@@ -649,7 +649,7 @@ body.show-case #home{display:none}
         <a class="btn btn-primary" href="#projects">Explore My Work <svg><use href="#i-arrow"/></svg></a>
         <a class="btn btn-secondary" href="#contact" data-topic="cv">Request My CV <svg><use href="#i-mail"/></svg></a>
       </div>
-      <p class="cv-note">My resume is available on request. Use the <a href="#contact" data-topic="cv">contact form</a> or email <a href="mailto:christelleann922@gmail.com">christelleann922@gmail.com</a> and I’ll send it over.</p>
+      <p class="cv-note">My resume is available on request. Use the <a href="#contact" data-topic="cv">contact form</a> or email <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=christelleann922@gmail.com&amp;su=Resume%20request%20from%20your%20portfolio" target="_blank" rel="noopener">christelleann922@gmail.com</a> and I’ll send it over.</p>
     </div>
     <div class="hero-art reveal" aria-label="Portrait collage">
       <div class="stripes" aria-hidden="true"></div>
@@ -983,7 +983,7 @@ body.show-case #home{display:none}
     </form>
     <p class="cf-or">or reach me directly</p>
     <div class="socials">
-      <a class="soc" href="mailto:christelleann922@gmail.com"><span class="c"><svg><use href="#i-mail"/></svg></span>Email <small>christelleann922@gmail.com</small></a>
+      <a class="soc" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=christelleann922@gmail.com&amp;su=Hello%20from%20your%20portfolio" target="_blank" rel="noopener"><span class="c"><svg><use href="#i-mail"/></svg></span>Email <small>christelleann922@gmail.com</small></a>
       <a class="soc" href="https://github.com/datgirlElle" target="_blank" rel="noopener"><span class="c"><svg><use href="#i-github"/></svg></span>GitHub <small>@datgirlElle</small></a>
       <a class="soc" href="https://www.linkedin.com/in/christelle-solis-67524a349" target="_blank" rel="noopener"><span class="c"><svg><use href="#i-linkedin"/></svg></span>LinkedIn <small>Christelle Solis</small></a>
     </div>
@@ -997,7 +997,7 @@ body.show-case #home{display:none}
     <small>© 2026 Christelle Ann L. Solis · elle.codes · Designed with love &amp; code.</small>
     <div class="right">
       <div class="mini">
-        <a href="mailto:christelleann922@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=christelleann922@gmail.com&amp;su=Hello%20from%20your%20portfolio" target="_blank" rel="noopener" aria-label="Email (opens Gmail)"><svg><use href="#i-mail"/></svg></a>
         <a href="https://github.com/datgirlElle" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
         <a href="https://www.linkedin.com/in/christelle-solis-67524a349" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
       </div>
@@ -1269,6 +1269,11 @@ var MY_EMAIL = "christelleann922@gmail.com";
     if (d.organization) lines.push("Company / School: " + d.organization);
     return "mailto:" + MY_EMAIL + "?subject=" + encodeURIComponent(d.subject) + "&body=" + encodeURIComponent(lines.join("\r\n"));
   }
+  function gmailHref(d){
+    var lines = ["Hi Christelle,", "", d.message || (d.topic === "CV request" ? "I came across your portfolio and would like to request a copy of your resume." : ""), "", "Name: " + d.name];
+    if (d.organization) lines.push("Company / School: " + d.organization);
+    return "https://mail.google.com/mail/?view=cm&fs=1&to=" + MY_EMAIL + "&su=" + encodeURIComponent(d.subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+  }
   function showDone(d){
     document.getElementById("cf-done-text").textContent = (d.topic === "CV request" ? "Your CV request is on its way. " : "Your message is on its way. ") + "I’ll get back to you at " + d.email + " soon.";
     body.hidden = true; done.hidden = false; document.getElementById("cf-done-title").focus();
@@ -1287,7 +1292,7 @@ var MY_EMAIL = "christelleann922@gmail.com";
         topic: d.topic, organization: d.organization || "—", message: d.message || "(no message)", botcheck: false }) })
       .then(function(r){ return r.json().catch(function(){ return { success: false }; }); })
       .then(function(res){ if (res && res.success) { showDone(d); f.reset(); syncTopic(); } else { throw new Error((res && res.message) || "send failed"); } })
-      .catch(function(){ status.className = "cf-status bad"; status.innerHTML = 'Sorry, that didn’t send. Please try again or <a href="' + mailtoHref(d).replace(/"/g, "&quot;") + '">email me directly</a>.'; })
+      .catch(function(){ status.className = "cf-status bad"; status.innerHTML = 'Sorry, that didn’t send. Please try again or <a href="' + gmailHref(d).replace(/&/g, "&amp;").replace(/"/g, "&quot;") + '" target="_blank" rel="noopener">email me directly</a>.'; })
       .then(function(){ send.disabled = false; sendLabel.textContent = copy[topic()][2]; });
   });
   // links like the hero's "Request My CV" pick a topic before jumping to the form
