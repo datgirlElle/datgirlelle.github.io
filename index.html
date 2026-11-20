@@ -182,7 +182,7 @@ a.cert:hover{background:rgba(255,215,231,.13);border-color:var(--candy);transfor
 .pcard{background:var(--white);border-radius:var(--r-card);box-shadow:var(--shadow-sm);border:1px solid var(--rose);overflow:hidden;transition:transform .35s,box-shadow .35s}
 .pcard:hover{transform:translateY(-8px) rotate(-.4deg);box-shadow:var(--shadow)}
 .feat{display:flex;flex-direction:column;position:relative}
-.feat .shot{background:var(--candy);padding:30px 30px 0;position:relative;min-height:290px;overflow:hidden}
+.feat .shot{background:var(--candy);padding:30px 30px 24px;position:relative;min-height:290px;overflow:hidden}
 .feat .shot::before{content:"";position:absolute;inset:0 0 auto 0;height:10px;background:var(--stripe)}
 .laptop{background:var(--cola);border-radius:14px 14px 0 0;padding:10px 10px 0;margin-top:14px;box-shadow:var(--shadow)}
 .screen{background:var(--cream);border-radius:8px 8px 0 0;height:230px;display:grid;grid-template-columns:90px 1fr;overflow:hidden}
@@ -195,6 +195,18 @@ a.cert:hover{background:rgba(255,215,231,.13);border-color:var(--candy);transfor
 .screen .mn .g i{height:54px;border-radius:8px;background:var(--candy);border:1px solid var(--rose)}
 .screen .mn .b{height:60px;border-radius:8px;background:var(--white);border:1px solid var(--rose)}
 .shot .note{position:absolute;right:22px;top:20px;background:var(--white);font:500 11px var(--mono);padding:6px 12px;border-radius:6px;transform:rotate(3deg);box-shadow:var(--shadow-sm);color:var(--wine)}
+.feat .shot .shot-img{display:block;width:100%;height:auto;margin-top:14px;filter:drop-shadow(0 18px 24px rgba(71,19,28,.28))}
+.demo-note{font-size:12.5px;color:var(--cola);opacity:.75;margin-top:-4px}
+.cs-hero .demo-note{margin-top:10px}
+.cs-logo{display:block;width:84px;height:auto;margin-bottom:14px}
+.jr-ph-logo{background:var(--white)!important}
+.jr-ph-logo img{position:absolute;left:8%;top:8%;width:84%;height:84%;object-fit:contain}
+.shots-real{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.shots-real figure{margin:0}
+.shots-real .wide{grid-column:1 / -1}
+.shots-real img{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 22px rgba(71,19,28,.22))}
+.shots-real figcaption{margin-top:8px;font:400 12px/1.5 var(--mono);color:var(--wine)}
+@media (max-width:820px){.shots-real{grid-template-columns:1fr}}
 .feat .body{padding:30px 34px 34px;display:flex;flex-direction:column;gap:14px;flex:1}
 .feat h3{font-size:36px}
 .feat .sol{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0}
@@ -261,18 +273,6 @@ a.cert:hover{background:rgba(255,215,231,.13);border-color:var(--candy);transfor
 .jr-ph .seal svg{width:34px;height:34px}
 .jr-ph .ph-chip{position:absolute;left:8px;bottom:8px;font:500 9.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.88);color:var(--wine);padding:3px 8px;border-radius:99px}
 .jr-ph .ph-spark{position:absolute;width:16px;height:16px;color:var(--white)}
-.jr-mini{width:86%;background:var(--cream);border-radius:7px;overflow:hidden;border:1px solid var(--rose);box-shadow:0 12px 20px -12px rgba(71,19,28,.6)}
-.jr-mini .bar{display:flex;align-items:center;gap:4px;padding:5px 7px;background:var(--cola)}
-.jr-mini .bar i{width:5px;height:5px;border-radius:50%;background:var(--rose)}
-.jr-mini .bar span{margin-left:6px;font:500 8px var(--mono);letter-spacing:.08em;color:var(--candy)}
-.jr-mini .body{display:grid;grid-template-columns:22% 1fr;height:84px}
-.jr-mini .sb{background:var(--wine)}
-.jr-mini .mn{padding:8px;display:grid;gap:6px;align-content:start}
-.jr-mini .mn b{display:block;height:7px;width:58%;border-radius:3px;background:var(--cola)}
-.jr-mini .row{display:grid;grid-template-columns:1fr 1fr;gap:5px}
-.jr-mini .row i{display:block;height:22px;border-radius:4px;background:var(--candy);border:1px solid var(--rose)}
-.jr-mini .meter{height:6px;border-radius:3px;background:var(--candy);overflow:hidden}
-.jr-mini .meter span{display:block;width:72%;height:100%;background:var(--wine)}
 .jr-ph-next{background:repeating-linear-gradient(135deg,#FFF6F9 0 10px,#FDE8F0 10px 20px)}
 .jr-ph-next .slot{position:absolute;inset:12px;border:1.5px dashed var(--wine);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--wine);font:500 9.5px var(--mono);letter-spacing:.14em;text-transform:uppercase}
 .jr-ph-next .slot svg{width:30px;height:30px}
@@ -748,10 +748,7 @@ body.show-case #home{display:none}
     </div>
     <div class="proj-grid">
       <article class="pcard feat reveal">
-        <div class="shot">
-          <span class="note">screenshot placeholder</span>
-          <div class="laptop" aria-hidden="true"><div class="screen"><div class="sb"><i></i><i></i><i></i><i></i></div><div class="mn"><div class="t"></div><div class="g"><i></i><i></i><i></i></div><div class="b"></div></div></div></div>
-        </div>
+        <div class="shot"><img class="shot-img" src="images/profilepath-admin.webp" alt="ProfilePath admin dashboard: Analytics &amp; Report page with assessment completion rate, students by strand pie chart, and average RIASEC dimension scores" width="852" height="536" loading="lazy"></div>
         <div class="body">
           <span class="label">Capstone Project · Backend &amp; Database Developer · 2026</span>
           <h3>ProfilePath — Web-Based Career Profiling System</h3>
@@ -764,8 +761,10 @@ body.show-case #home{display:none}
           <div class="badges"><span class="badge">PHP</span><span class="badge">PostgreSQL</span><span class="badge">JavaScript</span><span class="badge">HTML</span><span class="badge">CSS</span></div>
           <div class="btn-row" style="margin-top:8px">
             <a class="btn btn-primary" href="#case-study-profilepath">View Case Study <svg><use href="#i-arrow"/></svg></a>
-            <a class="btn btn-secondary" href="#" aria-disabled="true" tabindex="-1" title="Add a working link to enable">View Project <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-secondary" href="https://profilepath-careerprofilingsystem.onrender.com/staff-login" target="_blank" rel="noopener">Staff Portal <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-secondary" href="https://profilepath-careerprofilingsystem.onrender.com/student-login" target="_blank" rel="noopener">Student Portal <svg><use href="#i-arrow"/></svg></a>
           </div>
+          <p class="demo-note">Live demo. The first load can take a moment while the server wakes up.</p>
         </div>
       </article>
       <article class="pcard side tilt-a reveal">
@@ -835,13 +834,8 @@ body.show-case #home{display:none}
             <span class="jr-num" aria-hidden="true">02</span>
             <figure class="jr-pol" aria-hidden="true">
               <span class="tape" style="transform:rotate(4deg)"></span>
-              <div class="jr-ph">
-                <div class="jr-mini">
-                  <div class="bar"><i></i><i></i><i></i><span>profilepath</span></div>
-                  <div class="body"><div class="sb"></div><div class="mn"><b></b><div class="row"><i></i><i></i></div><div class="meter"><span></span></div></div></div>
-                </div>
-              </div>
-              <figcaption>ProfilePath</figcaption>
+              <div class="jr-ph jr-ph-logo"><img src="images/profilepath-logo.webp" alt="" width="640" height="582" loading="lazy"></div>
+              <figcaption>my capstone</figcaption>
               <svg class="jr-sticker" style="--r:16deg;width:66px;height:46px;right:-28px;top:-20px"><use href="#bow"/></svg>
             </figure>
           </div>
@@ -960,6 +954,7 @@ body.show-case #home{display:none}
   <section class="cs-hero">
     <div class="wrap">
       <a class="back" href="#projects"><svg><use href="#i-left"/></svg>BACK TO PROJECT GALLERY</a>
+      <img class="cs-logo" src="images/profilepath-logo.webp" alt="ProfilePath logo" width="640" height="582">
       <span class="label">Case Study / Capstone Project · In development</span>
       <h1>ProfilePath — <em>Web-Based</em> Career Profiling System</h1>
       <p style="max-width:640px">A web-based career profiling system for Senior High School students that matches them to career paths using content-based filtering and cosine similarity, with AES-256-GCM encryption, PBKDF2 key derivation, and role-based access control to help protect student profile and assessment data.</p>
@@ -969,6 +964,11 @@ body.show-case #home{display:none}
         <div><b>Stack</b>PHP · PostgreSQL · JavaScript · HTML · CSS</div>
         <div><b>Year</b>2026</div>
       </div>
+      <div class="btn-row" style="margin-top:26px">
+            <a class="btn btn-secondary" href="https://profilepath-careerprofilingsystem.onrender.com/staff-login" target="_blank" rel="noopener">Staff Portal <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-secondary" href="https://profilepath-careerprofilingsystem.onrender.com/student-login" target="_blank" rel="noopener">Student Portal <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <p class="demo-note">Live demo. The first load can take a moment while the server wakes up.</p>
     </div>
   </section>
   <div class="wrap cs-body">
@@ -990,7 +990,11 @@ body.show-case #home{display:none}
         <div class="steps"><div><b>01</b>Development</div><div><b>02</b>Implementation</div><div><b>03</b>Testing</div><div><b>04</b>Documentation</div></div>
         <span class="todo" style="margin-top:16px">To add: details for each phase</span></div>
       <div class="cs-sec" id="cs-shots"><span class="label">06</span><h2>Screenshots</h2>
-        <div class="shots"><div class="s"><svg><use href="#i-image"/></svg>Screenshot 01</div><div class="s"><svg><use href="#i-image"/></svg>Screenshot 02</div><div class="s"><svg><use href="#i-image"/></svg>Screenshot 03</div></div></div>
+        <div class="shots-real">
+          <figure class="wide"><img src="images/profilepath-login.webp" alt="ProfilePath staff sign-in page with the Mapúa Malayan Colleges Laguna and Center for Guidance and Counseling logos" width="863" height="548" loading="lazy"><figcaption>Staff sign-in for guidance counselors, facilitators, and administrators.</figcaption></figure>
+          <figure><img src="images/profilepath-admin.webp" alt="Admin dashboard Analytics &amp; Report page with completion rates, students by strand, and average RIASEC scores" width="852" height="536" loading="lazy"><figcaption>Admin dashboard: analytics and reports from student assessments.</figcaption></figure>
+          <figure><img src="images/profilepath-student.webp" alt="Student portal Career Results page showing careers that fit and the best RIASEC course match" width="861" height="539" loading="lazy"><figcaption>Student portal: career results and best RIASEC course match.</figcaption></figure>
+        </div></div>
       <div class="cs-sec" id="cs-features"><span class="label">07</span><h2>Key features</h2>
         <div class="feat-list"><div><h3>Content-Based Filtering</h3><p>Matches student profiles to career paths using cosine similarity.</p></div><div><h3>AES-256-GCM Encryption</h3><p>Encrypts sensitive student profile and assessment data.</p></div><div><h3>PBKDF2 Key Derivation</h3><p>Derives strong encryption keys instead of storing them directly.</p></div><div><h3>Role-Based Access Control</h3><p>Limits what each type of user can see and do in the system.</p></div></div>
         <span class="todo" style="margin-top:14px">To add: remaining features</span></div>
