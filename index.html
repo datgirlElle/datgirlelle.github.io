@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cherry Studio — Christelle Ann L. Solis</title>
+<title>elle.codes — Christelle Ann L. Solis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500&family=Parisienne&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -622,7 +622,7 @@ body.show-case #home{display:none}
 <div id="home">
 <header class="nav">
   <div class="wrap">
-    <a class="logo" href="#home-top" aria-label="cherry.exe — back to top"><svg><use href="#cherry"/></svg>cherry.exe</a>
+    <a class="logo" href="#hero" aria-label="cheri.exe — back to top"><svg><use href="#cherry"/></svg>cheri.exe</a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg><use href="#i-menu"/></svg></button>
     <ul id="menu">
       <li><a href="#hero" class="active">Home</a></li>
@@ -711,7 +711,7 @@ body.show-case #home{display:none}
       <h2>My <span class="script">Digital</span> Toolbox</h2>
       <p>Technologies, tools, and skills I’ve explored along the way.</p>
     </div>
-    <div class="dash-bar reveal" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>~/cherry/toolbox — 4 modules loaded</span><span>● ready</span></div>
+    <div class="dash-bar reveal" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>~/cheri/toolbox — 4 modules loaded</span><span>● ready</span></div>
     <div class="tool-grid">
       <article class="tcard reveal">
         <div class="ico"><svg><use href="#i-code"/></svg></div>
@@ -993,8 +993,8 @@ body.show-case #home{display:none}
 
 <footer>
   <div class="wrap">
-    <a class="logo" href="#hero"><svg><use href="#cherry"/></svg>Cherry Studio</a>
-    <small>© 2026 Christelle Ann L. Solis · Cherry Studio · Designed with love &amp; code.</small>
+    <a class="logo" href="#hero"><svg><use href="#cherry"/></svg>elle.codes</a>
+    <small>© 2026 Christelle Ann L. Solis · elle.codes · Designed with love &amp; code.</small>
     <div class="right">
       <div class="mini">
         <a href="mailto:christelleann922@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
@@ -1012,7 +1012,7 @@ body.show-case #home{display:none}
 <div id="case" class="case-view" data-route="case-study-profilepath">
   <header class="nav">
     <div class="wrap">
-      <a class="logo" href="#hero"><svg><use href="#cherry"/></svg>cherry.exe</a>
+      <a class="logo" href="#hero"><svg><use href="#cherry"/></svg>cheri.exe</a>
       <a class="btn btn-secondary btn-sm" href="#projects"><svg><use href="#i-left"/></svg>Back to projects</a>
     </div>
   </header>
@@ -1075,7 +1075,7 @@ body.show-case #home{display:none}
 <div id="case-plantsync" class="case-view" data-route="case-study-plantsync">
   <header class="nav">
     <div class="wrap">
-      <a class="logo" href="#hero"><svg><use href="#cherry"/></svg>cherry.exe</a>
+      <a class="logo" href="#hero"><svg><use href="#cherry"/></svg>cheri.exe</a>
       <a class="btn btn-secondary btn-sm" href="#projects"><svg><use href="#i-left"/></svg>Back to projects</a>
     </div>
   </header>
@@ -1283,7 +1283,7 @@ var MY_EMAIL = "christelleann922@gmail.com";
     if (!W3F_KEY) { status.textContent = "Opening your email app…"; window.location.href = mailtoHref(d); return; }
     send.disabled = true; sendLabel.textContent = "Sending…";
     fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify({ access_key: W3F_KEY, subject: d.subject, from_name: "Cherry Studio portfolio", name: d.name, email: d.email, replyto: d.email,
+      body: JSON.stringify({ access_key: W3F_KEY, subject: d.subject, from_name: "elle.codes portfolio", name: d.name, email: d.email, replyto: d.email,
         topic: d.topic, organization: d.organization || "—", message: d.message || "(no message)", botcheck: false }) })
       .then(function(r){ return r.json().catch(function(){ return { success: false }; }); })
       .then(function(res){ if (res && res.success) { showDone(d); f.reset(); syncTopic(); } else { throw new Error((res && res.message) || "send failed"); } })
