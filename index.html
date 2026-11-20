@@ -275,14 +275,32 @@ section{position:relative}
 @media (prefers-reduced-motion:reduce){.jr-card:hover,.jr-card:focus-within,.jr-card:hover .jr-sticker,.jr-card:focus-within .jr-sticker{transform:none}.jr-card:hover .jr-pol,.jr-card:focus-within .jr-pol{transform:rotate(0)}}
 @media (max-width:1100px) and (min-width:961px){.jr{gap:32px}.jr-pol figcaption{font-size:18px}.jr-cherry{width:42px!important;height:42px!important;left:-24px!important;bottom:-24px!important}}
 .jr-extra{margin-top:104px}
-.jr-notes{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:26px}
+.itsoc{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center;margin:30px 0 64px}
+.itsoc-photos{position:relative;height:470px}
+.itsoc .ip{position:absolute;margin:0;background:var(--white);padding:10px 10px 42px;box-shadow:var(--shadow);transition:transform .45s ease}
+.itsoc .ip img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block}
+.itsoc .ip figcaption{position:absolute;left:0;right:0;bottom:10px;text-align:center;font:400 21px/1 var(--script);color:var(--cola)}
+.itsoc .ip .tape{width:80px;height:22px;top:-11px;margin-left:-40px}
+.itsoc .ip1{width:72%;left:0;top:10px;transform:rotate(-2.5deg);z-index:1}
+.itsoc .ip1 figcaption{text-align:left;padding-left:20px}
+.itsoc .ip2{width:62%;right:0;bottom:0;transform:rotate(3deg);z-index:2}
+.itsoc .ip:hover{transform:rotate(0) translateY(-4px);z-index:3}
+.itsoc-sticker{position:absolute;z-index:4;transform:rotate(var(--r,0deg));pointer-events:none}
+.itsoc-copy h3{font-size:clamp(30px,3.4vw,40px);line-height:1.05;margin-bottom:8px}
+.itsoc-copy .jr-where{margin-bottom:16px}
+.itsoc-copy .side-list{font-size:15px;margin-bottom:18px}
+@media (max-width:1100px) and (min-width:961px){.itsoc-photos{height:540px}}
+@media (max-width:960px){.itsoc{grid-template-columns:1fr;gap:40px}.itsoc-photos{max-width:600px}}
+@media (max-width:560px){.itsoc-photos{height:420px}.itsoc .ip{padding:7px 7px 32px}.itsoc .ip figcaption{font-size:16px;bottom:8px}.itsoc .ip1 figcaption{padding-left:12px}.itsoc .ip1{width:82%}.itsoc .ip2{width:62%}}
+.jr-notes{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
 .jr-n{position:relative;background:var(--white);border:1px solid var(--rose);border-radius:14px;padding:26px 20px 20px;box-shadow:var(--shadow-sm)}
 .jr-n .tape{width:60px;height:18px;top:-9px;margin-left:-30px}
 .jr-n .when{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--wine)}
 .jr-n h3{font-size:23px;margin:8px 0 4px}
 .jr-n .org{font-size:13.5px;font-weight:600;color:var(--cola);margin-bottom:6px}
 .jr-n p{font-size:14px;line-height:1.55}
-@media (max-width:1100px){.jr-notes{grid-template-columns:repeat(2,1fr)}.certs{grid-template-columns:1fr}}
+@media (max-width:820px){.jr-notes{grid-template-columns:1fr}}
+@media (max-width:1100px){.certs{grid-template-columns:1fr}}
 @media (max-width:820px){.cert-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.jr-notes{grid-template-columns:1fr}}
 /* journey: vertical timeline on tablet and phone */
@@ -834,10 +852,28 @@ body.show-case #home{display:none}
 
     <div class="jr-extra">
       <span class="label reveal">Along the way</span>
+      <div class="itsoc reveal">
+        <div class="itsoc-photos">
+          <figure class="ip ip1"><span class="tape"></span><img src="images/itsoc-stage.jpg" alt="Christelle speaking on stage with a microphone in front of the ITSOC Infotech Society logo" width="900" height="600" loading="lazy"><figcaption>on stage for ITSOC</figcaption></figure>
+          <figure class="ip ip2"><span class="tape" style="transform:rotate(5deg)"></span><img src="images/itsoc-group.jpg" alt="Christelle with fellow ITSOC-MMCL members in their org shirts at a general assembly" width="900" height="600" loading="lazy"><figcaption>the ITSOC crew</figcaption></figure>
+          <svg class="itsoc-sticker" style="--r:-12deg;width:58px;height:58px;left:-14px;bottom:18px" aria-hidden="true"><use href="#cherry"/></svg>
+          <svg class="itsoc-sticker" style="--r:14deg;width:64px;height:44px;right:30%;top:-18px" aria-hidden="true"><use href="#bow"/></svg>
+        </div>
+        <div class="itsoc-copy">
+          <p class="jr-kicker"><span class="ic"><svg><use href="#i-users"/></svg></span>Organization · 2025 – 2026</p>
+          <p class="jr-chapter">Leading with my org</p>
+          <h3>Auditor, ITSOC-MMCL</h3>
+          <p class="jr-where">Infotech Society, Mapúa Malayan Colleges Laguna</p>
+          <ul class="side-list">
+            <li>Organized financial transaction records and assisted the Treasurer with tracking funds and expenses.</li>
+            <li>Prepared and presented financial reports to support transparent organizational reporting.</li>
+          </ul>
+          <div class="badges"><span class="badge">Leadership</span><span class="badge">Financial Reporting</span><span class="badge">Public Speaking</span></div>
+        </div>
+      </div>
       <ul class="jr-notes">
         <li class="jr-n reveal"><span class="tape"></span><span class="when">2021 – 2023</span><h3>Senior High School</h3><p class="org">The Canossa School, Inc.</p><p>Graduated with honors.</p></li>
         <li class="jr-n reveal"><span class="tape" style="transform:rotate(4deg)"></span><span class="when">June 2024</span><h3>Creative Committee Volunteer</h3><p class="org">CCIS-MMCL Committee</p><p>Created promotional materials for foundation events and social media.</p></li>
-        <li class="jr-n reveal"><span class="tape" style="transform:rotate(-6deg)"></span><span class="when">2025 – 2026</span><h3>Auditor</h3><p class="org">ITSOC-MMCL</p><p>Organized financial records, helped track funds and expenses, and presented financial reports.</p></li>
         <li class="jr-n reveal"><span class="tape" style="transform:rotate(3deg)"></span><span class="when">January 2026 · Seminar</span><h3>Future-Ready Pilipinas</h3><p class="org">DICT Region II</p><p>Understanding Blockchain Today.</p></li>
       </ul>
     </div>
