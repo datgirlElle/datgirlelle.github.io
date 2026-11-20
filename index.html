@@ -144,11 +144,12 @@ section{position:relative}
 .certs{position:relative;display:grid;grid-template-columns:1fr 300px;gap:48px;margin-top:72px;padding-top:48px;border-top:1px solid rgba(205,164,181,.3)}
 .certs h3{color:var(--cream);font-size:clamp(34px,4vw,46px);margin:8px 0 22px}
 .certs h3 .script{color:var(--candy);font-size:1.15em}
-.cert-grid{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cert-grid{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .sub-label{display:block;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--rose);margin-bottom:12px}
 .cert-grid li,.gb-list li{list-style:none}
 a.cert{text-decoration:none;position:relative;padding-bottom:36px;transition:background .25s,border-color .25s,transform .25s}
 a.cert:hover{background:rgba(255,215,231,.13);border-color:var(--candy);transform:translateY(-2px)}
+.cert small .d{display:block;margin-top:2px}
 .cert .go{position:absolute;left:68px;bottom:14px;display:inline-flex;align-items:center;gap:6px;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--candy)}
 .cert .go svg{width:12px;height:12px}
 .cert-grid li > .cert{height:100%}
@@ -708,10 +709,9 @@ body.show-case #home{display:none}
         <h3>Always <span class="script">Learning</span></h3>
         <span class="sub-label">Certificates</span>
         <ul class="cert-grid">
-          <li><a class="cert" href="https://coursera.org/share/0547c5a831d8caa29c006d2365aca590" target="_blank" rel="noopener"><span class="ci"><svg><use href="#i-code"/></svg></span><div><b>Full Stack Web Development</b><small>Amazon · Coursera · Mar 2026</small></div><span class="go">Verify <svg><use href="#i-arrow"/></svg></span></a></li>
-          <li><a class="cert" href="https://coursera.org/share/0defc8a54eafef713e4b2a53df22c2e8" target="_blank" rel="noopener"><span class="ci"><svg><use href="#i-flag"/></svg></span><div><b>Foundations of Project Management</b><small>Google · Coursera · Feb 2026</small></div><span class="go">Verify <svg><use href="#i-arrow"/></svg></span></a></li>
-          <li><a class="cert" href="https://coursera.org/share/92de1b2c1a8e683f16eede0344a9cde9" target="_blank" rel="noopener"><span class="ci"><svg><use href="#i-award"/></svg></span><div><b>Artificial Intelligence: Ethics &amp; Societal Challenges</b><small>Lund University · Coursera · Oct 2025</small></div><span class="go">Verify <svg><use href="#i-arrow"/></svg></span></a></li>
-          <li><div class="cert"><span class="ci"><svg><use href="#i-shield"/></svg></span><div><b>Google Cybersecurity Certificate: Courses 1–5</b><small>Google · Coursera · 5 courses completed</small></div></div></li>
+          <li><a class="cert" href="https://coursera.org/share/0547c5a831d8caa29c006d2365aca590" target="_blank" rel="noopener"><span class="ci"><svg><use href="#i-code"/></svg></span><div><b>Full Stack Web Development</b><small>Amazon · Coursera<span class="d">Mar 2026</span></small></div><span class="go">Verify <svg><use href="#i-arrow"/></svg></span></a></li>
+          <li><a class="cert" href="https://coursera.org/share/0defc8a54eafef713e4b2a53df22c2e8" target="_blank" rel="noopener"><span class="ci"><svg><use href="#i-flag"/></svg></span><div><b>Foundations of Project Management</b><small>Google · Coursera<span class="d">Feb 2026</span></small></div><span class="go">Verify <svg><use href="#i-arrow"/></svg></span></a></li>
+          <li><a class="cert" href="https://coursera.org/share/92de1b2c1a8e683f16eede0344a9cde9" target="_blank" rel="noopener"><span class="ci"><svg><use href="#i-award"/></svg></span><div><b>Artificial Intelligence: Ethics &amp; Societal Challenges</b><small>Lund University · Coursera<span class="d">Oct 2025</span></small></div><span class="go">Verify <svg><use href="#i-arrow"/></svg></span></a></li>
         </ul>
         <div class="gbadges">
           <div class="gb-head"><span class="sub-label">Google Cloud skill badges · 11 earned</span><a class="gb-all" href="https://www.skills.google/public_profiles/6e1da54d-7023-44d5-8d3e-af8418e5f70b" target="_blank" rel="noopener">View my Google Skills profile <svg><use href="#i-arrow"/></svg></a></div>
