@@ -170,20 +170,94 @@ section{position:relative}
 .pcard.soon p{font-size:14px;opacity:.8}
 .tilt-a{transform:rotate(1.2deg)}.tilt-b{transform:rotate(-1deg)}
 
-/* journey */
-.journey{background:var(--cream);padding-top:40px}
-.tl{--gap:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);position:relative;list-style:none}
-.tl-line{position:absolute;top:6.5px;height:3px;left:calc((100% - 2 * var(--gap)) / 6);right:calc((100% - 2 * var(--gap)) / 6);background:var(--wine);border-radius:3px}
-.tl-item{display:flex;flex-direction:column;position:relative}
-.tl-mark{display:flex;flex-direction:column;align-items:center;height:40px}
-.tl-dot{flex:none;width:16px;height:16px;border-radius:50%;background:var(--cream);box-shadow:inset 0 0 0 4px var(--wine);position:relative;z-index:1}
-.tl-stem{flex:1;width:3px;background:var(--wine)}
-.tl-card{flex:1;background:var(--candy);border-radius:var(--r-card);padding:28px 26px;border:1px solid var(--rose)}
-.tl-item .ico{width:50px;height:50px;border-radius:50%;background:var(--wine);color:var(--candy);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.tl-item .ico svg{width:24px;height:24px}
-.tl-item h3{font-size:25px;margin:6px 0 6px}
-.tl-item p{font-size:14.5px;line-height:1.55}
-.tl-item .when{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--wine)}
+/* journey — editorial scrapbook timeline */
+.journey{background-color:var(--cream);background-image:radial-gradient(rgba(205,164,181,.3) 1px,transparent 1.4px);background-size:24px 24px;padding-top:40px;overflow:hidden}
+.jr-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px 40px;flex-wrap:wrap}
+.jr-head .sec-head{margin-bottom:0}
+.journey .sec-head h2{font-size:clamp(46px,6.4vw,78px)}
+.journey .sec-head h2 .script{white-space:nowrap}
+.jr-note{position:relative;background:var(--white);border:1px solid var(--rose);padding:16px 30px 14px 22px;transform:rotate(2.5deg);box-shadow:var(--shadow-sm);font:400 26px/1.15 var(--script);color:var(--wine);margin:0 26px 10px 0}
+.jr-note .tape{width:70px;height:22px;top:-11px;margin-left:-35px}
+.jr-note svg{position:absolute;width:44px;height:44px;right:-24px;bottom:-22px;transform:rotate(14deg)}
+.jr{position:relative;list-style:none;display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:40px;align-items:start;margin-top:72px}
+.jr-line{position:absolute;left:0;right:34%;top:7.25px;height:1.5px;background:linear-gradient(90deg,rgba(122,32,55,0),var(--wine) 5%)}
+.jr-line-next{position:absolute;left:66%;right:0;top:7.25px;height:1.5px;background:repeating-linear-gradient(90deg,var(--wine) 0 6px,transparent 6px 12px)}
+.jr-item{position:relative;display:flex;flex-direction:column}
+.jr-mark{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:16px;height:calc(var(--drop,0px) + 64px);margin-left:44px}
+.jr-flip .jr-mark{align-self:flex-end;margin-left:0;margin-right:44px}
+.jr-dot{flex:none;width:16px;height:16px;border-radius:50%;background:var(--wine);box-shadow:0 0 0 5px var(--cream)}
+.jr-stem{flex:1;width:1.5px;background:var(--wine)}
+.jr-next .jr-dot{background:var(--cream);box-shadow:inset 0 0 0 2px var(--wine),0 0 0 5px var(--cream)}
+.jr-next .jr-stem{background:repeating-linear-gradient(180deg,var(--wine) 0 5px,transparent 5px 10px)}
+.jr-card{position:relative;background-color:#FFFCF7;background-image:radial-gradient(circle at 100% 0%,rgba(255,215,231,.8),transparent 58%),radial-gradient(circle at 0% 100%,rgba(255,215,231,.45),transparent 50%);border:1px solid rgba(205,164,181,.8);border-radius:20px;padding:0 28px 30px;box-shadow:0 26px 44px -30px rgba(71,19,28,.5);transition:transform .35s ease,box-shadow .35s ease}
+.jr-card:hover,.jr-card:focus-within{transform:translateY(-6px);box-shadow:0 36px 54px -30px rgba(71,19,28,.55)}
+.jr-next .jr-card{border:1.5px dashed var(--rose);background-color:rgba(255,252,247,.9)}
+.jr-top{position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:-34px 0 20px}
+.jr-flip .jr-top{flex-direction:row-reverse}
+.jr-num{font:italic 600 64px/1 var(--serif);color:var(--rose);margin-top:52px;letter-spacing:-.02em}
+.jr-pol{position:relative;flex:none;width:62%;margin:0;background:var(--white);padding:10px 10px 38px;box-shadow:0 18px 30px -18px rgba(71,19,28,.5);transform:rotate(3deg);transition:transform .45s ease}
+.jr-flip .jr-pol{transform:rotate(-3deg)}
+.jr-card:hover .jr-pol,.jr-card:focus-within .jr-pol{transform:rotate(0) translateY(-4px)}
+.jr-pol .tape{width:74px;height:22px;top:-11px;margin-left:-37px}
+.jr-pol figcaption{position:absolute;left:0;right:0;bottom:9px;text-align:center;font:400 21px/1 var(--script);color:var(--cola)}
+.jr-sticker{position:absolute;z-index:3;pointer-events:none;transform:rotate(var(--r,0deg));transition:transform .45s ease}
+.jr-card:hover .jr-sticker,.jr-card:focus-within .jr-sticker{transform:rotate(calc(var(--r,0deg) - 10deg)) translateY(-3px) scale(1.06)}
+.jr-ph{position:relative;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#FBE3EC,#EDBCD0)}
+.jr-ph .seal{width:70px;height:70px;border-radius:50%;background:var(--white);color:var(--wine);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 18px -10px rgba(71,19,28,.5);outline:1.5px dashed var(--wine);outline-offset:5px}
+.jr-ph .seal svg{width:34px;height:34px}
+.jr-ph .ph-chip{position:absolute;left:8px;bottom:8px;font:500 9.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.88);color:var(--wine);padding:3px 8px;border-radius:99px}
+.jr-ph .ph-spark{position:absolute;width:16px;height:16px;color:var(--white)}
+.jr-mini{width:86%;background:var(--cream);border-radius:7px;overflow:hidden;border:1px solid var(--rose);box-shadow:0 12px 20px -12px rgba(71,19,28,.6)}
+.jr-mini .bar{display:flex;align-items:center;gap:4px;padding:5px 7px;background:var(--cola)}
+.jr-mini .bar i{width:5px;height:5px;border-radius:50%;background:var(--rose)}
+.jr-mini .bar span{margin-left:6px;font:500 8px var(--mono);letter-spacing:.08em;color:var(--candy)}
+.jr-mini .body{display:grid;grid-template-columns:22% 1fr;height:84px}
+.jr-mini .sb{background:var(--wine)}
+.jr-mini .mn{padding:8px;display:grid;gap:6px;align-content:start}
+.jr-mini .mn b{display:block;height:7px;width:58%;border-radius:3px;background:var(--cola)}
+.jr-mini .row{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.jr-mini .row i{display:block;height:22px;border-radius:4px;background:var(--candy);border:1px solid var(--rose)}
+.jr-mini .meter{height:6px;border-radius:3px;background:var(--candy);overflow:hidden}
+.jr-mini .meter span{display:block;width:72%;height:100%;background:var(--wine)}
+.jr-ph-next{background:repeating-linear-gradient(135deg,#FFF6F9 0 10px,#FDE8F0 10px 20px)}
+.jr-ph-next .slot{position:absolute;inset:12px;border:1.5px dashed var(--wine);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--wine);font:500 9.5px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.jr-ph-next .slot svg{width:30px;height:30px}
+.jr-stamp{position:absolute;z-index:3;top:-12px;right:-16px;font:600 10.5px var(--mono);letter-spacing:.16em;color:var(--wine);border:1.5px solid var(--wine);border-radius:6px;padding:5px 9px;background:var(--cream);transform:rotate(10deg)}
+.jr-kicker{display:flex;align-items:center;gap:10px;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--wine)}
+.jr-kicker .ic{flex:none;width:30px;height:30px;border-radius:50%;background:var(--wine);color:var(--candy);display:flex;align-items:center;justify-content:center}
+.jr-kicker .ic svg{width:15px;height:15px}
+.jr-chapter{font:400 32px/1.1 var(--script);color:var(--wine);margin:12px 0 4px}
+.jr-card h3{font-size:29px;line-height:1.08;margin-bottom:8px}
+.jr-where{font-size:15px;line-height:1.45;font-weight:600;color:var(--cola)}
+.jr-story{font-size:14.5px;line-height:1.6;margin-top:10px}
+.jr-rule{height:1px;margin:18px 0 16px;background:repeating-linear-gradient(90deg,var(--rose) 0 4px,transparent 4px 8px)}
+.jr-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:8px;font:500 13.5px var(--sans);color:var(--wine);text-decoration:none}
+.jr-link span{border-bottom:1.5px solid var(--rose);padding-bottom:1px}
+.jr-link:hover span{border-color:var(--wine)}
+.jr-link svg{width:14px;height:14px}
+.jr-status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--wine);background:var(--white);border:1px dashed var(--wine);border-radius:99px;padding:6px 12px}
+.jr-status i{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--wine)}
+@media (prefers-reduced-motion:reduce){.jr-card:hover,.jr-card:focus-within,.jr-card:hover .jr-sticker,.jr-card:focus-within .jr-sticker{transform:none}.jr-card:hover .jr-pol,.jr-card:focus-within .jr-pol{transform:rotate(0)}}
+@media (max-width:1100px) and (min-width:961px){.jr{gap:32px}.jr-pol figcaption{font-size:18px}.jr-cherry{width:42px!important;height:42px!important;left:-24px!important;bottom:-24px!important}}
+/* journey: vertical timeline on tablet and phone */
+@media (max-width:960px){
+  .jr{--rail:44px;--lc:14px;grid-template-columns:1fr;gap:72px;padding-left:var(--rail);margin-top:80px}
+  .jr-line{left:calc(var(--lc) - .75px);right:auto;top:36px;bottom:0;width:1.5px;height:auto;background:linear-gradient(180deg,var(--wine) 80%,rgba(122,32,55,0))}
+  .jr-line-next{display:none}
+  .jr-item{max-width:560px}
+  .jr-mark,.jr-flip .jr-mark{position:absolute;left:calc(var(--lc) - 8px - var(--rail));top:28px;width:calc(var(--rail) - var(--lc) + 8px);height:16px;flex-direction:row;margin:0}
+  .jr-stem{width:auto;height:1.5px}
+  .jr-next .jr-stem{background:repeating-linear-gradient(90deg,var(--wine) 0 5px,transparent 5px 10px)}
+}
+@media (max-width:560px){
+  .jr{--rail:32px;--lc:10px;gap:64px}
+  .jr-card{padding:0 20px 24px}
+  .jr-num{font-size:50px;margin-top:48px}
+  .jr-pol{width:64%}
+  .jr-stamp{right:-8px}
+  .jr-card h3{font-size:26px}
+  .jr-note{font-size:22px}
+}
 
 /* contact */
 .contact{background:var(--cola);color:var(--cream);text-align:center;overflow:hidden}
@@ -312,10 +386,6 @@ body.show-case #case{display:block}
   .feat .body{padding:24px 22px 28px}
   .screen{grid-template-columns:56px 1fr;height:190px}
   .tilt-a,.tilt-b{transform:none}
-  .tl{grid-template-columns:1fr;padding-left:34px;gap:24px}
-  .tl-line{left:10.5px;right:auto;top:0;bottom:0;width:3px;height:auto}
-  .tl-mark{position:absolute;left:-30px;top:30px;width:30px;height:16px;flex-direction:row}
-  .tl-stem{width:auto;height:3px}
   .contact .pad{padding:110px 20px 80px}
   .contact .deco{display:none}
   .contact .cherry-d{display:none}
@@ -543,38 +613,97 @@ body.show-case #case{display:block}
 <!-- 05 JOURNEY -->
 <section class="journey pad" id="journey">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="label">04 / Journey</span>
-      <h2>My Journey <span class="script">So Far</span></h2>
+    <div class="jr-head">
+      <div class="sec-head reveal">
+        <span class="label">04 / Journey</span>
+        <h2>My Journey <span class="script">So Far</span></h2>
+        <p>A few pages from my story: the chapters I’ve written, and the one I’m about to begin.</p>
+      </div>
+      <p class="jr-note reveal" aria-hidden="true"><span class="tape"></span>still being written…<svg><use href="#cherry"/></svg></p>
     </div>
-    <ol class="tl">
-      <li class="tl-line" aria-hidden="true" role="presentation"></li>
-      <li class="tl-item reveal">
-        <div class="tl-mark" aria-hidden="true"><span class="tl-dot"></span><span class="tl-stem"></span></div>
-        <div class="tl-card">
-          <div class="ico"><svg><use href="#i-cap"/></svg></div>
-          <span class="when">Education</span>
+
+    <ol class="jr">
+      <li class="jr-line" aria-hidden="true" role="presentation"></li>
+      <li class="jr-line-next" aria-hidden="true" role="presentation"></li>
+
+      <li class="jr-item reveal" style="--drop:0px">
+        <div class="jr-mark" aria-hidden="true"><span class="jr-dot"></span><span class="jr-stem"></span></div>
+        <article class="jr-card">
+          <div class="jr-top">
+            <span class="jr-num" aria-hidden="true">01</span>
+            <figure class="jr-pol" aria-hidden="true">
+              <span class="tape"></span>
+              <div class="jr-ph">
+                <span class="seal"><svg><use href="#i-cap"/></svg></span>
+                <svg class="ph-spark" style="right:12px;top:10px"><use href="#spark"/></svg>
+                <span class="ph-chip">BS IT</span>
+              </div>
+              <figcaption>where it began</figcaption>
+              <svg class="jr-sticker jr-cherry" style="--r:-14deg;width:56px;height:56px;left:-26px;bottom:-16px"><use href="#cherry"/></svg>
+            </figure>
+          </div>
+          <p class="jr-kicker"><span class="ic"><svg><use href="#i-cap"/></svg></span>Chapter 01 · Education</p>
+          <p class="jr-chapter">The Beginning</p>
           <h3>BS Information Technology</h3>
-          <p>Mapúa Malayan Colleges Laguna</p>
-        </div>
+          <p class="jr-where">Mapúa Malayan Colleges Laguna</p>
+          <p class="jr-story">Where I started building my foundation in software, systems, and problem solving.</p>
+          <div class="jr-rule" aria-hidden="true"></div>
+          <div class="badges"><span class="badge">Information Technology</span><span class="badge">Laguna, PH</span></div>
+        </article>
       </li>
-      <li class="tl-item reveal">
-        <div class="tl-mark" aria-hidden="true"><span class="tl-dot"></span><span class="tl-stem"></span></div>
-        <div class="tl-card">
-          <div class="ico"><svg><use href="#i-code"/></svg></div>
-          <span class="when">Development</span>
+
+      <li class="jr-item jr-flip reveal" style="--drop:84px">
+        <div class="jr-mark" aria-hidden="true"><span class="jr-dot"></span><span class="jr-stem"></span></div>
+        <article class="jr-card">
+          <div class="jr-top">
+            <span class="jr-num" aria-hidden="true">02</span>
+            <figure class="jr-pol" aria-hidden="true">
+              <span class="tape" style="transform:rotate(4deg)"></span>
+              <div class="jr-ph">
+                <div class="jr-mini">
+                  <div class="bar"><i></i><i></i><i></i><span>profilepath</span></div>
+                  <div class="body"><div class="sb"></div><div class="mn"><b></b><div class="row"><i></i><i></i></div><div class="meter"><span></span></div></div></div>
+                </div>
+              </div>
+              <figcaption>ProfilePath</figcaption>
+              <svg class="jr-sticker" style="--r:16deg;width:66px;height:46px;right:-28px;top:-20px"><use href="#bow"/></svg>
+            </figure>
+          </div>
+          <p class="jr-kicker"><span class="ic"><svg><use href="#i-code"/></svg></span>Chapter 02 · Capstone</p>
+          <p class="jr-chapter">Building My Ideas</p>
           <h3>Capstone Project — ProfilePath</h3>
-          <p>Career profiling system development, implementation, testing, and documentation.</p>
-        </div>
+          <p class="jr-where">Web-based career profiling system</p>
+          <p class="jr-story">Development, implementation, testing, and documentation of a system that recommends college programs to Senior High School students.</p>
+          <div class="jr-rule" aria-hidden="true"></div>
+          <div class="badges"><span class="badge">Development</span><span class="badge">Implementation</span><span class="badge">Testing</span><span class="badge">Documentation</span></div>
+          <a class="jr-link" href="#case-study-profilepath"><span>Read the case study</span><svg><use href="#i-arrow"/></svg></a>
+        </article>
       </li>
-      <li class="tl-item reveal">
-        <div class="tl-mark" aria-hidden="true"><span class="tl-dot"></span><span class="tl-stem"></span></div>
-        <div class="tl-card">
-          <div class="ico"><svg><use href="#i-brief"/></svg></div>
-          <span class="when">Career growth</span>
+
+      <li class="jr-item jr-next reveal" style="--drop:32px">
+        <div class="jr-mark" aria-hidden="true"><span class="jr-dot"></span><span class="jr-stem"></span></div>
+        <article class="jr-card">
+          <div class="jr-top">
+            <span class="jr-num" aria-hidden="true">03</span>
+            <figure class="jr-pol" aria-hidden="true">
+              <span class="tape" style="transform:rotate(-6deg)"></span>
+              <div class="jr-ph jr-ph-next">
+                <div class="slot"><svg><use href="#i-brief"/></svg>Coming soon</div>
+              </div>
+              <figcaption>the next page</figcaption>
+              <span class="jr-stamp">UP NEXT</span>
+              <svg class="jr-sticker" style="--r:-8deg;width:40px;height:28px;left:-18px;bottom:30px"><use href="#bow"/></svg>
+              <svg class="jr-sticker" style="--r:0deg;width:20px;height:20px;right:-12px;bottom:-8px;color:var(--wine)"><use href="#spark"/></svg>
+            </figure>
+          </div>
+          <p class="jr-kicker"><span class="ic"><svg><use href="#i-brief"/></svg></span>Chapter 03 · Internship</p>
+          <p class="jr-chapter">The Next Chapter</p>
           <h3>Internship / OJT Journey</h3>
-          <p>486 required training hours, with internship details to be updated when confirmed.</p>
-        </div>
+          <p class="jr-where">486 required training hours</p>
+          <p class="jr-story">An upcoming chapter. Placement details will be added once confirmed.</p>
+          <div class="jr-rule" aria-hidden="true"></div>
+          <span class="jr-status"><i></i>Upcoming chapter</span>
+        </article>
       </li>
     </ol>
   </div>
