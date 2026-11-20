@@ -172,12 +172,13 @@ section{position:relative}
 
 /* journey */
 .journey{background:var(--cream);padding-top:40px}
-.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative;padding-top:48px}
-.tl::before{content:"";position:absolute;left:5%;right:5%;top:24px;height:3px;background:var(--wine);border-radius:3px}
-.tl-item{background:var(--candy);border-radius:var(--r-card);padding:28px 26px;position:relative;border:1px solid var(--rose);transition:transform .3s,box-shadow .3s}
-.tl-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-sm)}
-.tl-item::before{content:"";position:absolute;top:-34px;left:50%;margin-left:-8px;width:16px;height:16px;border-radius:50%;background:var(--cream);border:4px solid var(--wine)}
-.tl-item::after{content:"";position:absolute;top:-24px;left:50%;margin-left:-1.5px;width:3px;height:24px;background:var(--wine)}
+.tl{--gap:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);position:relative;list-style:none}
+.tl-line{position:absolute;top:6.5px;height:3px;left:calc((100% - 2 * var(--gap)) / 6);right:calc((100% - 2 * var(--gap)) / 6);background:var(--wine);border-radius:3px}
+.tl-item{display:flex;flex-direction:column;position:relative}
+.tl-mark{display:flex;flex-direction:column;align-items:center;height:40px}
+.tl-dot{flex:none;width:16px;height:16px;border-radius:50%;background:var(--cream);box-shadow:inset 0 0 0 4px var(--wine);position:relative;z-index:1}
+.tl-stem{flex:1;width:3px;background:var(--wine)}
+.tl-card{flex:1;background:var(--candy);border-radius:var(--r-card);padding:28px 26px;border:1px solid var(--rose)}
 .tl-item .ico{width:50px;height:50px;border-radius:50%;background:var(--wine);color:var(--candy);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
 .tl-item .ico svg{width:24px;height:24px}
 .tl-item h3{font-size:25px;margin:6px 0 6px}
@@ -311,10 +312,10 @@ body.show-case #case{display:block}
   .feat .body{padding:24px 22px 28px}
   .screen{grid-template-columns:56px 1fr;height:190px}
   .tilt-a,.tilt-b{transform:none}
-  .tl{grid-template-columns:1fr;padding-top:0;padding-left:34px;gap:24px}
-  .tl::before{left:11px;right:auto;top:0;bottom:0;width:3px;height:auto}
-  .tl-item::before{top:30px;left:-31px;margin-left:0}
-  .tl-item::after{top:38px;left:-16px;width:16px;height:3px;margin-left:0}
+  .tl{grid-template-columns:1fr;padding-left:34px;gap:24px}
+  .tl-line{left:10.5px;right:auto;top:0;bottom:0;width:3px;height:auto}
+  .tl-mark{position:absolute;left:-30px;top:30px;width:30px;height:16px;flex-direction:row}
+  .tl-stem{width:auto;height:3px}
   .contact .pad{padding:110px 20px 80px}
   .contact .deco{display:none}
   .contact .cherry-d{display:none}
@@ -546,24 +547,34 @@ body.show-case #case{display:block}
       <span class="label">04 / Journey</span>
       <h2>My Journey <span class="script">So Far</span></h2>
     </div>
-    <ol class="tl" style="list-style:none">
+    <ol class="tl">
+      <li class="tl-line" aria-hidden="true" role="presentation"></li>
       <li class="tl-item reveal">
-        <div class="ico"><svg><use href="#i-cap"/></svg></div>
-        <span class="when">Education</span>
-        <h3>BS Information Technology</h3>
-        <p>Mapúa Malayan Colleges Laguna</p>
+        <div class="tl-mark" aria-hidden="true"><span class="tl-dot"></span><span class="tl-stem"></span></div>
+        <div class="tl-card">
+          <div class="ico"><svg><use href="#i-cap"/></svg></div>
+          <span class="when">Education</span>
+          <h3>BS Information Technology</h3>
+          <p>Mapúa Malayan Colleges Laguna</p>
+        </div>
       </li>
       <li class="tl-item reveal">
-        <div class="ico"><svg><use href="#i-code"/></svg></div>
-        <span class="when">Development</span>
-        <h3>Capstone Project — ProfilePath</h3>
-        <p>Career profiling system development, implementation, testing, and documentation.</p>
+        <div class="tl-mark" aria-hidden="true"><span class="tl-dot"></span><span class="tl-stem"></span></div>
+        <div class="tl-card">
+          <div class="ico"><svg><use href="#i-code"/></svg></div>
+          <span class="when">Development</span>
+          <h3>Capstone Project — ProfilePath</h3>
+          <p>Career profiling system development, implementation, testing, and documentation.</p>
+        </div>
       </li>
       <li class="tl-item reveal">
-        <div class="ico"><svg><use href="#i-brief"/></svg></div>
-        <span class="when">Career growth</span>
-        <h3>Internship / OJT Journey</h3>
-        <p>486 required training hours, with internship details to be updated when confirmed.</p>
+        <div class="tl-mark" aria-hidden="true"><span class="tl-dot"></span><span class="tl-stem"></span></div>
+        <div class="tl-card">
+          <div class="ico"><svg><use href="#i-brief"/></svg></div>
+          <span class="when">Career growth</span>
+          <h3>Internship / OJT Journey</h3>
+          <p>486 required training hours, with internship details to be updated when confirmed.</p>
+        </div>
       </li>
     </ol>
   </div>
