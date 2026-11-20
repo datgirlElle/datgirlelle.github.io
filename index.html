@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>elle.codes — Christelle Ann L. Solis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500&family=Parisienne&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500&family=Parisienne&family=Press+Start+2P&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --cola:#47131C; --wine:#7A2037; --candy:#FFD7E7; --cream:#FFF9ED; --rose:#CDA4B5; --white:#FFFFFF; --text:#301D22;
@@ -234,6 +234,76 @@ a.cert:hover{background:rgba(255,215,231,.13);border-color:var(--candy);transfor
 @media (max-width:1100px){.pcard.side{grid-column:1 / -1}.pcard.side .ph-shot{flex:none;height:300px}}
 @media (max-width:820px){.pcard.side .ph-shot{height:220px}}.tilt-b{transform:rotate(-1deg)}
 
+/* arcade */
+.arcade-sec{background-color:#FFF4F7;background-image:radial-gradient(rgba(205,164,181,.35) 1.2px,transparent 1.6px);background-size:22px 22px}
+.arcade-sec .sec-head p{font:400 30px/1.2 var(--script);color:var(--wine);opacity:1}
+.arc-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:44px;align-items:start}
+.arc-machine{position:relative;background:var(--wine);border-radius:30px;padding:14px 18px 18px;box-shadow:inset 0 0 0 4px rgba(255,215,231,.16),inset 0 -8px 0 rgba(71,19,28,.35),0 30px 50px -26px rgba(71,19,28,.6)}
+.arc-top{display:flex;align-items:center;gap:12px;padding:4px 4px 12px;color:var(--candy)}
+.arc-dots{display:flex;gap:6px}.arc-dots i{width:10px;height:10px;border-radius:50%;background:var(--candy);opacity:.8}
+.arc-dots i:nth-child(2){opacity:.55}.arc-dots i:nth-child(3){opacity:.3}
+.arc-title{flex:1;font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.arc-ctrls{display:flex;gap:8px}
+.arc-icon{width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,215,231,.5);background:rgba(255,215,231,.1);color:var(--candy);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,transform .2s}
+.arc-icon svg{width:20px;height:20px;fill:currentColor}
+.arc-icon:hover:not(:disabled){background:rgba(255,215,231,.22);transform:translateY(-1px)}
+.arc-icon:disabled{opacity:.35;cursor:not-allowed}
+.arc-icon:focus-visible,.arc-btn:focus-visible,.arc-pad-btn:focus-visible{outline:3px solid var(--candy);outline-offset:3px}
+#ac-pause .i-play{display:none}#ac-pause.is-paused .i-play{display:block}#ac-pause.is-paused .i-pause{display:none}
+#ac-sound .i-off{display:none}#ac-sound[aria-pressed="true"] .i-off{display:block}#ac-sound[aria-pressed="true"] .i-on{display:none}
+.arc-hud{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--cola);color:var(--candy);border-radius:16px 16px 0 0;padding:12px 18px;font:400 11px/1 'Press Start 2P',var(--mono);letter-spacing:.04em}
+.arc-hud b{color:var(--white);font-weight:400;margin-left:6px}
+.arc-hearts{display:flex;gap:8px}
+.arc-hearts svg{width:21px;height:18px;fill:#FF6F91;shape-rendering:crispEdges;transition:transform .3s,opacity .3s}
+.arc-hearts svg.lost{fill:transparent;stroke:var(--rose);stroke-width:.5;opacity:.6}
+.arc-hearts svg.pop{animation:arcPop .45s ease}
+@keyframes arcPop{30%{transform:scale(1.5) rotate(-12deg)}100%{transform:none}}
+.arc-screen{position:relative;border:5px solid var(--cola);border-top:0;border-radius:0 0 16px 16px;overflow:hidden;background:var(--candy)}
+#ac-canvas{display:block;width:100%;height:auto;aspect-ratio:4/3;image-rendering:pixelated;image-rendering:crisp-edges;touch-action:pan-y;outline:none}
+.arc-machine.playing #ac-canvas{touch-action:none;cursor:grab}
+.arc-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:18px;text-align:center;background:rgba(71,19,28,.66);color:var(--cream)}
+.arc-overlay[hidden]{display:none}
+.arc-logo{font:400 clamp(18px,3.2vw,30px)/1.35 'Press Start 2P',var(--mono);color:var(--candy);text-shadow:3px 3px 0 var(--wine),6px 6px 0 rgba(71,19,28,.6);letter-spacing:.04em}
+.arc-logo.sm{font-size:clamp(16px,2.6vw,24px)}
+.arc-msg{font-size:15px;line-height:1.5;max-width:380px;color:var(--cream)}
+.arc-keys{font:500 12px var(--mono);color:var(--candy);letter-spacing:.04em}
+.arc-final{font:400 14px 'Press Start 2P',var(--mono);color:var(--candy)}
+.arc-final b{color:var(--white);font-weight:400;font-size:20px;margin-left:8px}
+.arc-final .new{display:block;margin-top:10px;font-size:9px;color:var(--cola);background:var(--candy);padding:5px 8px;border-radius:4px}
+.arc-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+kbd{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 6px;margin:0 2px;border-radius:6px;background:var(--cream);color:var(--cola);border:1.5px solid var(--rose);box-shadow:0 2px 0 var(--rose);font:500 12px var(--mono)}
+.arc-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 22px;border:3px solid var(--cola);border-radius:10px;background:var(--candy);color:var(--cola);font:400 12px/1 'Press Start 2P',var(--mono);letter-spacing:.04em;cursor:pointer;box-shadow:0 5px 0 var(--cola);transition:transform .12s,box-shadow .12s,background .2s}
+.arc-btn:hover{background:var(--white)}
+.arc-btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--cola)}
+.arc-btn.ghost{background:transparent;color:var(--candy);border-color:var(--candy);box-shadow:0 5px 0 rgba(255,215,231,.4)}
+.arc-pad{display:none;grid-template-columns:72px 1fr 72px;align-items:center;gap:10px;margin-top:14px}
+.arc-pad-btn{height:60px;border-radius:16px;border:3px solid var(--cola);background:var(--candy);color:var(--cola);box-shadow:0 5px 0 var(--cola);cursor:pointer;touch-action:none;-webkit-user-select:none;user-select:none;display:flex;align-items:center;justify-content:center}
+.arc-pad-btn svg{width:30px;height:30px;fill:currentColor}
+.arc-pad-btn:active,.arc-pad-btn.held{transform:translateY(4px);box-shadow:0 1px 0 var(--cola)}
+.arc-pad-hint{text-align:center;font:500 11px/1.5 var(--mono);color:var(--candy);letter-spacing:.06em}
+.arc-side{position:relative;background:var(--white);border:1px solid var(--rose);border-radius:20px;padding:30px 26px 26px;box-shadow:var(--shadow-sm);transform:rotate(1.2deg)}
+.arc-side .tape{width:80px;height:22px;top:-11px;margin-left:-40px}
+.arc-side h3{font-size:30px;margin-bottom:14px}
+.arc-how{list-style:none;display:grid;gap:12px;font-size:14.5px}
+.arc-how li{display:grid;grid-template-columns:136px 1fr;align-items:center;gap:10px}
+.arc-how li > span:first-child{white-space:nowrap}
+.arc-tag{display:inline-block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--wine);background:var(--candy);border:1.5px solid var(--rose);border-radius:6px;padding:4px 8px;justify-self:start}
+.arc-rules{margin:20px 0 14px;padding:16px;border-radius:14px;background:var(--candy);display:grid;gap:8px;font-size:14px}
+.arc-rules p{display:grid;grid-template-columns:50px 1fr;align-items:baseline}
+.arc-rules b{display:inline-block;font:400 10px 'Press Start 2P',var(--mono);color:var(--wine)}
+.arc-note{font-size:13px;line-height:1.55;opacity:.8}
+.arc-cherry{position:absolute;width:58px;height:58px;right:-16px;bottom:-22px;transform:rotate(14deg)}
+@media (max-width:1060px){.arc-grid{grid-template-columns:1fr;gap:36px}.arc-side{transform:none;max-width:560px}}
+@media (max-width:760px),(pointer:coarse){.arc-pad{display:grid}}
+@media (max-width:560px){
+  .arc-machine{border-radius:22px;padding:10px 10px 14px}
+  .arc-top{gap:8px}.arc-dots{display:none}.arc-title{font-size:10px;letter-spacing:.08em}
+  .arc-hud{padding:10px 12px;font-size:9px}.arc-hearts svg{width:16px;height:14px}.arc-hearts{gap:5px}
+  .arc-overlay{gap:10px;padding:12px}.arc-msg{font-size:13px}.arc-keys{display:none}
+  .arc-btn{min-height:46px;padding:10px 16px;font-size:10px}
+  .arc-how li{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.arc-hearts svg.pop{animation:none}.arc-side{transform:none}}
 /* journey — editorial scrapbook timeline */
 .journey{background-color:var(--cream);background-image:radial-gradient(rgba(205,164,181,.3) 1px,transparent 1.4px);background-size:24px 24px;padding-top:40px;overflow:hidden}
 .jr-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px 40px;flex-wrap:wrap}
@@ -877,6 +947,77 @@ body.show-case #home{display:none}
   </div>
 </section>
 
+<!-- 04½ ARCADE -->
+<section class="arcade-sec pad" id="arcade" aria-labelledby="arcade-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">✦ Bonus level</span>
+      <h2 id="arcade-title">Cherry <span class="script">Arcade</span></h2>
+      <p>Take a little break ♡</p>
+    </div>
+    <div class="arc-grid">
+      <div class="arc-machine" id="arcade-game">
+        <div class="arc-top">
+          <span class="arc-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="arc-title">cherry_catcher.exe</span>
+          <div class="arc-ctrls">
+            <button class="arc-icon" type="button" id="ac-pause" aria-label="Pause game" disabled><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3v14H7zM14 5h3v14h-3z"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            <button class="arc-icon" type="button" id="ac-restart" aria-label="Restart game" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 1 0 2.400-5.700M4 4v4h4"/></svg></button>
+            <button class="arc-icon" type="button" id="ac-sound" aria-pressed="false" aria-label="Mute sound effects"><svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M16.500 8.500a5 5 0 0 1 0 7M19 6a8.500 8.500 0 0 1 0 12"/></svg><svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M16 9l6 6M22 9l-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="arc-hud">
+          <p>SCORE <b id="ac-score">0</b></p>
+          <p class="arc-hearts" id="ac-hearts" role="img" aria-label="3 of 3 hearts left"><svg viewBox="0 0 7 6" aria-hidden="true"><path d="M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1z"/></svg><svg viewBox="0 0 7 6" aria-hidden="true"><path d="M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1z"/></svg><svg viewBox="0 0 7 6" aria-hidden="true"><path d="M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1z"/></svg></p>
+          <p>BEST <b id="ac-best">0</b></p>
+        </div>
+        <div class="arc-screen">
+          <canvas id="ac-canvas" width="320" height="240" tabindex="-1" role="img" aria-label="Cherry Catcher game screen: a basket at the bottom catches cherries falling from the sky"></canvas>
+          <div class="arc-overlay" id="ac-start">
+            <p class="arc-logo">CHERRY<br>CATCHER</p>
+            <p class="arc-msg">Catch the falling cherries and keep your three hearts!</p>
+            <p class="arc-keys"><kbd>←</kbd><kbd>→</kbd> or <kbd>A</kbd><kbd>D</kbd> to move · drag on mobile</p>
+            <button class="arc-btn" type="button" id="ac-go">▶ Start Game</button>
+          </div>
+          <div class="arc-overlay" id="ac-paused" hidden>
+            <p class="arc-logo sm">PAUSED</p>
+            <p class="arc-msg">Take your time ♡</p>
+            <div class="arc-row"><button class="arc-btn" type="button" id="ac-resume">▶ Resume</button><button class="arc-btn ghost" type="button" id="ac-restart2">↻ Restart</button></div>
+          </div>
+          <div class="arc-overlay" id="ac-over" hidden>
+            <p class="arc-logo sm">GAME OVER</p>
+            <p class="arc-final">SCORE <b id="ac-final">0</b></p>
+            <p class="arc-msg" id="ac-over-msg">Best this session: 0</p>
+            <button class="arc-btn" type="button" id="ac-again">↻ Play Again</button>
+          </div>
+        </div>
+        <div class="arc-pad">
+          <button class="arc-pad-btn" type="button" id="ac-left" aria-label="Move basket left"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7z"/></svg></button>
+          <p class="arc-pad-hint">hold the arrows<br>or drag the basket</p>
+          <button class="arc-pad-btn" type="button" id="ac-right" aria-label="Move basket right"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7z"/></svg></button>
+        </div>
+      </div>
+      <aside class="arc-side reveal" aria-labelledby="arc-how">
+        <span class="tape" aria-hidden="true"></span>
+        <h3 id="arc-how">How to play</h3>
+        <ul class="arc-how">
+          <li><span><kbd>←</kbd><kbd>→</kbd> <kbd>A</kbd><kbd>D</kbd></span>Move the basket</li>
+          <li><span class="arc-tag">drag</span>Move on touch screens</li>
+          <li><span><kbd>P</kbd> <kbd>Esc</kbd></span>Pause or resume</li>
+        </ul>
+        <div class="arc-rules">
+          <p><b>+10</b> for every cherry you catch</p>
+          <p><b>−1 ♥</b> for every cherry you miss</p>
+          <p><b>3 ♥</b> to start. Lose them all and it’s game over</p>
+        </div>
+        <p class="arc-note">Cherries fall faster as your score grows. Your best score is saved for this browser session.</p>
+        <svg class="arc-cherry" aria-hidden="true"><use href="#cherry"/></svg>
+      </aside>
+    </div>
+    <p class="jb-sr" aria-live="polite" id="ac-live"></p>
+  </div>
+</section>
+
 <!-- 05 JOURNEY -->
 <section class="journey pad" id="journey">
   <div class="wrap">
@@ -1382,6 +1523,183 @@ var MY_EMAIL = "christelleann922@gmail.com";
     setTimeout(function(){ nameEl.focus({ preventScroll: true }); }, 600);
   }); });
   syncTopic();
+})();
+
+// Cherry Catcher: a tiny canvas game in the Cherry Arcade section
+(function(){
+  var root = document.getElementById("arcade-game"); if (!root) return;
+  var cv = document.getElementById("ac-canvas"), g = cv.getContext("2d");
+  var W = 320, H = 240, GROUND = H - 22;
+  var C = { cola:"#47131C", wine:"#7A2037", candy:"#FFD7E7", cream:"#FFF9ED", rose:"#CDA4B5", red:"#C8314F", white:"#FFFFFF", pink:"#FF6F91", sky:"#FFE9F1" };
+  var $ = function(id){ return document.getElementById(id); };
+  var ui = { score:$("ac-score"), best:$("ac-best"), hearts:[].slice.call($("ac-hearts").children), heartsBox:$("ac-hearts"), start:$("ac-start"), paused:$("ac-paused"), over:$("ac-over"),
+    final:$("ac-final"), overMsg:$("ac-over-msg"), pause:$("ac-pause"), restart:$("ac-restart"), sound:$("ac-sound"), live:$("ac-live") };
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  function store(k, v){ try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
+  var best = parseInt(store("cc-best"), 10) || 0, muted = store("cc-muted") === "1";
+  var state = "start", score = 0, lives = 3, basket, items, parts, pops, spawnIn, clock = 0, last = 0, raf = 0, shake = 0;
+  var keys = { left:false, right:false }, pointerX = null, pointerDown = false;
+
+  // ---- pixel sprites ----
+  function sprite(rows, pal){ var c = document.createElement("canvas"); c.width = rows[0].length; c.height = rows.length; var x = c.getContext("2d");
+    rows.forEach(function(r, y){ for (var i = 0; i < r.length; i++) { var col = pal[r[i]]; if (col) { x.fillStyle = col; x.fillRect(i, y, 1, 1); } } }); return c; }
+  var CHERRY = sprite(["....LL.","...SLL.","...S...","..S....",".DDDD..","DHRRRD.","DRRRRD.","DRRRRD.",".DDDD.."], { L:C.wine, S:C.cola, D:C.cola, R:C.red, H:C.candy });
+  var HEART = sprite([".PP.PP.","PPPPPPP","PPPPPPP",".PPPPP.","..PPP..","...P..."], { P:C.pink });
+  var CLOUD = sprite(["....WWWW........","..WWWWWWWW..WW..",".WWWWWWWWWWWWWW.","WWWWWWWWWWWWWWWW",".RRRRRRRRRRRRRR."], { W:C.white, R:C.candy });
+  var BASKET = (function(){ var w = 40, h = 16, rows = [];
+    for (var y = 0; y < h; y++) { var r = "";
+      for (var x = 0; x < w; x++) {
+        var inset = y < 4 ? 0 : Math.floor((y - 4) / 4) + 1, edge = x === inset || x === w - 1 - inset;
+        if (x < inset || x > w - 1 - inset) r += ".";
+        else if (y === 0 || y === 3 || y === h - 1 || edge) r += "D";
+        else if (y < 3) r += (x % 6 === 2 && y === 1 ? "W" : "C");
+        else r += (((x >> 1) + (y >> 1)) % 2 ? "W" : "R");
+      } rows.push(r); }
+    return sprite(rows, { D:C.cola, C:C.candy, W:C.wine, R:C.rose }); })();
+  var BG = (function(){ var c = document.createElement("canvas"); c.width = W; c.height = H; var x = c.getContext("2d");
+    var bands = ["#FFF4F8","#FFEDF3","#FFE4EE","#FFDBE8","#FFD7E7"];
+    x.fillStyle = bands[bands.length - 1]; x.fillRect(0, 0, W, H); // fully opaque, so every frame repaints the whole screen
+    for (var i = 0; i < bands.length; i++) { x.fillStyle = bands[i]; x.fillRect(0, i * 40, W, 40); }
+    for (var y = 0; y < bands.length - 1; y++) for (var dx = 0; dx < W; dx += 2) { x.fillStyle = bands[y + 1]; x.fillRect(dx + (y % 2), y * 40 + 38, 1, 1); x.fillRect(dx + ((y + 1) % 2), y * 40 + 39, 1, 1); }
+    x.fillStyle = C.rose; x.fillRect(0, GROUND, W, H - GROUND);
+    x.fillStyle = "#E7BBCB"; x.fillRect(0, GROUND, W, 3);
+    for (var gx = 0; gx < W; gx += 6) { x.fillStyle = C.candy; x.fillRect(gx + 2, GROUND + 6 + (gx % 12 ? 0 : 6), 2, 1); x.fillStyle = C.wine; x.fillRect(gx, GROUND - 1 - (gx % 18 ? 0 : 1), 1, 2); }
+    return c; })();
+  var STARS = [[24,30],[70,62],[118,22],[170,48],[214,18],[262,58],[300,30],[46,104],[288,110],[150,90]];
+  var CLOUDS = [{x:20,y:36,s:4},{x:150,y:18,s:6},{x:250,y:70,s:3},{x:90,y:118,s:5}];
+
+  // ---- sound (tiny Web Audio blips; nothing loads until the first Start) ----
+  var ac = null;
+  function tone(f1, f2, dur, type, vol, delay){ if (muted || !ac) return; var t = ac.currentTime + (delay || 0), o = ac.createOscillator(), v = ac.createGain();
+    o.type = type || "square"; o.frequency.setValueAtTime(f1, t); if (f2) o.frequency.exponentialRampToValueAtTime(f2, t + dur);
+    v.gain.setValueAtTime(vol || .05, t); v.gain.exponentialRampToValueAtTime(.0001, t + dur); o.connect(v); v.connect(ac.destination); o.start(t); o.stop(t + dur + .02); }
+  var sfx = { start:function(){ tone(523,0,.08); tone(659,0,.08,0,0,.09); tone(784,0,.12,0,0,.18); }, catch:function(){ tone(880,1320,.08); },
+    miss:function(){ tone(260,110,.22,"triangle",.08); }, over:function(){ tone(440,0,.14,"triangle",.07); tone(330,0,.14,"triangle",.07,.16); tone(220,0,.3,"triangle",.07,.32); } };
+  function setSound(){ ui.sound.setAttribute("aria-pressed", muted ? "true" : "false"); ui.sound.setAttribute("aria-label", muted ? "Unmute sound effects" : "Mute sound effects"); }
+  ui.sound.addEventListener("click", function(){ muted = !muted; store("cc-muted", muted ? "1" : "0"); setSound(); if (!muted && !ac) initAudio(); });
+  function initAudio(){ try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === "suspended") ac.resume(); } catch (e) { ac = null; } }
+
+  // ---- game state ----
+  function reset(){ basket = { x:W / 2 - 20, y:GROUND - 16, w:40, h:16, squash:0 }; items = []; parts = []; pops = []; spawnIn = .5; score = 0; lives = 3; clock = 0; shake = 0;
+    keys.left = keys.right = false; pointerX = null; hud(true); }
+  function hud(all){ ui.score.textContent = score; ui.best.textContent = best;
+    ui.hearts.forEach(function(h, i){ h.classList.toggle("lost", i >= lives); });
+    ui.heartsBox.setAttribute("aria-label", lives + " of 3 hearts left"); }
+  function say(t){ ui.live.textContent = ""; setTimeout(function(){ ui.live.textContent = t; }, 30); }
+  function speed(){ return Math.min(48 + score * .32, 150) * (.88 + Math.random() * .28); }
+  function interval(){ return Math.max(.42, 1.15 - score * .0042); }
+
+  function update(dt){
+    clock += dt;
+    var dir = (keys.right ? 1 : 0) - (keys.left ? 1 : 0);
+    if (dir) basket.x += dir * 175 * dt;
+    else if (pointerX !== null) basket.x += (pointerX - basket.w / 2 - basket.x) * Math.min(1, dt * 16);
+    basket.x = Math.max(2, Math.min(W - basket.w - 2, basket.x));
+    basket.squash = Math.max(0, basket.squash - dt);
+    if ((spawnIn -= dt) <= 0) { items.push({ x: 6 + Math.random() * (W - 26), y: -20, vy: speed(), sway: Math.random() * 6.28 }); spawnIn = interval(); }
+    for (var i = items.length - 1; i >= 0; i--) {
+      var it = items[i]; it.y += it.vy * dt;
+      var cx = it.x + 5, bottom = it.y + 18; // cherry is drawn at 2x (14x18)
+      if (bottom >= basket.y + 2 && bottom <= basket.y + 11 && cx >= basket.x - 1 && cx <= basket.x + basket.w + 1) {
+        items.splice(i, 1); score += 10; basket.squash = .14; sfx.catch();
+        pops.push({ x: basket.x + basket.w / 2, y: basket.y - 6, t: 0 });
+        if (!reduce.matches) for (var k = 0; k < 6; k++) parts.push({ x: cx, y: basket.y, vx: (Math.random() - .5) * 70, vy: -30 - Math.random() * 50, t: 0, life: .5, c: k % 2 ? C.pink : C.white });
+        if (score > best) { best = score; store("cc-best", best); }
+        hud(); continue;
+      }
+      if (bottom >= GROUND + 4) {
+        items.splice(i, 1); lives--; sfx.miss(); if (!reduce.matches) shake = .25;
+        for (var m = 0; m < 5; m++) parts.push({ x: cx, y: GROUND + 2, vx: (Math.random() - .5) * 50, vy: -20 - Math.random() * 30, t: 0, life: .4, c: C.red });
+        var lost = ui.hearts[lives]; if (lost && !reduce.matches) { lost.classList.remove("pop"); void lost.offsetWidth; lost.classList.add("pop"); }
+        hud();
+        if (lives <= 0) { gameOver(); return; }
+        say("Missed one! " + lives + (lives === 1 ? " heart" : " hearts") + " left.");
+      }
+    }
+    for (var p = parts.length - 1; p >= 0; p--) { var q = parts[p]; q.t += dt; q.x += q.vx * dt; q.y += q.vy * dt; q.vy += 160 * dt; if (q.t > q.life) parts.splice(p, 1); }
+    for (var o = pops.length - 1; o >= 0; o--) { pops[o].t += dt; if (pops[o].t > .7) pops.splice(o, 1); }
+    shake = Math.max(0, shake - dt);
+  }
+
+  function draw(){
+    g.save();
+    if (shake > 0) g.translate(Math.round((Math.random() - .5) * 4), Math.round((Math.random() - .5) * 3));
+    g.drawImage(BG, 0, 0);
+    var tw = reduce.matches ? 0 : Math.floor(clock * 2);
+    STARS.forEach(function(s, i){ g.fillStyle = (i + tw) % 3 ? C.white : C.rose; g.fillRect(s[0], s[1], 1, 1);
+      if ((i + tw) % 3 === 0) { g.fillRect(s[0] - 1, s[1], 3, 1); g.fillRect(s[0], s[1] - 1, 1, 3); } });
+    CLOUDS.forEach(function(c){ var x = reduce.matches ? c.x : ((c.x + clock * c.s) % (W + 64)) - 32; g.drawImage(CLOUD, Math.round(x), c.y, 32, 10); });
+    g.drawImage(HEART, 8, GROUND + 8, 14, 12); g.drawImage(HEART, W - 22, GROUND + 8, 14, 12);
+    items.forEach(function(it){ var sx = reduce.matches ? 0 : Math.round(Math.sin(clock * 3 + it.sway) * .8); g.drawImage(CHERRY, Math.round(it.x) + sx, Math.round(it.y), 14, 18); });
+    var sq = basket.squash > 0 ? 1 : 0;
+    g.drawImage(BASKET, Math.round(basket.x) - sq, basket.y + sq, basket.w + sq * 2, basket.h - sq);
+    parts.forEach(function(q){ g.fillStyle = q.c; g.fillRect(Math.round(q.x), Math.round(q.y), 2, 2); });
+    g.font = '8px "Press Start 2P", monospace'; g.textAlign = "center";
+    pops.forEach(function(o){ var y = Math.round(o.y - o.t * 26); g.globalAlpha = Math.max(0, 1 - o.t / .7);
+      g.fillStyle = C.cream; g.fillText("+10", o.x + 1, y + 1); g.fillStyle = C.wine; g.fillText("+10", o.x, y); g.globalAlpha = 1; });
+    g.restore();
+  }
+
+  function loop(ts){ if (state !== "playing") return; var dt = Math.min(.034, (ts - last) / 1000 || 0); last = ts; update(dt); if (state === "playing") { draw(); raf = requestAnimationFrame(loop); } }
+  function show(el){ [ui.start, ui.paused, ui.over].forEach(function(o){ o.hidden = o !== el; }); }
+
+  function start(){ initAudio(); reset(); state = "playing"; show(null); root.classList.add("playing");
+    ui.pause.disabled = false; ui.restart.disabled = false; ui.pause.classList.remove("is-paused"); ui.pause.setAttribute("aria-label", "Pause game");
+    cv.focus({ preventScroll: true }); sfx.start(); say("Game started. Catch the cherries!"); last = performance.now(); cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); }
+  function pause(){ if (state !== "playing") return; state = "paused"; cancelAnimationFrame(raf); keys.left = keys.right = false; pointerX = null; show(ui.paused); root.classList.remove("playing");
+    ui.pause.classList.add("is-paused"); ui.pause.setAttribute("aria-label", "Resume game"); $("ac-resume").focus({ preventScroll: true }); say("Paused."); }
+  function resume(){ if (state !== "paused") return; state = "playing"; show(null); root.classList.add("playing"); ui.pause.classList.remove("is-paused"); ui.pause.setAttribute("aria-label", "Pause game");
+    cv.focus({ preventScroll: true }); say("Resumed."); last = performance.now(); raf = requestAnimationFrame(loop); }
+  function gameOver(){ state = "over"; cancelAnimationFrame(raf); root.classList.remove("playing"); draw(); sfx.over();
+    ui.pause.disabled = true; ui.pause.classList.remove("is-paused"); ui.pause.setAttribute("aria-label", "Pause game");
+    var isBest = score > 0 && score >= best;
+    ui.final.innerHTML = score + (isBest ? '<span class="new">★ NEW BEST ★</span>' : "");
+    ui.overMsg.textContent = "Best this session: " + best;
+    show(ui.over); $("ac-again").focus({ preventScroll: true }); say("Game over. Final score " + score + ". Best this session " + best + "."); }
+
+  $("ac-go").addEventListener("click", start); $("ac-again").addEventListener("click", start); $("ac-restart2").addEventListener("click", start);
+  $("ac-resume").addEventListener("click", resume);
+  ui.restart.addEventListener("click", start);
+  ui.pause.addEventListener("click", function(){ state === "playing" ? pause() : resume(); });
+
+  // keyboard: only captured while a game is running (or paused, for resume), never while typing in a field
+  function typing(e){ var t = e.target; return t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)); }
+  document.addEventListener("keydown", function(e){
+    if (typing(e) || e.ctrlKey || e.metaKey || e.altKey) return;
+    var k = e.key;
+    if (state === "paused" && (k === "p" || k === "P" || k === "Escape")) { e.preventDefault(); resume(); return; }
+    if (state !== "playing") return;
+    if (k === "ArrowLeft" || k === "a" || k === "A") { keys.left = true; pointerX = null; e.preventDefault(); }
+    else if (k === "ArrowRight" || k === "d" || k === "D") { keys.right = true; pointerX = null; e.preventDefault(); }
+    else if (k === "p" || k === "P" || k === "Escape" || k === " ") { e.preventDefault(); pause(); }
+  });
+  document.addEventListener("keyup", function(e){ var k = e.key;
+    if (k === "ArrowLeft" || k === "a" || k === "A") keys.left = false;
+    if (k === "ArrowRight" || k === "d" || k === "D") keys.right = false; });
+
+  // pointer: mouse hover or touch drag moves the basket while playing
+  function toX(e){ var r = cv.getBoundingClientRect(); return (e.clientX - r.left) / r.width * W; }
+  cv.addEventListener("pointerdown", function(e){ if (state !== "playing") return; pointerDown = true; pointerX = toX(e); try { cv.setPointerCapture(e.pointerId); } catch (x) {} });
+  cv.addEventListener("pointermove", function(e){ if (state !== "playing") return; if (e.pointerType === "mouse" || pointerDown) pointerX = toX(e); });
+  ["pointerup", "pointercancel"].forEach(function(ev){ cv.addEventListener(ev, function(e){ pointerDown = false; if (e.pointerType !== "mouse") pointerX = null; }); });
+  cv.addEventListener("pointerleave", function(e){ if (e.pointerType === "mouse") pointerX = null; });
+  [["ac-left", "left"], ["ac-right", "right"]].forEach(function(pair){ var b = $(pair[0]), dir = pair[1];
+    function on(e){ e.preventDefault(); if (state !== "playing") return; keys[dir] = true; pointerX = null; b.classList.add("held"); }
+    function off(){ keys[dir] = false; b.classList.remove("held"); }
+    b.addEventListener("pointerdown", on); ["pointerup", "pointerleave", "pointercancel"].forEach(function(ev){ b.addEventListener(ev, off); });
+    b.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " ") on(e); }); b.addEventListener("keyup", off);
+    b.addEventListener("contextmenu", function(e){ e.preventDefault(); }); });
+
+  // pause automatically when the game scrolls out of view, the tab is hidden, or the window loses focus
+  if ("IntersectionObserver" in window) new IntersectionObserver(function(es){ es.forEach(function(en){ if (!en.isIntersecting) pause(); }); }, { threshold: .35 }).observe(root);
+  document.addEventListener("visibilitychange", function(){ if (document.hidden) pause(); });
+  window.addEventListener("blur", function(){ pause(); });
+
+  // first paint: a calm scene behind the start screen
+  setSound(); reset(); items = [{ x: 56, y: 56, vy: 0, sway: 0 }, { x: 236, y: 120, vy: 0, sway: 1 }, { x: 250, y: 30, vy: 0, sway: 2 }];
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw); draw();
+  // read-only snapshot of the game, handy for automated checks
+  root.ccState = function(){ return { state: state, score: score, lives: lives, best: best, basketX: basket.x, basketW: basket.w, items: items.map(function(i){ return { x: i.x, y: i.y }; }) }; };
 })();
 
 // journey scrapbook: tabs, previous/next, page counter, page-turn transition, swipe
