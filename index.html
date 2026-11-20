@@ -351,14 +351,50 @@ a.cert:hover{background:rgba(255,215,231,.13);border-color:var(--candy);transfor
 .contact h2{color:var(--cream);font-size:clamp(46px,7vw,92px);margin:20px auto 8px;max-width:900px;line-height:1}
 .contact h2 .script{color:var(--candy);font-size:1.15em}
 .contact p.lead{max-width:540px;margin:22px auto 34px;color:var(--candy)}
-.socials{display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.cform{position:relative;max-width:700px;margin:0 auto;text-align:left;background:rgba(255,249,237,.06);border:1px solid rgba(205,164,181,.35);border-radius:var(--r-card);padding:32px}
+.cf-topics{border:0;margin:0 0 22px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.cf-legend{display:block;width:100%;margin-bottom:12px;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--rose)}
+.cf-topics label{position:relative;cursor:pointer}
+.cf-topics input{position:absolute;opacity:0;width:1px;height:1px}
+.cf-topics span{display:inline-flex;align-items:center;min-height:44px;padding:9px 16px;border-radius:999px;border:1px solid rgba(205,164,181,.5);color:var(--candy);font:500 13.5px var(--sans);transition:background .2s,color .2s}
+.cf-topics label:hover span{background:rgba(255,215,231,.1)}
+.cf-topics input:checked + span{background:var(--candy);color:var(--cola);border-color:var(--candy)}
+.cf-topics input:focus-visible + span{outline:3px solid var(--candy);outline-offset:3px}
+.cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cf-field{display:flex;flex-direction:column;gap:6px}
+.cf-field.full{grid-column:1 / -1}
+.cf-field label{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--rose)}
+.cf-field label em{font-style:normal;text-transform:none;letter-spacing:0;opacity:.8}
+.cf-field input,.cf-field textarea{width:100%;font:400 15px/1.5 var(--sans);color:var(--text);background:var(--cream);border:2px solid transparent;border-radius:12px;padding:12px 14px;min-height:48px}
+.cf-field textarea{resize:vertical;min-height:130px}
+.cf-field input:focus,.cf-field textarea:focus{outline:none;border-color:var(--candy);box-shadow:0 0 0 3px rgba(255,215,231,.35)}
+.cf-field [aria-invalid="true"]{border-color:#FF8FAB}
+.cf-err{min-height:0;font-size:12.5px;color:#FFB3C7}
+.cf-err:empty{display:none}
+.cf-hp{position:absolute;left:-9999px;width:1px;height:1px}
+.cf-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px}
+.cf-actions .btn[disabled]{opacity:.7;cursor:progress}
+.cf-status{font-size:13.5px;color:var(--candy)}
+.cf-status.bad{color:#FFB3C7}
+.cf-status a{color:var(--white)}
+.cf-fine{margin-top:16px;font:400 11.5px/1.5 var(--mono);color:var(--rose)}
+.cf-done{text-align:center;padding:20px 8px}
+.cf-check{display:inline-flex;width:56px;height:56px;border-radius:50%;background:var(--candy);color:var(--wine);align-items:center;justify-content:center;margin-bottom:14px}
+.cf-check svg{width:26px;height:26px}
+.cf-done h3{color:var(--cream);font-size:36px;margin-bottom:10px}
+.cf-done p{color:var(--candy);max-width:440px;margin:0 auto 20px}
+.cf-again{background:transparent;color:var(--candy);border-color:rgba(205,164,181,.6)}
+.cf-again:hover{background:rgba(255,215,231,.12)}
+.cf-or{margin-top:34px;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--rose)}
+@media (max-width:820px){.cform{padding:22px 18px}.cf-grid{grid-template-columns:1fr}.cf-actions .btn{width:100%;justify-content:center}}
+.socials{display:flex;gap:14px;justify-content:center;margin-top:16px;flex-wrap:wrap}
 .soc{display:inline-flex;align-items:center;gap:10px;padding:10px 20px 10px 12px;border-radius:999px;border:1px solid rgba(205,164,181,.5);color:var(--candy);text-decoration:none;font-size:14px;min-height:48px;transition:background .25s,transform .25s}
 .soc:hover{background:rgba(255,215,231,.12);transform:translateY(-2px)}
 .soc .c{width:30px;height:30px;border-radius:50%;background:var(--candy);color:var(--cola);display:flex;align-items:center;justify-content:center}
 .soc .c svg{width:16px;height:16px}
 .soc small{font:400 11px var(--mono);opacity:.7;margin-left:2px}
 .contact .deco{position:absolute;color:var(--candy);opacity:.85}
-.contact .d1{width:38px;left:12%;top:26%}.contact .d2{width:24px;right:14%;top:22%}.contact .d3{width:30px;right:22%;bottom:20%}.contact .d4{width:20px;left:20%;bottom:24%}
+.contact .d1{width:38px;left:12%;top:26%}.contact .d2{width:24px;right:14%;top:22%}.contact .d3{width:30px;right:9%;top:58%}.contact .d4{width:20px;left:20%;bottom:24%}
 .contact .cherry-d,footer .logo svg{--cs:#FFD7E7}
 .contact .cherry-d{position:absolute;width:110px;right:7%;bottom:90px;transform:rotate(12deg);opacity:.95}
 .note-ph{margin-top:16px;font:400 12px var(--mono);color:var(--rose)}
@@ -611,9 +647,9 @@ body.show-case #home{display:none}
       <p class="desc">I build web systems, databases, and IoT projects with security in mind, and I’m currently looking for an OJT / IT internship where I can learn from experienced IT professionals.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="#projects">Explore My Work <svg><use href="#i-arrow"/></svg></a>
-        <a class="btn btn-secondary" href="mailto:christelleann922@gmail.com?subject=Resume%20request%3A%20Christelle%20Ann%20L.%20Solis&amp;body=Hi%20Christelle%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20request%20a%20copy%20of%20your%20resume.%0D%0A%0D%0AName%3A%0D%0ACompany%20/%20School%3A%0D%0ARole%20or%20opportunity%3A%0D%0A%0D%0AThank%20you%21">Request My CV <svg><use href="#i-mail"/></svg></a>
+        <a class="btn btn-secondary" href="#contact" data-topic="cv">Request My CV <svg><use href="#i-mail"/></svg></a>
       </div>
-      <p class="cv-note">My resume is available on request. Email <a href="mailto:christelleann922@gmail.com?subject=Resume%20request%3A%20Christelle%20Ann%20L.%20Solis&amp;body=Hi%20Christelle%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20request%20a%20copy%20of%20your%20resume.%0D%0A%0D%0AName%3A%0D%0ACompany%20/%20School%3A%0D%0ARole%20or%20opportunity%3A%0D%0A%0D%0AThank%20you%21">christelleann922@gmail.com</a> and I’ll send it over.</p>
+      <p class="cv-note">My resume is available on request. Use the <a href="#contact" data-topic="cv">contact form</a> or email <a href="mailto:christelleann922@gmail.com">christelleann922@gmail.com</a> and I’ll send it over.</p>
     </div>
     <div class="hero-art reveal" aria-label="Portrait collage">
       <div class="stripes" aria-hidden="true"></div>
@@ -916,7 +952,36 @@ body.show-case #home{display:none}
     <span class="label">✦ One last thing ✦</span>
     <h2>Let’s Create <span class="script">Something</span> Wonderful.</h2>
     <p class="lead">Have an opportunity, a project idea, or just want to connect? I’d love to hear from you.</p>
-    <a class="btn btn-light" href="mailto:christelleann922@gmail.com"><svg><use href="#i-mail"/></svg>Get in Touch</a>
+    <form class="cform" id="cform" novalidate>
+      <div class="cf-body">
+        <fieldset class="cf-topics">
+          <legend class="cf-legend">What’s this about?</legend>
+          <label><input type="radio" name="topic" value="Internship / job opportunity" checked><span>Internship / job opportunity</span></label>
+          <label><input type="radio" name="topic" value="CV request" data-key="cv"><span>Request my CV</span></label>
+          <label><input type="radio" name="topic" value="Project collaboration"><span>Project collaboration</span></label>
+          <label><input type="radio" name="topic" value="Just saying hi"><span>Just saying hi</span></label>
+        </fieldset>
+        <div class="cf-grid">
+          <div class="cf-field"><label for="cf-name">Your name</label><input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="100"><small class="cf-err" id="cf-name-err"></small></div>
+          <div class="cf-field"><label for="cf-email">Your email</label><input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="160"><small class="cf-err" id="cf-email-err"></small></div>
+          <div class="cf-field full"><label for="cf-org">Company or school <em>(optional)</em></label><input id="cf-org" name="organization" type="text" autocomplete="organization" maxlength="140"></div>
+          <div class="cf-field full"><label for="cf-msg" id="cf-msg-label">Message</label><textarea id="cf-msg" name="message" rows="5" maxlength="3000" placeholder="Tell me a bit about the opportunity."></textarea><small class="cf-err" id="cf-msg-err"></small></div>
+        </div>
+        <input type="checkbox" name="botcheck" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="cf-actions">
+          <button class="btn btn-light" type="submit" id="cf-send"><svg><use href="#i-mail"/></svg><span>Send Message</span></button>
+          <p class="cf-status" id="cf-status" role="status" aria-live="polite"></p>
+        </div>
+        <p class="cf-fine">Your message goes straight to my inbox, and I’ll reply to the email you enter.</p>
+      </div>
+      <div class="cf-done" id="cf-done" hidden>
+        <span class="cf-check" aria-hidden="true"><svg><use href="#i-heart"/></svg></span>
+        <h3 id="cf-done-title" tabindex="-1">Thank you!</h3>
+        <p id="cf-done-text"></p>
+        <button class="btn btn-sm cf-again" type="button" id="cf-again">Send another message</button>
+      </div>
+    </form>
+    <p class="cf-or">or reach me directly</p>
     <div class="socials">
       <a class="soc" href="mailto:christelleann922@gmail.com"><span class="c"><svg><use href="#i-mail"/></svg></span>Email <small>christelleann922@gmail.com</small></a>
       <a class="soc" href="https://github.com/datgirlElle" target="_blank" rel="noopener"><span class="c"><svg><use href="#i-github"/></svg></span>GitHub <small>@datgirlElle</small></a>
@@ -1168,6 +1233,70 @@ menu.addEventListener("click",function(e){if(e.target.closest("a"))setMenu(false
 // disabled placeholder links shouldn't jump
 var toast=document.createElement("div");toast.className="toast";toast.setAttribute("role","status");document.body.appendChild(toast);var tt;
 document.addEventListener("click",function(e){var a=e.target.closest('a[aria-disabled="true"],a[data-soon]');if(!a)return;e.preventDefault();var m=a.getAttribute("data-soon");if(m){toast.textContent=m;toast.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove("show")},2600);}});
+
+// contact form: sends through Web3Forms; without a key it falls back to a pre-filled email
+var W3F_KEY = ""; // Web3Forms access key (public by design; safe to keep in this file)
+var MY_EMAIL = "christelleann922@gmail.com";
+(function(){
+  var f = document.getElementById("cform"); if (!f) return;
+  var send = document.getElementById("cf-send"), sendLabel = send.querySelector("span"), status = document.getElementById("cf-status");
+  var msg = document.getElementById("cf-msg"), msgLabel = document.getElementById("cf-msg-label");
+  var done = document.getElementById("cf-done"), body = f.querySelector(".cf-body");
+  var nameEl = document.getElementById("cf-name"), emailEl = document.getElementById("cf-email"), orgEl = document.getElementById("cf-org"), hpEl = f.querySelector(".cf-hp");
+  var copy = {
+    "Internship / job opportunity": ["Message", "Tell me a bit about the opportunity.", "Send Message", true],
+    "CV request": ["Role or opportunity (optional)", "Which role or opportunity is this for?", "Request My CV", false],
+    "Project collaboration": ["Message", "What would you like to build together?", "Send Message", true],
+    "Just saying hi": ["Message", "Say hello!", "Send Message", true]
+  };
+  function topic(){ return f.querySelector('input[name="topic"]:checked').value; }
+  function syncTopic(){ var c = copy[topic()]; msgLabel.textContent = c[0]; msg.placeholder = c[1]; sendLabel.textContent = c[2]; msg.required = c[3]; clearErr(msg); }
+  f.addEventListener("change", function(e){ if (e.target.name === "topic") syncTopic(); });
+  function setErr(el, text){ el.setAttribute("aria-invalid", "true"); var e = document.getElementById(el.id + "-err"); if (e) e.textContent = text; el.setAttribute("aria-describedby", el.id + "-err"); }
+  function clearErr(el){ el.removeAttribute("aria-invalid"); var e = document.getElementById(el.id + "-err"); if (e) e.textContent = ""; }
+  ["cf-name", "cf-email", "cf-msg"].forEach(function(id){ document.getElementById(id).addEventListener("input", function(){ clearErr(this); }); });
+  function validate(){
+    var ok = true, first = null, name = nameEl.value.trim(), email = emailEl.value.trim();
+    [nameEl, emailEl, msg].forEach(clearErr);
+    if (!name) { setErr(nameEl, "Please enter your name."); ok = false; first = first || nameEl; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setErr(emailEl, "Please enter a valid email so I can reply."); ok = false; first = first || emailEl; }
+    if (msg.required && !msg.value.trim()) { setErr(msg, "Please add a short message."); ok = false; first = first || msg; }
+    if (first) first.focus();
+    return ok;
+  }
+  function mailtoHref(d){
+    var lines = ["Hi Christelle,", "", d.message || (d.topic === "CV request" ? "I came across your portfolio and would like to request a copy of your resume." : ""), "", "Name: " + d.name, "Email: " + d.email];
+    if (d.organization) lines.push("Company / School: " + d.organization);
+    return "mailto:" + MY_EMAIL + "?subject=" + encodeURIComponent(d.subject) + "&body=" + encodeURIComponent(lines.join("\r\n"));
+  }
+  function showDone(d){
+    document.getElementById("cf-done-text").textContent = (d.topic === "CV request" ? "Your CV request is on its way. " : "Your message is on its way. ") + "I’ll get back to you at " + d.email + " soon.";
+    body.hidden = true; done.hidden = false; document.getElementById("cf-done-title").focus();
+  }
+  document.getElementById("cf-again").addEventListener("click", function(){ f.reset(); syncTopic(); status.textContent = ""; done.hidden = true; body.hidden = false; nameEl.focus(); });
+  f.addEventListener("submit", function(e){
+    e.preventDefault(); status.className = "cf-status"; status.textContent = "";
+    if (hpEl.checked) return;
+    if (!validate()) return;
+    var d = { topic: topic(), name: nameEl.value.trim(), email: emailEl.value.trim(), organization: orgEl.value.trim(), message: msg.value.trim() };
+    d.subject = "[Portfolio] " + d.topic + " from " + d.name;
+    if (!W3F_KEY) { status.textContent = "Opening your email app…"; window.location.href = mailtoHref(d); return; }
+    send.disabled = true; sendLabel.textContent = "Sending…";
+    fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({ access_key: W3F_KEY, subject: d.subject, from_name: "Cherry Studio portfolio", name: d.name, email: d.email, replyto: d.email,
+        topic: d.topic, organization: d.organization || "—", message: d.message || "(no message)", botcheck: false }) })
+      .then(function(r){ return r.json().catch(function(){ return { success: false }; }); })
+      .then(function(res){ if (res && res.success) { showDone(d); f.reset(); syncTopic(); } else { throw new Error((res && res.message) || "send failed"); } })
+      .catch(function(){ status.className = "cf-status bad"; status.innerHTML = 'Sorry, that didn’t send. Please try again or <a href="' + mailtoHref(d).replace(/"/g, "&quot;") + '">email me directly</a>.'; })
+      .then(function(){ send.disabled = false; sendLabel.textContent = copy[topic()][2]; });
+  });
+  // links like the hero's "Request My CV" pick a topic before jumping to the form
+  document.querySelectorAll("[data-topic]").forEach(function(a){ a.addEventListener("click", function(){
+    var r = f.querySelector('input[data-key="' + a.getAttribute("data-topic") + '"]'); if (r) { r.checked = true; syncTopic(); }
+    setTimeout(function(){ nameEl.focus({ preventScroll: true }); }, 600);
+  }); });
+  syncTopic();
+})();
 
 // hash routing: home sections vs case study
 function route(){
