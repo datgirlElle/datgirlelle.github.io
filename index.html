@@ -199,8 +199,6 @@ a.cert:hover{background:rgba(255,215,231,.13);border-color:var(--candy);transfor
 .demo-note{font-size:12.5px;color:var(--cola);opacity:.75;margin-top:-4px}
 .cs-hero .demo-note{margin-top:10px}
 .cs-logo{display:block;width:84px;height:auto;margin-bottom:14px}
-.jr-ph-logo{background:var(--white)!important}
-.jr-ph-logo img{position:absolute;left:8%;top:8%;width:84%;height:84%;object-fit:contain}
 .shots-real{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .shots-real figure{margin:0}
 .shots-real .wide{grid-column:1 / -1}
@@ -245,43 +243,10 @@ a.cert:hover{background:rgba(255,215,231,.13);border-color:var(--candy);transfor
 .jr-note{position:relative;background:var(--white);border:1px solid var(--rose);padding:16px 30px 14px 22px;transform:rotate(2.5deg);box-shadow:var(--shadow-sm);font:400 26px/1.15 var(--script);color:var(--wine);margin:0 26px 10px 0}
 .jr-note .tape{width:70px;height:22px;top:-11px;margin-left:-35px}
 .jr-note svg{position:absolute;width:44px;height:44px;right:-24px;bottom:-22px;transform:rotate(14deg)}
-.jr{position:relative;list-style:none;display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:40px;align-items:start;margin-top:72px}
-.jr-line{position:absolute;left:0;right:34%;top:7.25px;height:1.5px;background:linear-gradient(90deg,rgba(122,32,55,0),var(--wine) 5%)}
-.jr-line-next{position:absolute;left:66%;right:0;top:7.25px;height:1.5px;background:repeating-linear-gradient(90deg,var(--wine) 0 6px,transparent 6px 12px)}
-.jr-item{position:relative;display:flex;flex-direction:column}
-.jr-mark{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:16px;height:calc(var(--drop,0px) + 64px);margin-left:44px}
-.jr-flip .jr-mark{align-self:flex-end;margin-left:0;margin-right:44px}
-.jr-dot{flex:none;width:16px;height:16px;border-radius:50%;background:var(--wine);box-shadow:0 0 0 5px var(--cream)}
-.jr-stem{flex:1;width:1.5px;background:var(--wine)}
-.jr-next .jr-dot{background:var(--cream);box-shadow:inset 0 0 0 2px var(--wine),0 0 0 5px var(--cream)}
-.jr-next .jr-stem{background:repeating-linear-gradient(180deg,var(--wine) 0 5px,transparent 5px 10px)}
-.jr-card{position:relative;background-color:#FFFCF7;background-image:radial-gradient(circle at 100% 0%,rgba(255,215,231,.8),transparent 58%),radial-gradient(circle at 0% 100%,rgba(255,215,231,.45),transparent 50%);border:1px solid rgba(205,164,181,.8);border-radius:20px;padding:0 28px 30px;box-shadow:0 26px 44px -30px rgba(71,19,28,.5);transition:transform .35s ease,box-shadow .35s ease}
-.jr-card:hover,.jr-card:focus-within{transform:translateY(-6px);box-shadow:0 36px 54px -30px rgba(71,19,28,.55)}
-.jr-next .jr-card{border:1.5px dashed var(--rose);background-color:rgba(255,252,247,.9)}
-.jr-top{position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:-34px 0 20px}
-.jr-flip .jr-top{flex-direction:row-reverse}
-.jr-num{font:italic 600 64px/1 var(--serif);color:var(--rose);margin-top:52px;letter-spacing:-.02em}
-.jr-pol{position:relative;flex:none;width:62%;margin:0;background:var(--white);padding:10px 10px 38px;box-shadow:0 18px 30px -18px rgba(71,19,28,.5);transform:rotate(3deg);transition:transform .45s ease}
-.jr-flip .jr-pol{transform:rotate(-3deg)}
-.jr-card:hover .jr-pol,.jr-card:focus-within .jr-pol{transform:rotate(0) translateY(-4px)}
-.jr-pol .tape{width:74px;height:22px;top:-11px;margin-left:-37px}
-.jr-pol figcaption{position:absolute;left:0;right:0;bottom:9px;text-align:center;font:400 21px/1 var(--script);color:var(--cola)}
-.jr-sticker{position:absolute;z-index:3;pointer-events:none;transform:rotate(var(--r,0deg));transition:transform .45s ease}
-.jr-card:hover .jr-sticker,.jr-card:focus-within .jr-sticker{transform:rotate(calc(var(--r,0deg) - 10deg)) translateY(-3px) scale(1.06)}
-.jr-ph{position:relative;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#FBE3EC,#EDBCD0)}
-.jr-ph .seal{width:70px;height:70px;border-radius:50%;background:var(--white);color:var(--wine);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 18px -10px rgba(71,19,28,.5);outline:1.5px dashed var(--wine);outline-offset:5px}
-.jr-ph .seal svg{width:34px;height:34px}
-.jr-ph .ph-chip{position:absolute;left:8px;bottom:8px;font:500 9.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.88);color:var(--wine);padding:3px 8px;border-radius:99px}
-.jr-ph .ph-spark{position:absolute;width:16px;height:16px;color:var(--white)}
-.jr-ph-next{background:repeating-linear-gradient(135deg,#FFF6F9 0 10px,#FDE8F0 10px 20px)}
-.jr-ph-next .slot{position:absolute;inset:12px;border:1.5px dashed var(--wine);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--wine);font:500 9.5px var(--mono);letter-spacing:.14em;text-transform:uppercase}
-.jr-ph-next .slot svg{width:30px;height:30px}
-.jr-stamp{position:absolute;z-index:3;top:-12px;right:-16px;font:600 10.5px var(--mono);letter-spacing:.16em;color:var(--wine);border:1.5px solid var(--wine);border-radius:6px;padding:5px 9px;background:var(--cream);transform:rotate(10deg)}
 .jr-kicker{display:flex;align-items:center;gap:10px;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--wine)}
 .jr-kicker .ic{flex:none;width:30px;height:30px;border-radius:50%;background:var(--wine);color:var(--candy);display:flex;align-items:center;justify-content:center}
 .jr-kicker .ic svg{width:15px;height:15px}
 .jr-chapter{font:400 32px/1.1 var(--script);color:var(--wine);margin:12px 0 4px}
-.jr-card h3{font-size:29px;line-height:1.08;margin-bottom:8px}
 .jr-where{font-size:15px;line-height:1.45;font-weight:600;color:var(--cola)}
 .jr-date{display:inline-block;margin-top:8px;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--wine);background:var(--white);border:1px solid var(--rose);border-radius:6px;padding:4px 9px}
 .jr-story{font-size:14.5px;line-height:1.6;margin-top:10px}
@@ -292,9 +257,118 @@ a.cert:hover{background:rgba(255,215,231,.13);border-color:var(--candy);transfor
 .jr-link svg{width:14px;height:14px}
 .jr-status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--wine);background:var(--white);border:1px dashed var(--wine);border-radius:99px;padding:6px 12px}
 .jr-status i{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--wine)}
-@media (prefers-reduced-motion:reduce){.jr-card:hover,.jr-card:focus-within,.jr-card:hover .jr-sticker,.jr-card:focus-within .jr-sticker{transform:none}.jr-card:hover .jr-pol,.jr-card:focus-within .jr-pol{transform:rotate(0)}}
-@media (max-width:1100px) and (min-width:961px){.jr{gap:32px}.jr-pol figcaption{font-size:18px}.jr-cherry{width:42px!important;height:42px!important;left:-24px!important;bottom:-24px!important}}
 .jr-extra{margin-top:104px}
+/* journey: interactive scrapbook journal */
+.jb{position:relative;margin-top:64px}
+.jb-tabs{position:relative;z-index:3;display:flex;gap:8px;padding:0 34px;margin-bottom:12px}
+.jb-tab{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:10px 20px 14px;border:1px solid var(--rose);border-bottom:0;border-radius:14px 14px 0 0;background:var(--candy);color:var(--cola);font:500 14px var(--sans);cursor:pointer;transform:translateY(8px);transition:transform .3s ease,background .3s,color .3s}
+.jb-tab .n{font:500 11px var(--mono);letter-spacing:.12em;color:var(--wine)}
+.jb-tab:hover{transform:translateY(3px)}
+.jb-tab[aria-selected="true"]{background:var(--wine);color:var(--cream);border-color:var(--wine);transform:translateY(0)}
+.jb-tab[aria-selected="true"] .n{color:var(--candy)}
+.jb-tab:focus-visible{outline:3px solid var(--wine);outline-offset:3px}
+.jb-book{position:relative;isolation:isolate;perspective:6000px;background-color:#FFFCF6;border-radius:12px;box-shadow:0 2px 0 #F3E3D6,0 4px 0 #E6CFC2,0 6px 0 #F3E3D6,0 8px 0 #DEC2B6,0 34px 56px -26px rgba(71,19,28,.5)}
+.jb-cover{position:absolute;z-index:-1;inset:-12px -14px -20px;border-radius:20px;background:var(--wine);box-shadow:inset 0 0 0 6px var(--wine),inset 0 0 0 7.5px rgba(255,215,231,.45)}
+.jb-book::after{content:"";position:absolute;z-index:2;top:0;bottom:0;left:50%;width:70px;margin-left:-35px;pointer-events:none;background:linear-gradient(90deg,rgba(71,19,28,0),rgba(71,19,28,.08) 40%,rgba(71,19,28,.2) 50%,rgba(71,19,28,.08) 60%,rgba(71,19,28,0))}
+.jb-ribbon{position:absolute;z-index:3;top:-14px;right:48px;width:24px;height:96px;background:var(--cola);clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);box-shadow:0 4px 8px rgba(0,0,0,.2)}
+.jb-ch{display:grid;grid-template-columns:1fr 1fr;min-height:620px;border-radius:12px;overflow:hidden}
+.jb-ch[hidden]{display:none}
+.jb-ch:focus-visible{outline:3px solid var(--wine);outline-offset:6px}
+.jb-page{position:relative;padding:52px 56px 48px}
+.jb-left{background-color:#FFF8F1;background-image:radial-gradient(rgba(205,164,181,.35) 1px,transparent 1.3px);background-size:18px 18px;border-radius:12px 0 0 12px}
+.jb-right{padding-right:96px;background-color:#FFFCF6;background-image:linear-gradient(90deg,transparent 30px,rgba(205,164,181,.45) 30px,rgba(205,164,181,.45) 31px,transparent 31px),repeating-linear-gradient(180deg,transparent 0 31px,rgba(205,164,181,.2) 31px 32px);border-radius:0 12px 12px 0}
+.jb-num{position:absolute;left:30px;top:22px;font:italic 600 88px/1 var(--serif);color:rgba(205,164,181,.55);letter-spacing:-.03em;pointer-events:none}
+.jb-art{position:relative;height:420px;margin-top:34px}
+.jb-pol{position:absolute;margin:0;background:var(--white);padding:10px 10px 40px;box-shadow:0 18px 30px -18px rgba(71,19,28,.5);transform:rotate(var(--r,0deg));transition:transform .45s ease}
+.jb-pol:hover{transform:rotate(0) translateY(-6px) scale(1.02);z-index:4}
+.jb-pol .tape{width:76px;height:22px;top:-11px;margin-left:-38px}
+.jb-pol figcaption{position:absolute;left:0;right:0;bottom:10px;text-align:center;font:400 21px/1 var(--script);color:var(--cola)}
+.jb-ph{position:relative;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#FBE3EC,#EDBCD0)}
+.jb-ph img{display:block;width:100%;height:100%;object-fit:cover}
+.jb-ph .seal{width:76px;height:76px;border-radius:50%;background:var(--white);color:var(--wine);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 18px -10px rgba(71,19,28,.5);outline:1.5px dashed var(--wine);outline-offset:6px}
+.jb-ph .seal svg{width:36px;height:36px}
+.jb-ph .ph-chip{position:absolute;left:8px;bottom:8px;font:500 9.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.88);color:var(--wine);padding:3px 8px;border-radius:99px}
+.jb-ph .ph-spark{position:absolute;width:16px;height:16px;color:var(--white)}
+.jb-ph.logo{background:var(--white);aspect-ratio:1}
+.jb-ph.logo img{object-fit:contain;padding:8%}
+.jb-ph.slot{background:repeating-linear-gradient(135deg,#FFF6F9 0 10px,#FDE8F0 10px 20px)}
+.jb-ph.slot .slot-in{position:absolute;inset:12px;border:1.5px dashed var(--wine);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--wine);font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.jb-ph.slot svg{width:32px;height:32px}
+.jb-stk{position:absolute;z-index:5;pointer-events:none;transform:rotate(var(--r,0deg));transition:transform .5s ease}
+.jb-ch:hover .jb-stk{transform:rotate(calc(var(--r,0deg) - 10deg)) translateY(-3px) scale(1.06)}
+.jb-sticky{position:absolute;z-index:3;right:2%;bottom:6%;width:150px;padding:18px 14px 16px;background:var(--candy);color:var(--cola);transform:rotate(5deg);box-shadow:0 12px 18px -12px rgba(71,19,28,.5);text-align:center;clip-path:polygon(0 0,100% 0,100% 82%,84% 100%,0 100%);transition:transform .45s ease}
+.jb-sticky:hover{transform:rotate(0) translateY(-4px)}
+.jb-sticky span{display:block;font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--wine)}
+.jb-sticky b{display:block;font:400 30px/1.1 var(--script);color:var(--wine);margin-top:4px}
+.jb-stamp{position:absolute;z-index:4;top:-14px;right:-18px;font:600 11px var(--mono);letter-spacing:.16em;color:var(--wine);border:1.5px solid var(--wine);border-radius:6px;padding:5px 10px;background:var(--cream);transform:rotate(10deg)}
+.jb-hours{position:absolute;z-index:3;left:4%;bottom:6%;width:112px;height:112px;border-radius:50%;border:2px dashed var(--wine);background:rgba(255,249,237,.92);color:var(--wine);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-10deg);transition:transform .45s ease}
+.jb-hours:hover{transform:rotate(0) scale(1.04)}
+.jb-hours b{font:600 36px/1 var(--serif)}
+.jb-hours span{font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.jb-hand{position:absolute;left:56px;bottom:30px;font:400 24px/1 var(--script);color:var(--wine);transform:rotate(-3deg)}
+.jb-right .jr-kicker{margin-top:6px}
+.jb-title{font:400 clamp(40px,4vw,52px)/1.05 var(--script);color:var(--wine);margin:14px 0 6px}
+.jb-right h3{font-size:clamp(28px,2.6vw,34px);line-height:1.08;margin-bottom:8px}
+.jb-right .jr-date{margin-top:10px}
+.jb-story{font-size:15px;line-height:1.7;margin-top:14px;max-width:440px}
+.jb-phases{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;font-size:14.5px}
+.jb-phases li{position:relative;padding-left:22px}
+.jb-phases li::before{content:"";position:absolute;left:0;top:7px;width:10px;height:10px;border-radius:50% 50% 50% 0;background:var(--wine);transform:rotate(-45deg)}
+.jb-links{display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:10px}
+.jb-tbc{display:flex;align-items:center;gap:14px;margin-top:22px;font:400 clamp(34px,3.4vw,44px)/1 var(--script);color:var(--wine)}
+.jb-tbc::before{content:"";flex:0 0 36px;height:0;border-top:2px dotted var(--wine)}
+.jb-tbc svg{width:40px;height:40px;flex:none;transform:rotate(12deg)}
+.jb-flip{position:absolute;z-index:6;top:0;bottom:0;width:50%;pointer-events:none;opacity:0;background-color:#FFFCF6;background-image:repeating-linear-gradient(180deg,transparent 0 31px,rgba(205,164,181,.2) 31px 32px)}
+.jb-flip.go-next{left:50%;border-radius:0 12px 12px 0;transform-origin:left center;animation:jbFlipNext .75s cubic-bezier(.45,.05,.35,1)}
+.jb-flip.go-prev{left:0;border-radius:12px 0 0 12px;transform-origin:right center;animation:jbFlipPrev .75s cubic-bezier(.45,.05,.35,1)}
+@keyframes jbFlipNext{0%{opacity:1;transform:rotateY(0);box-shadow:inset 40px 0 40px -30px rgba(71,19,28,.15)}25%{transform:rotateY(-45deg) scale(.9)}50%{opacity:1;transform:rotateY(-90deg) scale(.9)}75%{transform:rotateY(-135deg) scale(.93)}100%{opacity:0;transform:rotateY(-180deg);box-shadow:inset 40px 0 40px -30px rgba(71,19,28,.45)}}
+@keyframes jbFlipPrev{0%{opacity:1;transform:rotateY(0);box-shadow:inset -40px 0 40px -30px rgba(71,19,28,.15)}25%{transform:rotateY(45deg) scale(.9)}50%{opacity:1;transform:rotateY(90deg) scale(.9)}75%{transform:rotateY(135deg) scale(.93)}100%{opacity:0;transform:rotateY(180deg);box-shadow:inset -40px 0 40px -30px rgba(71,19,28,.45)}}
+.jb-ch.jb-in-next{animation:jbFade .6s ease}
+.jb-ch.jb-in-prev{animation:jbFade .6s ease}
+.jb-in-next .jb-right{animation:jbTurnNext .7s ease}
+.jb-in-prev .jb-left{animation:jbTurnPrev .7s ease}
+@keyframes jbFade{from{opacity:.35}to{opacity:1}}
+@keyframes jbTurnNext{from{transform:rotateY(-24deg);transform-origin:left center;opacity:.3}to{transform:none;transform-origin:left center;opacity:1}}
+@keyframes jbTurnPrev{from{transform:rotateY(24deg);transform-origin:right center;opacity:.3}to{transform:none;transform-origin:right center;opacity:1}}
+.jb-nav{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:40px}
+.jb-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;min-width:150px;padding:12px 24px;border-radius:999px;border:1.5px solid var(--wine);background:var(--white);color:var(--wine);font:500 14.5px var(--sans);cursor:pointer;transition:background .25s,color .25s,transform .25s,opacity .25s}
+.jb-btn svg{width:18px;height:18px}
+.jb-btn:hover:not(:disabled){background:var(--wine);color:var(--cream);transform:translateY(-2px)}
+.jb-btn:disabled{opacity:.38;cursor:not-allowed;border-style:dashed}
+.jb-btn:focus-visible{outline:3px solid var(--wine);outline-offset:3px}
+.jb-count{display:flex;flex-direction:column;align-items:center;min-width:92px;font:500 22px/1 var(--mono);color:var(--cola);letter-spacing:.06em}
+.jb-count small{font:500 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--wine);margin-bottom:6px}
+.jb-count b{color:var(--wine)}
+.jb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.jb:not(.js) .jb-tabs,.jb:not(.js) .jb-nav,.jb:not(.js) .jb-flip{display:none}
+.jb:not(.js) .jb-ch + .jb-ch{border-top:2px dashed var(--rose)}
+@media (prefers-reduced-motion:reduce){.jb-flip{display:none}.jb-ch,.jb-ch .jb-left,.jb-ch .jb-right{animation:none!important}.jb-ch:hover .jb-stk,.jb-pol:hover,.jb-sticky:hover,.jb-hours:hover{transform:rotate(var(--r,0deg))}}
+@media (max-width:1100px) and (min-width:861px){.jb-page{padding:46px 36px 40px}.jb-right{padding-right:70px}.jb-art{height:380px}.jb-sticky{width:128px}.jb-hand{left:36px}}
+@media (max-width:860px){
+  .jb{margin-top:48px}
+  .jb-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 4px}
+  .jb-tab{flex-direction:column;align-items:flex-start;gap:4px;min-height:64px;padding:10px 12px 14px;font-size:13px;line-height:1.25;text-align:left}
+  .jb-cover{inset:-8px -8px -14px}
+  .jb-book::after,.jb-flip{display:none}
+  .jb-ribbon{right:20px;height:70px}
+  .jb-ch{grid-template-columns:1fr;min-height:0}
+  .jb-left{border-radius:12px 12px 0 0;padding:40px 20px 24px}
+  .jb-right{border-radius:0 0 12px 12px;padding:28px 22px 34px 44px;border-top:1px dashed var(--rose)}
+  .jb-num{left:16px;top:12px;font-size:64px}
+  .jb-art{height:330px;margin-top:20px}
+  .jb-hand{position:relative;left:auto;bottom:auto;margin:6px 0 0 4px;font-size:21px}
+  .jb-ch.jb-in-next{animation:jbSlideNext .45s ease}
+  .jb-ch.jb-in-prev{animation:jbSlidePrev .45s ease}
+  .jb-in-next .jb-right,.jb-in-prev .jb-left{animation:none}
+  .jb-phases{grid-template-columns:1fr}
+  .jb-tbc{font-size:30px}
+  .jb-nav{position:relative;gap:10px;margin-top:30px}
+  .jb-btn{flex:1;min-width:0;min-height:56px;padding:12px 14px}
+  .jb-count{min-width:72px;font-size:19px}
+}
+@keyframes jbSlideNext{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+@keyframes jbSlidePrev{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+@media (max-width:420px){.jb-btn span{display:none}.jb-btn{flex:0 0 64px}.jb-nav{justify-content:space-between}.jb-sticky{width:118px;padding:14px 10px}.jb-sticky b{font-size:24px}.jb-hours{width:92px;height:92px}.jb-hours b{font-size:28px}}
 .itsoc{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center;margin:30px 0 64px}
 .itsoc-photos{position:relative;height:470px}
 .itsoc .ip{position:absolute;margin:0;background:var(--white);padding:10px 10px 42px;box-shadow:var(--shadow);transition:transform .45s ease}
@@ -323,25 +397,7 @@ a.cert:hover{background:rgba(255,215,231,.13);border-color:var(--candy);transfor
 @media (max-width:1100px){.certs{grid-template-columns:1fr}}
 @media (max-width:820px){.cert-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.jr-notes{grid-template-columns:1fr}}
-/* journey: vertical timeline on tablet and phone */
-@media (max-width:960px){
-  .jr{--rail:44px;--lc:14px;grid-template-columns:1fr;gap:72px;padding-left:var(--rail);margin-top:80px}
-  .jr-line{left:calc(var(--lc) - .75px);right:auto;top:36px;bottom:0;width:1.5px;height:auto;background:linear-gradient(180deg,var(--wine) 80%,rgba(122,32,55,0))}
-  .jr-line-next{display:none}
-  .jr-item{max-width:560px}
-  .jr-mark,.jr-flip .jr-mark{position:absolute;left:calc(var(--lc) - 8px - var(--rail));top:28px;width:calc(var(--rail) - var(--lc) + 8px);height:16px;flex-direction:row;margin:0}
-  .jr-stem{width:auto;height:1.5px}
-  .jr-next .jr-stem{background:repeating-linear-gradient(90deg,var(--wine) 0 5px,transparent 5px 10px)}
-}
-@media (max-width:560px){
-  .jr{--rail:32px;--lc:10px;gap:64px}
-  .jr-card{padding:0 20px 24px}
-  .jr-num{font-size:50px;margin-top:48px}
-  .jr-pol{width:64%}
-  .jr-stamp{right:-8px}
-  .jr-card h3{font-size:26px}
-  .jr-note{font-size:22px}
-}
+@media (max-width:560px){.jr-note{font-size:22px}}
 
 /* contact */
 .contact{background:var(--cola);color:var(--cream);text-align:center;overflow:hidden}
@@ -615,6 +671,7 @@ body.show-case #home{display:none}
     <symbol id="i-plant" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12C12 7 8.500 5 4 5c0 4.500 3 7 8 7zM12 10c0-4 3-6 8-6 0 4.500-3 6-8 6z"/><path d="M7 21h10"/></g></symbol>
     <symbol id="i-award" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.500 14-1.500 7 5-3 5 3-1.500-7"/></g></symbol>
     <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.500"/><path d="M2.500 20c0-3.600 2.900-6 6.500-6s6.500 2.400 6.500 6M16 4.600a3.500 3.500 0 0 1 0 6.800M18.500 14.300c1.800.8 3 2.700 3 5.700"/></g></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></g></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></g></symbol>
   </defs>
 </svg>
@@ -832,87 +889,108 @@ body.show-case #home{display:none}
       <p class="jr-note reveal" aria-hidden="true"><span class="tape"></span>still being written…<svg><use href="#cherry"/></svg></p>
     </div>
 
-    <ol class="jr">
-      <li class="jr-line" aria-hidden="true" role="presentation"></li>
-      <li class="jr-line-next" aria-hidden="true" role="presentation"></li>
+    <div class="jb" id="journal">
+      <div class="jb-tabs" role="tablist" aria-label="Journey chapters">
+        <button class="jb-tab" role="tab" type="button" id="jb-tab-1" aria-controls="jb-ch-1" aria-selected="true"><span class="n">01</span><span class="t">The Beginning</span></button>
+        <button class="jb-tab" role="tab" type="button" id="jb-tab-2" aria-controls="jb-ch-2" aria-selected="false" tabindex="-1"><span class="n">02</span><span class="t">The Creation</span></button>
+        <button class="jb-tab" role="tab" type="button" id="jb-tab-3" aria-controls="jb-ch-3" aria-selected="false" tabindex="-1"><span class="n">03</span><span class="t">The Next Chapter</span></button>
+      </div>
 
-      <li class="jr-item reveal" style="--drop:0px">
-        <div class="jr-mark" aria-hidden="true"><span class="jr-dot"></span><span class="jr-stem"></span></div>
-        <article class="jr-card">
-          <div class="jr-top">
-            <span class="jr-num" aria-hidden="true">01</span>
-            <figure class="jr-pol" aria-hidden="true">
-              <span class="tape"></span>
-              <div class="jr-ph">
-                <span class="seal"><svg><use href="#i-cap"/></svg></span>
-                <svg class="ph-spark" style="right:12px;top:10px"><use href="#spark"/></svg>
-                <span class="ph-chip">BS IT</span>
-              </div>
-              <figcaption>where it began</figcaption>
-              <svg class="jr-sticker jr-cherry" style="--r:-14deg;width:56px;height:56px;left:-26px;bottom:-16px"><use href="#cherry"/></svg>
-            </figure>
-          </div>
-          <p class="jr-kicker"><span class="ic"><svg><use href="#i-cap"/></svg></span>Chapter 01 · Education</p>
-          <p class="jr-chapter">The Beginning</p>
-          <h3>BS Information Technology</h3>
-          <p class="jr-where">Mapúa Malayan Colleges Laguna</p>
-          <p class="jr-date">2023 – 2027 · Cybersecurity track</p>
-          <p class="jr-story">Where I’m building my foundation in software, systems, and security, and where I’ve been a Dean’s Lister for six terms.</p>
-          <div class="jr-rule" aria-hidden="true"></div>
-          <div class="badges"><span class="badge">Cybersecurity</span><span class="badge">Dean’s Lister</span></div>
-        </article>
-      </li>
+      <div class="jb-book">
+        <span class="jb-cover" aria-hidden="true"></span>
+        <span class="jb-ribbon" aria-hidden="true"></span>
+        <span class="jb-flip" aria-hidden="true"></span>
 
-      <li class="jr-item jr-flip reveal" style="--drop:84px">
-        <div class="jr-mark" aria-hidden="true"><span class="jr-dot"></span><span class="jr-stem"></span></div>
-        <article class="jr-card">
-          <div class="jr-top">
-            <span class="jr-num" aria-hidden="true">02</span>
-            <figure class="jr-pol" aria-hidden="true">
-              <span class="tape" style="transform:rotate(4deg)"></span>
-              <div class="jr-ph jr-ph-logo"><img src="images/profilepath-logo.webp" alt="" width="640" height="582" loading="lazy"></div>
-              <figcaption>my capstone</figcaption>
-              <svg class="jr-sticker" style="--r:16deg;width:66px;height:46px;right:-28px;top:-20px"><use href="#bow"/></svg>
-            </figure>
+        <section class="jb-ch" id="jb-ch-1" role="tabpanel" aria-labelledby="jb-tab-1" tabindex="0">
+          <div class="jb-page jb-left">
+            <span class="jb-num" aria-hidden="true">01</span>
+            <div class="jb-art" aria-hidden="true">
+              <figure class="jb-pol" style="--r:-3deg;width:66%;left:6%;top:12px"><span class="tape"></span>
+                <div class="jb-ph"><span class="seal"><svg><use href="#i-cap"/></svg></span><svg class="ph-spark" style="right:14px;top:12px"><use href="#spark"/></svg><svg class="ph-spark" style="left:18px;top:20px;width:11px;height:11px"><use href="#spark"/></svg><span class="ph-chip">BS IT · 2023</span></div>
+                <figcaption>Mapúa MCL</figcaption></figure>
+              <div class="jb-sticky"><span>Dean’s Lister</span><b>× 6 terms</b></div>
+              <svg class="jb-stk" style="--r:-14deg;width:62px;height:62px;left:0;bottom:16%"><use href="#cherry"/></svg>
+              <svg class="jb-stk" style="--r:14deg;width:72px;height:50px;left:58%;top:-10px"><use href="#bow"/></svg>
+            </div>
+            <p class="jb-hand" aria-hidden="true">where it all began ♡</p>
           </div>
-          <p class="jr-kicker"><span class="ic"><svg><use href="#i-code"/></svg></span>Chapter 02 · Capstone</p>
-          <p class="jr-chapter">Building My Ideas</p>
-          <h3>Capstone Project — ProfilePath</h3>
-          <p class="jr-where">Web-based career profiling system</p>
-          <p class="jr-date">2026 · Backend &amp; Database Developer</p>
-          <p class="jr-story">Development, implementation, testing, and documentation of a system that matches Senior High School students to career paths, secured with AES-256-GCM encryption and role-based access control.</p>
-          <div class="jr-rule" aria-hidden="true"></div>
-          <div class="badges"><span class="badge">Development</span><span class="badge">Implementation</span><span class="badge">Testing</span><span class="badge">Documentation</span></div>
-          <a class="jr-link" href="#case-study-profilepath"><span>Read the case study</span><svg><use href="#i-arrow"/></svg></a>
-        </article>
-      </li>
+          <div class="jb-page jb-right">
+            <p class="jr-kicker"><span class="ic"><svg><use href="#i-cap"/></svg></span>Chapter 01 · Education</p>
+            <p class="jb-title">The Beginning</p>
+            <h3>BS Information Technology</h3>
+            <p class="jr-where">Mapúa Malayan Colleges Laguna</p>
+            <p class="jr-date">2023 – 2027 · Cybersecurity track</p>
+            <p class="jb-story">Where I’m building my foundation in software, systems, and security, and where I’ve been a Dean’s Lister for six terms.</p>
+            <div class="jr-rule" aria-hidden="true"></div>
+            <div class="badges"><span class="badge">Cybersecurity</span><span class="badge">Dean’s Lister</span><span class="badge">Laguna, PH</span></div>
+          </div>
+        </section>
 
-      <li class="jr-item jr-next reveal" style="--drop:32px">
-        <div class="jr-mark" aria-hidden="true"><span class="jr-dot"></span><span class="jr-stem"></span></div>
-        <article class="jr-card">
-          <div class="jr-top">
-            <span class="jr-num" aria-hidden="true">03</span>
-            <figure class="jr-pol" aria-hidden="true">
-              <span class="tape" style="transform:rotate(-6deg)"></span>
-              <div class="jr-ph jr-ph-next">
-                <div class="slot"><svg><use href="#i-brief"/></svg>Coming soon</div>
-              </div>
-              <figcaption>the next page</figcaption>
-              <span class="jr-stamp">UP NEXT</span>
-              <svg class="jr-sticker" style="--r:-8deg;width:40px;height:28px;left:-18px;bottom:30px"><use href="#bow"/></svg>
-              <svg class="jr-sticker" style="--r:0deg;width:20px;height:20px;right:-12px;bottom:-8px;color:var(--wine)"><use href="#spark"/></svg>
-            </figure>
+        <section class="jb-ch" id="jb-ch-2" role="tabpanel" aria-labelledby="jb-tab-2" tabindex="0">
+          <div class="jb-page jb-left">
+            <span class="jb-num" aria-hidden="true">02</span>
+            <div class="jb-art">
+              <figure class="jb-pol" style="--r:-2deg;width:88%;left:2%;top:14px"><span class="tape"></span>
+                <div class="jb-ph" style="aspect-ratio:852/536;background:var(--white)"><img src="images/profilepath-admin.webp" alt="ProfilePath admin dashboard showing analytics and reports" width="852" height="536" loading="lazy" style="object-fit:contain"></div>
+                <figcaption>the system we built</figcaption></figure>
+              <figure class="jb-pol" style="--r:6deg;width:32%;right:-3%;bottom:-6%" aria-hidden="true"><span class="tape" style="transform:rotate(8deg)"></span>
+                <div class="jb-ph logo"><img src="images/profilepath-logo.webp" alt="" width="640" height="582" loading="lazy"></div>
+                <figcaption>ProfilePath</figcaption></figure>
+              <svg class="jb-stk" style="--r:16deg;width:70px;height:48px;right:6%;top:-16px" aria-hidden="true"><use href="#bow"/></svg>
+              <svg class="jb-stk" style="--r:-10deg;width:52px;height:52px;left:4%;bottom:6%" aria-hidden="true"><use href="#cherry"/></svg>
+            </div>
+            <p class="jb-hand" aria-hidden="true">from idea → real system</p>
           </div>
-          <p class="jr-kicker"><span class="ic"><svg><use href="#i-brief"/></svg></span>Chapter 03 · Internship</p>
-          <p class="jr-chapter">The Next Chapter</p>
-          <h3>Internship / OJT Journey</h3>
-          <p class="jr-where">486 required training hours</p>
-          <p class="jr-story">An upcoming chapter. Placement details will be added once confirmed.</p>
-          <div class="jr-rule" aria-hidden="true"></div>
-          <span class="jr-status"><i></i>Upcoming chapter</span>
-        </article>
-      </li>
-    </ol>
+          <div class="jb-page jb-right">
+            <p class="jr-kicker"><span class="ic"><svg><use href="#i-code"/></svg></span>Chapter 02 · Capstone</p>
+            <p class="jb-title">The Creation</p>
+            <h3>Capstone Project — ProfilePath</h3>
+            <p class="jr-where">Web-based career profiling system</p>
+            <p class="jr-date">2026 · Backend &amp; Database Developer</p>
+            <p class="jb-story">A system that matches Senior High School students to career paths using content-based filtering, with AES-256-GCM encryption and role-based access control to protect their data.</p>
+            <div class="jr-rule" aria-hidden="true"></div>
+            <ul class="jb-phases" aria-label="Project phases"><li>Development</li><li>Implementation</li><li>Testing</li><li>Documentation</li></ul>
+            <div class="jb-links">
+              <a class="jr-link" href="#case-study-profilepath"><span>Read the case study</span><svg><use href="#i-arrow"/></svg></a>
+              <a class="jr-link" href="https://profilepath-careerprofilingsystem.onrender.com/student-login" target="_blank" rel="noopener"><span>Try the live demo</span><svg><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </section>
+
+        <section class="jb-ch" id="jb-ch-3" role="tabpanel" aria-labelledby="jb-tab-3" tabindex="0">
+          <div class="jb-page jb-left">
+            <span class="jb-num" aria-hidden="true">03</span>
+            <div class="jb-art" aria-hidden="true">
+              <figure class="jb-pol" style="--r:3deg;width:62%;right:6%;top:12px"><span class="tape" style="transform:rotate(-6deg)"></span>
+                <div class="jb-ph slot"><div class="slot-in"><svg><use href="#i-brief"/></svg>photo coming soon</div></div>
+                <figcaption>the next page</figcaption>
+                <span class="jb-stamp">UP NEXT</span></figure>
+              <div class="jb-hours"><b>486</b><span>hours</span></div>
+              <svg class="jb-stk" style="--r:-8deg;width:46px;height:32px;left:36%;bottom:4%"><use href="#bow"/></svg>
+              <svg class="jb-stk" style="--r:0deg;width:22px;height:22px;right:2%;bottom:16%;color:var(--wine)"><use href="#spark"/></svg>
+            </div>
+            <p class="jb-hand" aria-hidden="true">coming soon ✦</p>
+          </div>
+          <div class="jb-page jb-right">
+            <p class="jr-kicker"><span class="ic"><svg><use href="#i-brief"/></svg></span>Chapter 03 · Internship / OJT</p>
+            <p class="jb-title">The Next Chapter</p>
+            <h3>Internship / OJT Journey</h3>
+            <p class="jr-where">486 required training hours</p>
+            <p class="jb-story">An upcoming chapter where I’ll put what I’ve learned to work with a real team. Placement details will be added once confirmed.</p>
+            <div class="jr-rule" aria-hidden="true"></div>
+            <span class="jr-status"><i></i>Upcoming chapter</span>
+            <p class="jb-tbc">To Be Continued…<svg aria-hidden="true"><use href="#cherry"/></svg></p>
+          </div>
+        </section>
+      </div>
+
+      <div class="jb-nav">
+        <button class="jb-btn jb-prev" type="button" aria-label="Previous chapter" disabled><svg aria-hidden="true"><use href="#i-left"/></svg><span>Previous</span></button>
+        <p class="jb-count" aria-hidden="true"><small>Page</small><span><b>01</b> / 03</span></p>
+        <button class="jb-btn jb-next" type="button" aria-label="Next chapter"><span>Next</span><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+      </div>
+      <p class="jb-sr" aria-live="polite" id="jb-live"></p>
+    </div>
 
     <div class="jr-extra">
       <span class="label reveal">Along the way</span>
@@ -1304,6 +1382,51 @@ var MY_EMAIL = "christelleann922@gmail.com";
     setTimeout(function(){ nameEl.focus({ preventScroll: true }); }, 600);
   }); });
   syncTopic();
+})();
+
+// journey scrapbook: tabs, previous/next, page counter, page-turn transition, swipe
+(function(){
+  var jb = document.getElementById("journal"); if (!jb) return;
+  jb.classList.add("js");
+  var tabs = [].slice.call(jb.querySelectorAll(".jb-tab")), pages = [].slice.call(jb.querySelectorAll(".jb-ch"));
+  var prev = jb.querySelector(".jb-prev"), next = jb.querySelector(".jb-next"), count = jb.querySelector(".jb-count b");
+  var flip = jb.querySelector(".jb-flip"), live = document.getElementById("jb-live"), book = jb.querySelector(".jb-book");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)"), cur = 0, n = pages.length;
+  function pad(i){ return (i < 10 ? "0" : "") + i; }
+  function render(i, dir, focusTab){
+    pages.forEach(function(p, k){ p.hidden = k !== i; p.classList.remove("jb-in-next", "jb-in-prev"); });
+    tabs.forEach(function(t, k){ t.setAttribute("aria-selected", k === i ? "true" : "false"); t.tabIndex = k === i ? 0 : -1; });
+    var hadFocus = document.activeElement;
+    prev.disabled = i === 0; next.disabled = i === n - 1;
+    if (hadFocus === prev && prev.disabled) next.focus();
+    if (hadFocus === next && next.disabled) prev.focus();
+    count.textContent = pad(i + 1);
+    if (dir && !reduce.matches) {
+      void pages[i].offsetWidth; pages[i].classList.add("jb-in-" + dir);
+      flip.className = "jb-flip"; void flip.offsetWidth; flip.classList.add("go-" + dir);
+    }
+    if (dir) live.textContent = "Chapter " + (i + 1) + " of " + n + ": " + tabs[i].querySelector(".t").textContent;
+    if (focusTab) tabs[i].focus();
+    cur = i;
+  }
+  function go(i, focusTab){ if (i < 0 || i >= n || i === cur) { if (focusTab && tabs[i]) tabs[i].focus(); return; } render(i, i > cur ? "next" : "prev", focusTab); }
+  tabs.forEach(function(t, k){
+    t.addEventListener("click", function(){ go(k); });
+    t.addEventListener("keydown", function(e){
+      var to = e.key === "ArrowRight" ? k + 1 : e.key === "ArrowLeft" ? k - 1 : e.key === "Home" ? 0 : e.key === "End" ? n - 1 : null;
+      if (to === null) return; e.preventDefault(); go(Math.max(0, Math.min(n - 1, to)), true);
+    });
+  });
+  prev.addEventListener("click", function(){ go(cur - 1); });
+  next.addEventListener("click", function(){ go(cur + 1); });
+  flip.addEventListener("animationend", function(){ flip.className = "jb-flip"; });
+  var sx = null, sy = null;
+  book.addEventListener("touchstart", function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+  book.addEventListener("touchend", function(e){
+    if (sx === null) return; var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; sx = null;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) go(cur + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+  render(0, null, false);
 })();
 
 // hash routing: home sections vs case study
