@@ -145,6 +145,25 @@ section{position:relative}
 .certs h3{color:var(--cream);font-size:clamp(34px,4vw,46px);margin:8px 0 22px}
 .certs h3 .script{color:var(--candy);font-size:1.15em}
 .cert-grid{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.sub-label{display:block;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--rose);margin-bottom:12px}
+.cert-grid li,.gb-list li{list-style:none}
+a.cert{text-decoration:none;position:relative;padding-bottom:36px;transition:background .25s,border-color .25s,transform .25s}
+a.cert:hover{background:rgba(255,215,231,.13);border-color:var(--candy);transform:translateY(-2px)}
+.cert .go{position:absolute;left:68px;bottom:14px;display:inline-flex;align-items:center;gap:6px;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--candy)}
+.cert .go svg{width:12px;height:12px}
+.cert-grid li > .cert{height:100%}
+.gbadges{margin-top:34px}
+.gb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.gb-all{display:inline-flex;align-items:center;gap:6px;font:500 12px var(--mono);letter-spacing:.06em;color:var(--candy);text-decoration:none;border-bottom:1px solid rgba(255,215,231,.4);padding:10px 0 2px;min-height:44px}
+.gb-all:hover{border-color:var(--candy)}
+.gb-all svg{width:12px;height:12px}
+.gb-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 14px;margin-top:4px}
+.gb-list a{display:flex;align-items:center;gap:12px;min-height:48px;padding:10px 14px;border-radius:12px;border:1px solid rgba(205,164,181,.25);color:var(--cream);text-decoration:none;font-size:13.5px;line-height:1.35;transition:background .25s,border-color .25s}
+.gb-list a:hover{background:rgba(255,215,231,.1);border-color:var(--candy)}
+.gb-list .bt{flex:1}
+.gb-list small{flex:none;font:400 10.5px var(--mono);letter-spacing:.08em;color:var(--rose)}
+.gb-list svg{flex:none;width:12px;height:12px;color:var(--candy)}
+@media (max-width:820px){.gb-list{grid-template-columns:1fr}}
 .cert{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid rgba(205,164,181,.35);border-radius:var(--r-sm);background:rgba(255,215,231,.06)}
 .cert .ci{flex:none;width:36px;height:36px;border-radius:10px;background:var(--candy);color:var(--wine);display:flex;align-items:center;justify-content:center}
 .cert .ci svg{width:18px;height:18px}
@@ -687,14 +706,27 @@ body.show-case #home{display:none}
       <div class="certs-col reveal">
         <span class="label">Certifications</span>
         <h3>Always <span class="script">Learning</span></h3>
+        <span class="sub-label">Certificates</span>
         <ul class="cert-grid">
-          <li class="cert"><span class="ci"><svg><use href="#i-shield"/></svg></span><div><b>Google Cybersecurity Certificate</b><small>Google</small></div></li>
-          <li class="cert"><span class="ci"><svg><use href="#i-server"/></svg></span><div><b>Cloud Computing Foundations: Networking &amp; Security in Google Cloud</b><small>Google Cloud</small></div></li>
-          <li class="cert"><span class="ci"><svg><use href="#i-server"/></svg></span><div><b>Cloud Computing Foundations: Cloud Computing Fundamentals</b><small>Google Cloud</small></div></li>
-          <li class="cert"><span class="ci"><svg><use href="#i-code"/></svg></span><div><b>Full Stack Web Development</b><small>Amazon</small></div></li>
-          <li class="cert"><span class="ci"><svg><use href="#i-flag"/></svg></span><div><b>Foundations of Project Management</b><small>Google</small></div></li>
-          <li class="cert"><span class="ci"><svg><use href="#i-award"/></svg></span><div><b>Artificial Intelligence: Ethics &amp; Societal Challenges</b><small>Certificate</small></div></li>
+          <li><a class="cert" href="https://coursera.org/share/0547c5a831d8caa29c006d2365aca590" target="_blank" rel="noopener"><span class="ci"><svg><use href="#i-code"/></svg></span><div><b>Full Stack Web Development</b><small>Amazon · Coursera · Mar 2026</small></div><span class="go">Verify <svg><use href="#i-arrow"/></svg></span></a></li>
+          <li><a class="cert" href="https://coursera.org/share/0defc8a54eafef713e4b2a53df22c2e8" target="_blank" rel="noopener"><span class="ci"><svg><use href="#i-flag"/></svg></span><div><b>Foundations of Project Management</b><small>Google · Coursera · Feb 2026</small></div><span class="go">Verify <svg><use href="#i-arrow"/></svg></span></a></li>
+          <li><a class="cert" href="https://coursera.org/share/92de1b2c1a8e683f16eede0344a9cde9" target="_blank" rel="noopener"><span class="ci"><svg><use href="#i-award"/></svg></span><div><b>Artificial Intelligence: Ethics &amp; Societal Challenges</b><small>Lund University · Coursera · Oct 2025</small></div><span class="go">Verify <svg><use href="#i-arrow"/></svg></span></a></li>
+          <li><div class="cert"><span class="ci"><svg><use href="#i-shield"/></svg></span><div><b>Google Cybersecurity Certificate</b><small>Google</small></div></div></li>
         </ul>
+        <div class="gbadges">
+          <div class="gb-head"><span class="sub-label">Google Cloud skill badges · 9 earned</span><a class="gb-all" href="https://www.skills.google/public_profiles/6e1da54d-7023-44d5-8d3e-af8418e5f70b" target="_blank" rel="noopener">View my Google Skills profile <svg><use href="#i-arrow"/></svg></a></div>
+          <ul class="gb-list">
+          <li><a href="https://www.skills.google/public_profiles/6e1da54d-7023-44d5-8d3e-af8418e5f70b/badges/22292017" target="_blank" rel="noopener"><span class="bt">Cloud Computing Foundations: Cloud Computing Fundamentals</span><small>Feb 2026</small><svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="https://www.skills.google/public_profiles/6e1da54d-7023-44d5-8d3e-af8418e5f70b/badges/22822882" target="_blank" rel="noopener"><span class="bt">Cloud Computing Foundations: Infrastructure in Google Cloud</span><svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="https://www.skills.google/public_profiles/6e1da54d-7023-44d5-8d3e-af8418e5f70b/badges/22875850" target="_blank" rel="noopener"><span class="bt">Cloud Computing Foundations: Networking &amp; Security in Google Cloud</span><svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="https://www.skills.google/public_profiles/6e1da54d-7023-44d5-8d3e-af8418e5f70b/badges/23243610" target="_blank" rel="noopener"><span class="bt">Cloud Computing Foundations: Data, ML, and AI in Google Cloud</span><small>Mar 2026</small><svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="https://www.skills.google/public_profiles/6e1da54d-7023-44d5-8d3e-af8418e5f70b/badges/22972641" target="_blank" rel="noopener"><span class="bt">Implementing Cloud Load Balancing for Compute Engine</span><small>Mar 2026</small><svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="https://www.skills.google/public_profiles/6e1da54d-7023-44d5-8d3e-af8418e5f70b/badges/23012478" target="_blank" rel="noopener"><span class="bt">Introduction to Security Principles in Cloud Computing</span><small>Mar 2026</small><svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="https://www.skills.google/public_profiles/6e1da54d-7023-44d5-8d3e-af8418e5f70b/badges/23012888" target="_blank" rel="noopener"><span class="bt">Strategies for Cloud Security Risk Management</span><small>Mar 2026</small><svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="https://www.skills.google/public_profiles/6e1da54d-7023-44d5-8d3e-af8418e5f70b/badges/23193107" target="_blank" rel="noopener"><span class="bt">Build a Secure Google Cloud Network</span><small>Mar 2026</small><svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="https://www.skills.google/public_profiles/6e1da54d-7023-44d5-8d3e-af8418e5f70b/badges/23224205" target="_blank" rel="noopener"><span class="bt">Set Up an App Dev Environment on Google Cloud</span><small>Mar 2026</small><svg><use href="#i-arrow"/></svg></a></li>
+          </ul>
+        </div>
       </div>
       <div class="soft reveal">
         <span class="label">Professional skills</span>
