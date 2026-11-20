@@ -1235,7 +1235,7 @@ var toast=document.createElement("div");toast.className="toast";toast.setAttribu
 document.addEventListener("click",function(e){var a=e.target.closest('a[aria-disabled="true"],a[data-soon]');if(!a)return;e.preventDefault();var m=a.getAttribute("data-soon");if(m){toast.textContent=m;toast.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove("show")},2600);}});
 
 // contact form: sends through Web3Forms; without a key it falls back to a pre-filled email
-var W3F_KEY = ""; // Web3Forms access key (public by design; safe to keep in this file)
+var W3F_KEY = "7b7431ce-9e0a-4313-a8a6-92c4cc36e513"; // Web3Forms access key (public by design; safe to keep in this file)
 var MY_EMAIL = "christelleann922@gmail.com";
 (function(){
   var f = document.getElementById("cform"); if (!f) return;
