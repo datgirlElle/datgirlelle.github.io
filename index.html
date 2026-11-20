@@ -65,6 +65,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,249,237,.92);bac
 .cv-note{max-width:480px;margin-top:16px;font-size:13.5px;line-height:1.5;color:var(--cola);opacity:.85}
 .cv-note a{color:var(--wine);font-weight:500;overflow-wrap:anywhere}
 .polaroid .ph.ph-photo{padding:0;background:var(--candy)}
+.polaroid .ph .credit{position:absolute;right:6px;bottom:6px;font:500 8.5px var(--mono);letter-spacing:.04em;text-transform:none;background:rgba(255,255,255,.85);color:var(--wine);padding:2px 6px;border-radius:4px}
 .polaroid .ph-photo img{width:100%;height:100%;object-fit:cover}
 .hero-art{position:relative;height:620px}
 .stripes{position:absolute;right:20px;top:0;width:78%;height:100%;background:repeating-linear-gradient(90deg,var(--candy) 0 26px,var(--wine) 26px 52px);border-radius:var(--r-card) var(--r-card) 0 0;opacity:.95}
@@ -623,10 +624,10 @@ body.show-case #home{display:none}
 <!-- 02 ABOUT -->
 <section class="about pad" id="about">
   <div class="wrap about-grid">
-    <div class="collage reveal" aria-hidden="true">
-      <div class="polaroid p1"><div class="tape"></div><div class="ph"><svg class="person" aria-hidden="true"><use href="#person"/></svg>Photo 01</div><div class="cap">hello!</div></div>
-      <div class="polaroid p2"><div class="tape" style="transform:rotate(5deg)"></div><div class="ph"><svg class="person" aria-hidden="true" style="width:50%"><use href="#i-image"/></svg>Photo 02</div><div class="cap">late-night code</div></div>
-      <svg class="cherry-s"><use href="#cherry"/></svg>
+    <div class="collage reveal">
+      <div class="polaroid p1"><div class="tape" aria-hidden="true"></div><div class="ph ph-photo"><img src="images/about-hello.jpg" alt="Christelle in a white top, posing in a parking garage" width="480" height="518" loading="lazy"></div><div class="cap">hello!</div></div>
+      <div class="polaroid p2"><div class="tape" style="transform:rotate(5deg)" aria-hidden="true"></div><div class="ph ph-photo"><img src="images/about-volleyball.jpg" alt="Christelle jumping to hit a volleyball at a CCIS department event" width="480" height="518" loading="lazy"><span class="credit">photo: Joseph Bohol</span></div><div class="cap">off-screen mode</div></div>
+      <svg class="cherry-s" aria-hidden="true"><use href="#cherry"/></svg>
     </div>
     <div class="about-copy reveal">
       <span class="label">01 / About</span>
