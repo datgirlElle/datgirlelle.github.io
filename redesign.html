@@ -984,6 +984,76 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
 @media (max-width:560px){.arc-cherry{right:-4px}}
 @media (prefers-reduced-motion:reduce){.x-card:hover,.x-tiles li:hover,.x-proj:hover .media img,.x-photo:hover,.x-feature .media:hover img{transform:none}}
 
+/* ---- journey journal: dark editorial version ---- */
+.journey .jr-note{background:rgba(36,15,26,.88);border:1px solid var(--line2);color:var(--accent-2);border-radius:14px;box-shadow:0 20px 40px -22px rgba(0,0,0,.7)}
+.journey .jr-note .tape{display:none}
+.jb{margin-top:56px}
+.jb-tabs{padding:0;gap:10px;margin-bottom:22px}
+.jb-tab{border-radius:999px;border:1px solid var(--line2);background:transparent;color:var(--muted);transform:none;min-height:48px;padding:10px 20px;transition:background .3s,color .3s,border-color .3s,transform .3s}
+.jb-tab:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--text)}
+.jb-tab .n{color:var(--accent)}
+.jb-tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#2A0F1C;transform:none}
+.jb-tab[aria-selected="true"] .n{color:var(--wine)}
+.jb-book{perspective:none;border-radius:24px;border:1px solid var(--line2);background:radial-gradient(700px 420px at 15% 0%,rgba(122,32,55,.4),transparent 70%),linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));box-shadow:0 40px 80px -40px rgba(0,0,0,.8);color:var(--text)}
+.jb-cover,.jb-ribbon,.jb-flip,.jb-book::after{display:none}
+.jb-ch{border-radius:24px;min-height:560px}
+.jb-page{color:var(--muted)}
+.jb-left{background:radial-gradient(circle at 35% 30%,rgba(243,179,208,.14),transparent 60%);border-right:1px solid var(--line);border-radius:24px 0 0 24px}
+.jb-right{background:none;padding-right:56px;border-radius:0 24px 24px 0}
+.jb-num{color:rgba(243,179,208,.16);font:italic 500 112px/1 var(--display);top:18px}
+.jb-pol{background:var(--panel2);border:1px solid var(--line2);border-radius:16px;padding:8px 8px 40px;box-shadow:0 30px 50px -28px rgba(0,0,0,.85)}
+.jb-pol .tape{display:none}
+.jb-pol figcaption{color:var(--accent-2)}
+.jb-ph{border-radius:10px}
+.jb-ph .ph-chip{background:rgba(27,11,19,.78);color:var(--accent-2);border:1px solid var(--line2)}
+.jb-ph.slot{background:repeating-linear-gradient(135deg,rgba(243,179,208,.05) 0 10px,rgba(243,179,208,.1) 10px 20px)}
+.jb-ph.slot .slot-in{border-color:var(--line2);color:var(--accent)}
+.jb-sticky{background:rgba(27,11,19,.88);border:1px solid var(--line2);border-radius:14px;clip-path:none;color:var(--text);box-shadow:0 20px 34px -20px rgba(0,0,0,.8)}
+.jb-sticky span{color:var(--accent)}
+.jb-sticky b{color:var(--accent-2)}
+.jb-hours{background:rgba(27,11,19,.88);border-color:var(--accent);color:var(--accent)}
+.jb-stamp{background:var(--bg);color:var(--accent);border-color:var(--accent)}
+.jb-hand{color:var(--accent-2)}
+.jb-right .jr-kicker{color:var(--accent)}
+.jb-right .jr-kicker .ic{background:var(--accent);color:#2A0F1C}
+.jb-title{font:italic 500 clamp(38px,3.8vw,50px)/1.02 var(--display);color:var(--accent);margin:16px 0 8px}
+.jb-book h3,.jb-right h3{color:var(--text)}
+.jb-book .jr-where{color:var(--text)}
+.jb-right .jr-date{background:transparent;color:var(--accent);border-color:var(--line2)}
+.jb-story{color:var(--muted)}
+.jb-right .jr-rule{background:var(--line)}
+.jb-book .badge{background:rgba(243,179,208,.08);color:var(--accent-2);border-color:var(--line2)}
+.jb-phases li{color:var(--muted)}
+.jb-phases li::before{background:var(--accent)}
+.jb-right .jr-link{color:var(--accent)}
+.jb-right .jr-link span{border-color:var(--line2)}
+.jb-right .jr-link:hover span{border-color:var(--accent)}
+.jb-right .jr-status{background:transparent;color:var(--accent);border-color:var(--accent)}
+.jb-right .jr-status i{border-color:var(--accent)}
+.jb-tbc{color:var(--accent-2);font:italic 500 clamp(30px,3vw,40px)/1 var(--display)}
+.jb-tbc::before{border-top-color:var(--accent)}
+.jb-tbc svg{--cs:#FFD7E7}
+/* motion: soft slide + fade, then the chapter's text rises in */
+.jb-in-next .jb-right,.jb-in-prev .jb-left{animation:none}
+.jb-ch.jb-in-next{animation:jbSlideNext .55s cubic-bezier(.2,.7,.2,1)}
+.jb-ch.jb-in-prev{animation:jbSlidePrev .55s cubic-bezier(.2,.7,.2,1)}
+.jb-ch.jb-in-next .jb-right > *,.jb-ch.jb-in-prev .jb-right > *{animation:jbRise .6s cubic-bezier(.2,.7,.2,1) both}
+.jb-ch[class*="jb-in-"] .jb-right > :nth-child(2){animation-delay:.05s}
+.jb-ch[class*="jb-in-"] .jb-right > :nth-child(3){animation-delay:.1s}
+.jb-ch[class*="jb-in-"] .jb-right > :nth-child(4){animation-delay:.15s}
+.jb-ch[class*="jb-in-"] .jb-right > :nth-child(n+5){animation-delay:.2s}
+.jb-ch[class*="jb-in-"] .jb-pol{animation:jbPolIn .7s cubic-bezier(.2,.7,.2,1) both}
+.jb-ch[class*="jb-in-"] .jb-pol + .jb-pol{animation-delay:.08s}
+@keyframes jbRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes jbPolIn{from{opacity:0;transform:translateY(20px) rotate(var(--r,0deg))}to{opacity:1;transform:rotate(var(--r,0deg))}}
+@media (max-width:860px){
+  .jb-tabs{gap:6px}
+  .jb-tab{border-radius:14px}
+  .jb-left{border-right:0;border-bottom:1px solid var(--line);border-radius:24px 24px 0 0}
+  .jb-right{border-top:0;border-radius:0 0 24px 24px;padding:28px 22px 34px}
+  .jb-num{font-size:76px}
+}
+@media (prefers-reduced-motion:reduce){.jb-ch,.jb-ch .jb-right > *,.jb-ch .jb-pol{animation:none!important}}
 </style>
 </head>
 <body>
