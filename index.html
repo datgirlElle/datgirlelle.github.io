@@ -358,7 +358,9 @@ kbd{display:inline-flex;align-items:center;justify-content:center;min-width:26px
 .jb-ph img{display:block;width:100%;height:100%;object-fit:cover}
 .jb-ph .seal{width:76px;height:76px;border-radius:50%;background:var(--white);color:var(--wine);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 18px -10px rgba(71,19,28,.5);outline:1.5px dashed var(--wine);outline-offset:6px}
 .jb-ph .seal svg{width:36px;height:36px}
-@media (max-width:860px){.jb-pol-wide{width:min(84%,330px)!important;left:4%!important}}
+.jb-art .jb-sticky.jb-sticky-low{bottom:auto;top:-26px;right:-3%;width:132px;padding:12px 10px;z-index:6}
+.jb-art .jb-sticky.jb-sticky-low b{font-size:26px}
+@media (max-width:860px){.jb-pol-wide{width:96%!important;left:0!important}.jb-art .jb-sticky.jb-sticky-low{top:-22px;right:-2%;width:112px;padding:9px 8px}.jb-art .jb-sticky.jb-sticky-low b{font-size:21px}.jb-stk-low{bottom:-12%!important;right:4%!important}}
 .jb-ph .ph-chip{white-space:nowrap;position:absolute;left:8px;bottom:8px;font:500 9.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.88);color:var(--wine);padding:3px 8px;border-radius:99px}
 .jb-ph .ph-spark{position:absolute;width:16px;height:16px;color:var(--white)}
 .jb-ph.logo{background:var(--white);aspect-ratio:1}
@@ -1048,12 +1050,11 @@ body.show-case #home{display:none}
           <div class="jb-page jb-left">
             <span class="jb-num" aria-hidden="true">01</span>
             <div class="jb-art">
-              <figure class="jb-pol jb-pol-wide" style="--r:-3deg;width:70%;left:5%;top:10px"><span class="tape" aria-hidden="true"></span>
-                <div class="jb-ph"><img src="images/ccis-award-2024.jpg" alt="Christelle holding her Dean’s Lister certificate on stage at the CCIS Awarding Ceremony 2024" width="800" height="600" loading="lazy"><span class="ph-chip">CCIS Awards · 2024</span></div>
+              <figure class="jb-pol jb-pol-wide" style="--r:-2deg;width:94%;left:1%;top:6px"><span class="tape" aria-hidden="true"></span>
+                <div class="jb-ph"><img src="images/ccis-award-2024-wide.jpg" alt="Christelle holding her Dean’s Lister certificate on stage at the CCIS Awarding Ceremony 2024" width="800" height="600" loading="lazy"><span class="ph-chip">CCIS Awards · 2024</span></div>
                 <figcaption>Dean’s Lister ♡</figcaption></figure>
-              <div class="jb-sticky" aria-hidden="true"><span>Dean’s Lister</span><b>× 6 terms</b></div>
-              <svg class="jb-stk" style="--r:-14deg;width:62px;height:62px;left:0;bottom:16%" aria-hidden="true"><use href="#cherry"/></svg>
-              <svg class="jb-stk" style="--r:14deg;width:72px;height:50px;left:58%;top:-10px" aria-hidden="true"><use href="#bow"/></svg>
+              <div class="jb-sticky jb-sticky-low" aria-hidden="true"><span>Dean’s Lister</span><b>× 6 terms</b></div>
+              <svg class="jb-stk jb-stk-low" style="--r:12deg;width:56px;height:56px;right:3%;bottom:-13%" aria-hidden="true"><use href="#cherry"/></svg>
             </div>
             <p class="jb-hand" aria-hidden="true">where it all began ♡</p>
           </div>
