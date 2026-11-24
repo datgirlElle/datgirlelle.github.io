@@ -807,11 +807,13 @@ em.it,h1 em,h2 em{font-style:italic;color:var(--accent)}
 .x-stack-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin:72px 0 22px}
 .x-stack-head h3{font-size:clamp(28px,3vw,36px)}
 .x-stack-head p{font:600 12px var(--sans);color:var(--accent)}
-.x-tiles{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:12px}
+.x-tiles{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:12px}
 .x-tiles li{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:96px;padding:14px 8px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.025);transition:border-color .25s,transform .25s,background .25s}
 .x-tiles li:hover{border-color:var(--accent);transform:translateY(-3px);background:rgba(243,179,208,.06)}
-.x-tiles b{font:600 22px/1 var(--display);color:var(--accent)}
-.x-tiles span{font:500 11px var(--sans);color:var(--muted);text-align:center;line-height:1.3}
+.x-tiles svg{width:30px;height:30px;fill:currentColor;color:var(--accent);margin-bottom:6px;transition:transform .25s}
+.x-tiles li:hover svg{transform:scale(1.1)}
+.x-tiles b{font:600 13.5px/1.2 var(--sans);color:var(--text);text-align:center}
+.x-tiles span{font:500 10.5px var(--sans);color:var(--dim);text-align:center;line-height:1.3;letter-spacing:.04em}
 .x-sec .certs{border-top-color:var(--line)}
 /* projects */
 .x-work{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -933,7 +935,8 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
 .shots-real figcaption,.ps-gallery figcaption{color:var(--muted)}
 .ps-gallery .pol figcaption{color:var(--wine)}
 .cs-end{border-top-color:var(--line)}
-.todo{background:transparent;color:var(--accent);border-color:var(--accent)}
+.todo{display:none!important}
+#cs-learn{display:none}
 .cs-logo{background:var(--white);border-radius:16px;padding:8px}
 .case-view .stripe-foot{display:none}
 .cs-end .btn-secondary,.case-view .btn-secondary{color:var(--text);border-color:var(--line2)}
@@ -984,6 +987,7 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
   .jr-n{border-left:0;border-top:1px solid var(--line2);padding:18px 4px}
 }
 @media (max-width:560px){.arc-cherry{right:-4px}}
+@media (max-width:560px){.x-tiles{grid-template-columns:repeat(3,1fr);gap:8px}.x-tiles li{min-height:92px;padding:12px 4px}.x-tiles svg{width:26px;height:26px}.x-tiles b{font-size:12.5px}.x-tiles span{font-size:9.5px}}
 @media (prefers-reduced-motion:reduce){.x-card:hover,.x-tiles li:hover,.x-proj:hover .media img,.x-photo:hover,.x-feature .media:hover img{transform:none}}
 
 /* ---- journey journal: dark editorial version ---- */
@@ -1137,9 +1141,9 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
       <p class="x-hand" aria-hidden="true">code with<br>heart ♡</p>
     </div>
     <div class="x-hero-copy">
-      <p class="x-eyebrow">Portfolio 2026 · BS IT – Cybersecurity</p>
+      <p class="x-eyebrow">IT student · Cybersecurity track</p>
       <h1>Hey, I’m <em>Christelle.</em></h1>
-      <p class="x-lead">I build web systems, databases, and IoT projects with security in mind, and I’m currently looking for an OJT / IT internship where I can learn from experienced IT professionals.</p>
+      <p class="x-lead">I build websites, databases, and IoT devices, with a focus on keeping data safe. I’m looking for an IT internship (OJT) where I can learn from experienced professionals.</p>
       <div class="btn-row">
         <a class="x-btn primary" href="#projects">Explore my work <svg aria-hidden="true"><use href="#i-right"/></svg></a>
         <a class="x-btn ghost" href="#contact" data-topic="cv">Request my CV <svg aria-hidden="true"><use href="#i-mail"/></svg></a>
@@ -1162,17 +1166,19 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
     <div class="x-about-copy">
       <p class="sec-label">01 — About</p>
       <h2 class="x-h2">Behind the <em>screen.</em></h2>
-      <p>Hi! I’m Christelle Ann L. Solis, a BS Information Technology student specializing in Cybersecurity at Mapúa Malayan Colleges Laguna. I’ve worked on web development, database integration, IoT systems, and implementing security features, from a career profiling system protected with AES-256-GCM encryption to a smart plant monitor with its own Android app. I’m now looking for an IT internship where I can apply what I’ve learned, strengthen my practical skills, and contribute to real team projects.</p>
+      <p>Hi! I’m Christelle Ann L. Solis, a BS Information Technology student on the Cybersecurity track at Mapúa Malayan Colleges Laguna.</p>
+      <p>I’ve built web apps, databases, and IoT devices, and I try to build in security from the start. My capstone project encrypts student data, and my plant monitor sends its sensor readings to an Android app.</p>
+      <p>I’m now looking for an IT internship where I can apply what I’ve learned, grow my practical skills, and help a real team.</p>
     </div>
     <aside class="x-card x-info" aria-labelledby="qi">
       <h3 id="qi"><svg aria-hidden="true"><use href="#i-star"/></svg>Quick information</h3>
       <dl>
-        <div class="row"><span class="ic"><svg aria-hidden="true"><use href="#i-cap"/></svg></span><div><dt>Education</dt><dd>BS Information Technology – Cybersecurity, 2023–2027</dd></div></div>
+        <div class="row"><span class="ic"><svg aria-hidden="true"><use href="#i-cap"/></svg></span><div><dt>Education</dt><dd>BS Information Technology, Cybersecurity track (2023–2027)</dd></div></div>
         <div class="row"><span class="ic"><svg aria-hidden="true"><use href="#i-flag"/></svg></span><div><dt>School</dt><dd>Mapúa Malayan Colleges Laguna</dd></div></div>
         <div class="row"><span class="ic"><svg aria-hidden="true"><use href="#i-award"/></svg></span><div><dt>Honors</dt><dd>Dean’s Lister, 6 terms (2023–2026)</dd></div></div>
         <div class="row"><span class="ic"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><div><dt>Location</dt><dd>Santa Rosa City, Laguna, Philippines</dd></div></div>
-        <div class="row"><span class="ic"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><div><dt>Interests</dt><dd>Cybersecurity, Web Development, Databases, and IoT</dd></div></div>
-        <div class="row"><span class="ic"><svg aria-hidden="true"><use href="#i-brief"/></svg></span><div><dt>Current status</dt><dd>Seeking an OJT / IT internship</dd></div></div>
+        <div class="row"><span class="ic"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><div><dt>Interests</dt><dd>Cybersecurity, web development, databases, and IoT</dd></div></div>
+        <div class="row"><span class="ic"><svg aria-hidden="true"><use href="#i-brief"/></svg></span><div><dt>Looking for</dt><dd>An IT internship (OJT)</dd></div></div>
       </dl>
     </aside>
   </div>
@@ -1183,24 +1189,34 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
   <div class="wrap">
     <div class="x-head">
       <div><p class="sec-label">02 — Skills</p><h2 class="x-h2">My digital <em>toolbox.</em></h2></div>
-      <p class="x-intro">Technologies, tools, and skills I’ve explored along the way, across code, data, networks, and design.</p>
+      <p class="x-intro">The languages, tools, and skills I use in my school and personal projects.</p>
     </div>
     <div class="x-exp">
-      <article class="x-card"><p class="k">01 / Code <svg aria-hidden="true"><use href="#i-code"/></svg></p><h3>Programming Languages</h3><p>Languages I use to build web systems, APIs, Android apps, and embedded IoT code.</p><div class="badges"><span class="badge">Python</span><span class="badge">C#</span><span class="badge">C/C++</span><span class="badge">Kotlin</span><span class="badge">PHP</span><span class="badge">SQL</span><span class="badge">HTML</span><span class="badge">CSS</span></div></article>
-      <article class="x-card"><p class="k">02 / Data <svg aria-hidden="true"><use href="#i-db"/></svg></p><h3>Databases</h3><p>Designing, querying, and managing data in an organized, efficient way.</p><div class="badges"><span class="badge">MySQL</span><span class="badge">PostgreSQL</span><span class="badge">phpMyAdmin</span></div></article>
-      <article class="x-card"><p class="k">03 / Secure <svg aria-hidden="true"><use href="#i-shield"/></svg></p><h3>Networking &amp; Security</h3><p>Configuring and troubleshooting networks, and building security into the systems I make.</p><div class="badges"><span class="badge">IP Configuration</span><span class="badge">Network Troubleshooting</span><span class="badge">Connectivity Testing</span><span class="badge">AES-256-GCM</span><span class="badge">RBAC</span></div></article>
-      <article class="x-card"><p class="k">04 / Tools <svg aria-hidden="true"><use href="#i-tools"/></svg></p><h3>Tools, Platforms &amp; Design</h3><p>The tools I use to code, test, version, and design my projects.</p><div class="badges"><span class="badge">VS Code</span><span class="badge">Android Studio</span><span class="badge">Git &amp; GitHub</span><span class="badge">VirtualBox</span><span class="badge">Figma</span><span class="badge">Canva</span><span class="badge">MS Office</span></div></article>
+      <article class="x-card"><p class="k">01 / Code <svg aria-hidden="true"><use href="#i-code"/></svg></p><h3>Programming languages</h3><p>For websites, server code, Android apps, and IoT devices.</p><div class="badges"><span class="badge">Python</span><span class="badge">C#</span><span class="badge">C/C++</span><span class="badge">Kotlin</span><span class="badge">PHP</span><span class="badge">SQL</span><span class="badge">HTML</span><span class="badge">CSS</span></div></article>
+      <article class="x-card"><p class="k">02 / Data <svg aria-hidden="true"><use href="#i-db"/></svg></p><h3>Databases</h3><p>Designing databases and writing queries to store and find data.</p><div class="badges"><span class="badge">MySQL</span><span class="badge">PostgreSQL</span><span class="badge">phpMyAdmin</span></div></article>
+      <article class="x-card"><p class="k">03 / Security <svg aria-hidden="true"><use href="#i-shield"/></svg></p><h3>Networking and security</h3><p>Setting up and fixing networks, and protecting the data in my projects.</p><div class="badges"><span class="badge">IP Configuration</span><span class="badge">Network Troubleshooting</span><span class="badge">Connectivity Testing</span><span class="badge">AES-256-GCM</span><span class="badge">RBAC</span></div></article>
+      <article class="x-card"><p class="k">04 / Tools <svg aria-hidden="true"><use href="#i-tools"/></svg></p><h3>Tools and design</h3><p>For writing code, tracking changes, and designing screens.</p><div class="badges"><span class="badge">VS Code</span><span class="badge">Android Studio</span><span class="badge">Git &amp; GitHub</span><span class="badge">VirtualBox</span><span class="badge">Figma</span><span class="badge">Canva</span><span class="badge">MS Office</span></div></article>
     </div>
-    <div class="x-stack-head"><h3>Tools of the <em class="it">trade.</em></h3><p>Code · Data · Hardware · Design</p></div>
+    <div class="x-stack-head"><h3>Tools of the <em class="it">trade.</em></h3><p>Languages · Databases · Hardware · Design</p></div>
     <ul class="x-tiles">
-      <li><b>Py</b><span>Python</span></li><li><b>C#</b><span>C#</span></li><li><b>C++</b><span>C/C++</span></li><li><b>Kt</b><span>Kotlin</span></li>
-      <li><b>PHP</b><span>PHP</span></li><li><b>SQL</b><span>SQL</span></li><li><b>&lt;/&gt;</b><span>HTML &amp; CSS</span></li><li><b>My</b><span>MySQL</span></li>
-      <li><b>Pg</b><span>PostgreSQL</span></li><li><b>Ard</b><span>Arduino / ESP8266</span></li><li><b>Git</b><span>Git &amp; GitHub</span></li><li><b>Fg</b><span>Figma</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.858 0c-.978.005-1.913.088-2.736.234C6.7.662 6.26 1.558 6.26 3.21v2.182h5.725v.727H4.111c-1.664 0-3.121 1-3.577 2.903-.526 2.181-.549 3.542 0 5.82.407 1.694 1.379 2.902 3.043 2.902h1.969v-2.616c0-1.89 1.635-3.557 3.576-3.557h5.72c1.591 0 2.862-1.31 2.862-2.91v-5.45c0-1.553-1.309-2.718-2.863-2.977A18 18 0 0 0 11.858 0M8.762 1.755c.591 0 1.074.491 1.074 1.095 0 .601-.483 1.087-1.074 1.087A1.08 1.08 0 0 1 7.688 2.85c0-.604.48-1.095 1.074-1.095m9.656 4.364v2.543c0 1.971-1.671 3.63-3.577 3.63H9.122c-1.566 0-2.862 1.34-2.862 2.91v5.452c0 1.551 1.349 2.464 2.862 2.91 1.813.532 3.55.628 5.72 0 1.44-.418 2.862-1.258 2.862-2.91V18.47h-5.719v-.727h8.582c1.664 0 2.284-1.16 2.862-2.903.598-1.793.573-3.518 0-5.819-.41-1.656-1.196-2.903-2.862-2.903zm-3.216 13.807a1.08 1.08 0 0 1 1.074 1.088c0 .604-.48 1.094-1.074 1.094-.592 0-1.075-.49-1.075-1.094 0-.601.483-1.088 1.075-1.088"/></svg><b>Python</b><span>Language</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 1.8 20.8 6.9v10.2L12 22.2 3.2 17.1V6.9z"/><text x="12" y="15.4" text-anchor="middle" font-family="Poppins,system-ui,sans-serif" font-weight="700" font-size="8.4" fill="currentColor">C#</text></svg><b>C#</b><span>Language</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11 0-3.92 3.19-7.11 7.11-7.11a7.133 7.133 0 016.156 3.553l-3.076 1.78a3.567 3.567 0 00-3.08-1.78A3.56 3.56 0 008.444 12 3.56 3.56 0 0012 15.555a3.57 3.57 0 003.08-1.778l3.078 1.78A7.135 7.135 0 0112 19.11zm7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"/></svg><b>C/C++</b><span>Language</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 24H0V0h24L12 12Z"/></svg><b>Kotlin</b><span>Android</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z"/></svg><b>PHP</b><span>Backend</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.700 3.600 3 8 3s8-1.300 8-3V5M4 12c0 1.700 3.600 3 8 3s8-1.300 8-3"/></g></svg><b>SQL</b><span>Queries</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z"/></svg><b>MySQL</b><span>Database</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z"/></svg><b>PostgreSQL</b><span>Database</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg><b>HTML</b><span>Web</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0v20.16A3.84 3.84 0 0 0 3.84 24h16.32A3.84 3.84 0 0 0 24 20.16V3.84A3.84 3.84 0 0 0 20.16 0Zm14.256 13.08c1.56 0 2.28 1.08 2.304 2.64h-1.608c.024-.288-.048-.6-.144-.84-.096-.192-.288-.264-.552-.264-.456 0-.696.264-.696.84-.024.576.288.888.768 1.08.72.288 1.608.744 1.92 1.296q.432.648.432 1.656c0 1.608-.912 2.592-2.496 2.592-1.656 0-2.4-1.032-2.424-2.688h1.68c0 .792.264 1.176.792 1.176.264 0 .456-.072.552-.24.192-.312.24-1.176-.048-1.512-.312-.408-.912-.6-1.32-.816q-.828-.396-1.224-.936c-.24-.36-.36-.888-.36-1.536 0-1.44.936-2.472 2.424-2.448m5.4 0c1.584 0 2.304 1.08 2.328 2.64h-1.608c0-.288-.048-.6-.168-.84-.096-.192-.264-.264-.528-.264-.48 0-.72.264-.72.84s.288.888.792 1.08c.696.288 1.608.744 1.92 1.296.264.432.408.984.408 1.656.024 1.608-.888 2.592-2.472 2.592-1.68 0-2.424-1.056-2.448-2.688h1.68c0 .744.264 1.176.792 1.176.264 0 .456-.072.552-.24.216-.312.264-1.176-.048-1.512-.288-.408-.888-.6-1.32-.816-.552-.264-.96-.576-1.2-.936s-.36-.888-.36-1.536c-.024-1.44.912-2.472 2.4-2.448m-11.031.018c.711-.006 1.419.198 1.839.63.432.432.672 1.128.648 1.992H9.336c.024-.456-.096-.792-.432-.96-.312-.144-.768-.048-.888.24-.12.264-.192.576-.168.864v3.504c0 .744.264 1.128.768 1.128a.65.65 0 0 0 .552-.264c.168-.24.192-.552.168-.84h1.776c.096 1.632-.984 2.712-2.568 2.688-1.536 0-2.496-.864-2.472-2.472v-4.032c0-.816.24-1.44.696-1.848.432-.408 1.146-.624 1.857-.63"/></svg><b>CSS</b><span>Web</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.087 6.146c-.3 0-.607.017-.907.069-2.532.367-4.23 2.239-5.18 3.674-.95-1.435-2.648-3.307-5.18-3.674a6.49 6.49 0 0 0-.907-.069C2.648 6.146 0 8.77 0 12s2.656 5.854 5.913 5.854c.3 0 .607-.017.916-.069 2.531-.376 4.23-2.247 5.18-3.683.949 1.436 2.647 3.307 5.18 3.683.299.043.607.069.915.069C21.344 17.854 24 15.23 24 12s-2.656-5.854-5.913-5.854zM6.53 15.734a3.837 3.837 0 0 1-.625.043c-2.148 0-3.889-1.7-3.889-3.777 0-2.085 1.749-3.777 3.898-3.777.208 0 .416.017.624.043 2.39.35 3.847 2.768 4.347 3.734-.508.974-1.974 3.384-4.355 3.734zm11.558.043c-.208 0-.416-.017-.624-.043-2.39-.35-3.856-2.768-4.347-3.734.491-.966 1.957-3.384 4.347-3.734.208-.026.416-.043.624-.043 2.149 0 3.89 1.7 3.89 3.777 0 2.085-1.75 3.777-3.89 3.777zm1.65-4.404v1.134h-1.205v1.182h-1.156v-1.182H16.17v-1.134h1.206V10.19h1.156v1.183h1.206zM4.246 12.498H7.82v-1.125H4.245v1.125z"/></svg><b>Arduino</b><span>IoT hardware</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><b>Git &amp; GitHub</b><span>Version control</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg><b>Figma</b><span>Design</span></li>
     </ul>
     <div class="certs">
       <div class="certs-col reveal">
         <span class="label">Certifications</span>
-        <h3>Always <span class="script">Learning</span></h3>
+        <h3>Always <em class="it">learning.</em></h3>
         <span class="sub-label">Certificates</span>
         <ul class="cert-grid">
           <li><a class="cert" href="https://coursera.org/share/0547c5a831d8caa29c006d2365aca590" target="_blank" rel="noopener"><span class="ci"><svg><use href="#i-code"/></svg></span><div><b>Full Stack Web Development</b><small>Amazon · Coursera<span class="d">Mar 2026</span></small></div><span class="go">Verify <svg><use href="#i-arrow"/></svg></span></a></li>
@@ -1236,27 +1252,27 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
 <section class="x-sec" id="projects">
   <div class="wrap">
     <div class="x-head">
-      <div><p class="sec-label">03 — Selected work</p><h2 class="x-h2">Things I’ve <em>built.</em></h2></div>
-      <p class="x-intro">A collection of projects where ideas meet functionality, from career guidance to smart plant care.</p>
+      <div><p class="sec-label">03 — Projects</p><h2 class="x-h2">Things I’ve <em>built.</em></h2></div>
+      <p class="x-intro">Two projects I helped build: a career guidance website and a smart plant monitor.</p>
     </div>
     <div class="x-work">
       <article class="x-card x-proj">
-        <div class="media"><span class="tag">Capstone · 2026</span><img class="shot" src="images/profilepath-admin.webp" alt="ProfilePath admin dashboard: Analytics &amp; Report page with completion rates, students by strand, and RIASEC scores" width="852" height="536" loading="lazy"></div>
+        <div class="media"><span class="tag">Capstone project · 2026</span><img class="shot" src="images/profilepath-admin.webp" alt="ProfilePath admin dashboard: Analytics &amp; Report page with completion rates, students by strand, and RIASEC scores" width="852" height="536" loading="lazy"></div>
         <div class="body">
           <h3>ProfilePath</h3>
-          <p class="pmeta">Web-based career profiling system · Backend &amp; Database Developer</p>
+          <p class="pmeta">Career guidance website · My role: backend and database</p>
           <a class="arrow-c" href="#case-study-profilepath" aria-label="View the ProfilePath case study"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <p class="desc">Matches Senior High School students to career paths using content-based filtering and cosine similarity, with AES-256-GCM encryption, PBKDF2, and role-based access control protecting their data.</p>
+          <p class="desc">Recommends career paths to senior high school students based on their answers and profile. Student data is encrypted, and each user only sees what their role allows.</p>
           <div class="badges" style="grid-column:1 / -1;margin-top:8px"><span class="badge">PHP</span><span class="badge">PostgreSQL</span><span class="badge">JavaScript</span><span class="badge">HTML</span><span class="badge">CSS</span></div>
         </div>
       </article>
       <article class="x-card x-proj">
-        <div class="media"><span class="tag">IoT · API · Android · 2026</span><img class="cover" src="images/plantsync-hardware.jpg" alt="PlantSync prototype: two plant pots with soil moisture sensors in a clear enclosure, with the Arduino and Wemos boards below" width="760" height="1044" loading="lazy"></div>
+        <div class="media"><span class="tag">IoT project · 2026</span><img class="cover" src="images/plantsync-hardware.jpg" alt="PlantSync prototype: two plant pots with soil moisture sensors in a clear enclosure, with the Arduino and Wemos boards below" width="760" height="1044" loading="lazy"></div>
         <div class="body">
           <h3>PlantSync</h3>
-          <p class="pmeta">Smart plant monitoring system with app integration</p>
+          <p class="pmeta">Smart plant monitor with an Android app</p>
           <a class="arrow-c" href="#case-study-plantsync" aria-label="View the PlantSync case study"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <p class="desc">An Arduino Uno reads soil moisture for two pots, light, temperature, and humidity, sounds an LED and buzzer alert when a pot is dry, and a Wemos D1 R1 sends the readings to a PHP/MySQL API and a Kotlin Android app.</p>
+          <p class="desc">A small device that checks the soil moisture of two plant pots, plus light, temperature, and humidity. It lights up and beeps when a pot is dry, and sends every reading to an Android app.</p>
           <div class="badges" style="grid-column:1 / -1;margin-top:8px"><span class="badge">Arduino</span><span class="badge">ESP8266</span><span class="badge">PHP</span><span class="badge">MySQL</span><span class="badge">Kotlin</span></div>
         </div>
       </article>
@@ -1267,18 +1283,18 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
       <div>
         <p class="sec-label">Featured case study</p>
         <h2 class="x-h2">Guiding students, <em>protecting</em> their data.</h2>
-        <p class="d">ProfilePath helps Senior High School students explore career paths through a profile built from their own information, and keeps that information safe while doing it.</p>
+        <p class="d">ProfilePath helps senior high school students find career paths that fit them, and keeps their personal information safe.</p>
         <ul class="x-steps3">
-          <li><b>Problem</b>Students need guidance choosing a career path, and their data must be protected.</li>
-          <li><b>Solution</b>Content-based filtering with cosine similarity matches each profile to career paths.</li>
-          <li><b>Security</b>AES-256-GCM encryption, PBKDF2 key derivation, and role-based access control.</li>
+          <li><b>Problem</b>Students need help choosing a career, and the information they share is personal.</li>
+          <li><b>Solution</b>The system compares each student’s profile with career paths and recommends the best matches.</li>
+          <li><b>Security</b>Student data is encrypted (AES-256-GCM), and access depends on each user’s role.</li>
         </ul>
         <div class="btn-row">
-          <a class="x-btn primary sm" href="#case-study-profilepath">Explore the case study <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="x-btn ghost sm" href="https://profilepath-careerprofilingsystem.onrender.com/staff-login" target="_blank" rel="noopener">Staff portal <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="x-btn ghost sm" href="https://profilepath-careerprofilingsystem.onrender.com/student-login" target="_blank" rel="noopener">Student portal <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="x-btn primary sm" href="#case-study-profilepath">Read the case study <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="x-btn ghost sm" href="https://profilepath-careerprofilingsystem.onrender.com/staff-login" target="_blank" rel="noopener">Open staff portal <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="x-btn ghost sm" href="https://profilepath-careerprofilingsystem.onrender.com/student-login" target="_blank" rel="noopener">Open student portal <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-        <p class="demo-note">Live demo. The first load can take a moment while the server wakes up.</p>
+        <p class="demo-note">This is a live demo. It may take up to a minute to load the first time.</p>
       </div>
     </div>
   </div>
@@ -1288,7 +1304,7 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
 <section class="arcade-sec pad x-sec" id="arcade" aria-labelledby="arcade-title">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="sec-label">05 — Bonus level</p>
+      <p class="sec-label">04 — Just for fun</p>
       <h2 id="arcade-title" class="x-h2">Cherry <em>Arcade.</em></h2>
       <p>Take a little break ♡</p>
     </div>
@@ -1312,8 +1328,8 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
           <canvas id="ac-canvas" width="320" height="240" tabindex="-1" role="img" aria-label="Cherry Catcher game screen: a basket at the bottom catches cherries falling from the sky"></canvas>
           <div class="arc-overlay" id="ac-start">
             <p class="arc-logo">CHERRY<br>CATCHER</p>
-            <p class="arc-msg">Catch the falling cherries and keep your three hearts!</p>
-            <p class="arc-keys"><kbd>←</kbd><kbd>→</kbd> or <kbd>A</kbd><kbd>D</kbd> to move · drag on mobile</p>
+            <p class="arc-msg">Catch the falling cherries. Miss three and the game ends.</p>
+            <p class="arc-keys"><kbd>←</kbd><kbd>→</kbd> or <kbd>A</kbd><kbd>D</kbd> to move. On a phone, drag the basket.</p>
             <button class="arc-btn" type="button" id="ac-go">▶ Start Game</button>
           </div>
           <div class="arc-overlay" id="ac-paused" hidden>
@@ -1345,7 +1361,7 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
         <div class="arc-rules">
           <p><b>+10</b> for every cherry you catch</p>
           <p><b>−1 ♥</b> for every cherry you miss</p>
-          <p><b>3 ♥</b> to start. Lose them all and it’s game over</p>
+          <p><b>3 ♥</b> to start. Lose all three and the game ends</p>
         </div>
         <p class="arc-note">Cherries fall faster as your score grows. Your best score is saved for this browser session.</p>
         <svg class="arc-cherry" aria-hidden="true"><use href="#cherry"/></svg>
@@ -1360,9 +1376,9 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
   <div class="wrap">
     <div class="jr-head">
       <div class="sec-head reveal">
-        <p class="sec-label">06 — Journey</p>
+        <p class="sec-label">05 — Journey</p>
         <h2 class="x-h2">My journey <em>so far.</em></h2>
-        <p>A few pages from my story: the chapters I’ve written, and the one I’m about to begin.</p>
+        <p>Where I’ve been so far, and what comes next.</p>
       </div>
       <p class="jr-note reveal" aria-hidden="true"><span class="tape"></span>still being written…<svg><use href="#cherry"/></svg></p>
     </div>
@@ -1396,8 +1412,8 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
             <p class="jb-title">The Beginning</p>
             <h3>BS Information Technology</h3>
             <p class="jr-where">Mapúa Malayan Colleges Laguna</p>
-            <p class="jr-date">2023 – 2027 · Cybersecurity track</p>
-            <p class="jb-story">Where I’m building my foundation in software, systems, and security, and where I’ve been a Dean’s Lister for six terms.</p>
+            <p class="jr-date">2023–2027 · Cybersecurity track</p>
+            <p class="jb-story">Where I’m learning software, systems, and security. I’ve been a Dean’s Lister for six terms.</p>
             <div class="jr-rule" aria-hidden="true"></div>
             <div class="badges"><span class="badge">Cybersecurity</span><span class="badge">Dean’s Lister</span><span class="badge">Laguna, PH</span></div>
           </div>
@@ -1419,17 +1435,17 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
             <p class="jb-hand" aria-hidden="true">from idea → real system</p>
           </div>
           <div class="jb-page jb-right">
-            <p class="jr-kicker"><span class="ic"><svg><use href="#i-code"/></svg></span>Chapter 02 · Capstone</p>
+            <p class="jr-kicker"><span class="ic"><svg><use href="#i-code"/></svg></span>Chapter 02 · Capstone project</p>
             <p class="jb-title">The Creation</p>
             <h3>Capstone Project — ProfilePath</h3>
             <p class="jr-where">Web-based career profiling system</p>
-            <p class="jr-date">2026 · Backend &amp; Database Developer</p>
-            <p class="jb-story">A system that matches Senior High School students to career paths using content-based filtering, with AES-256-GCM encryption and role-based access control to protect their data.</p>
+            <p class="jr-date">2026 · Backend and database</p>
+            <p class="jb-story">A website that recommends career paths to senior high school students. I built the backend and database, including the encryption that protects student data.</p>
             <div class="jr-rule" aria-hidden="true"></div>
             <ul class="jb-phases" aria-label="Project phases"><li>Development</li><li>Implementation</li><li>Testing</li><li>Documentation</li></ul>
             <div class="jb-links">
               <a class="jr-link" href="#case-study-profilepath"><span>Read the case study</span><svg><use href="#i-arrow"/></svg></a>
-              <a class="jr-link" href="https://profilepath-careerprofilingsystem.onrender.com/student-login" target="_blank" rel="noopener"><span>Try the live demo</span><svg><use href="#i-arrow"/></svg></a>
+              <a class="jr-link" href="https://profilepath-careerprofilingsystem.onrender.com/student-login" target="_blank" rel="noopener"><span>Open student portal</span><svg><use href="#i-arrow"/></svg></a>
             </div>
           </div>
         </section>
@@ -1449,11 +1465,11 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
             <p class="jb-hand" aria-hidden="true">coming soon ✦</p>
           </div>
           <div class="jb-page jb-right">
-            <p class="jr-kicker"><span class="ic"><svg><use href="#i-brief"/></svg></span>Chapter 03 · Internship / OJT</p>
+            <p class="jr-kicker"><span class="ic"><svg><use href="#i-brief"/></svg></span>Chapter 03 · Internship (OJT)</p>
             <p class="jb-title">The Next Chapter</p>
-            <h3>Internship / OJT Journey</h3>
+            <h3>IT Internship (OJT)</h3>
             <p class="jr-where">486 required training hours</p>
-            <p class="jb-story">An upcoming chapter where I’ll put what I’ve learned to work with a real team. Placement details will be added once confirmed.</p>
+            <p class="jb-story">Where I’ll apply what I’ve learned in a real workplace. Company and role details will be added once confirmed.</p>
             <div class="jr-rule" aria-hidden="true"></div>
             <span class="jr-status"><i></i>Upcoming chapter</span>
             <p class="jb-tbc">To Be Continued…<svg aria-hidden="true"><use href="#cherry"/></svg></p>
@@ -1479,21 +1495,21 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
           <svg class="itsoc-sticker" style="--r:14deg;width:64px;height:44px;right:30%;top:-18px" aria-hidden="true"><use href="#bow"/></svg>
         </div>
         <div class="itsoc-copy">
-          <p class="jr-kicker"><span class="ic"><svg><use href="#i-users"/></svg></span>Organization · 2025 – 2026</p>
-          <p class="jr-chapter">Leading with my org</p>
+          <p class="jr-kicker"><span class="ic"><svg><use href="#i-users"/></svg></span>Student organization · 2025–2026</p>
+          <p class="jr-chapter">Student leadership</p>
           <h3>Auditor, ITSOC-MMCL</h3>
           <p class="jr-where">Infotech Society, Mapúa Malayan Colleges Laguna</p>
           <ul class="side-list">
-            <li>Organized financial transaction records and assisted the Treasurer with tracking funds and expenses.</li>
-            <li>Prepared and presented financial reports to support transparent organizational reporting.</li>
+            <li>Kept the organization’s financial records and helped the Treasurer track funds and expenses.</li>
+            <li>Prepared and presented financial reports to keep the organization’s spending transparent.</li>
           </ul>
           <div class="badges"><span class="badge">Leadership</span><span class="badge">Financial Reporting</span><span class="badge">Public Speaking</span></div>
         </div>
       </div>
       <ul class="jr-notes">
-        <li class="jr-n reveal"><span class="tape"></span><span class="when">2021 – 2023</span><h3>Senior High School</h3><p class="org">The Canossa School, Inc.</p><p>Graduated with honors.</p></li>
+        <li class="jr-n reveal"><span class="tape"></span><span class="when">2021–2023</span><h3>Senior High School</h3><p class="org">The Canossa School, Inc.</p><p>Graduated with honors.</p></li>
         <li class="jr-n reveal"><span class="tape" style="transform:rotate(4deg)"></span><span class="when">June 2024</span><h3>Creative Committee Volunteer</h3><p class="org">CCIS-MMCL Committee</p><p>Created promotional materials for foundation events and social media.</p></li>
-        <li class="jr-n reveal"><span class="tape" style="transform:rotate(3deg)"></span><span class="when">January 2026 · Seminar</span><h3>Future-Ready Pilipinas</h3><p class="org">DICT Region II</p><p>Understanding Blockchain Today.</p></li>
+        <li class="jr-n reveal"><span class="tape" style="transform:rotate(3deg)"></span><span class="when">January 2026 · Seminar</span><h3>Future-Ready Pilipinas</h3><p class="org">DICT Region II</p><p>Attended the seminar “Understanding Blockchain Today.”</p></li>
       </ul>
     </div>
   </div>
@@ -1504,20 +1520,20 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
   <div class="wrap">
     <div class="x-cta">
       <div>
-        <p class="sec-label">07 — Start a conversation</p>
+        <p class="sec-label">06 — Contact</p>
         <h2>Let’s create something <em>wonderful.</em></h2>
         <p>Have an opportunity, a project idea, or just want to connect? I’d love to hear from you.</p>
       </div>
-      <a class="x-btn primary" href="#cf-name">Start a conversation <svg aria-hidden="true"><use href="#i-right"/></svg></a>
+      <a class="x-btn primary" href="#cf-name">Send me a message <svg aria-hidden="true"><use href="#i-right"/></svg></a>
     </div>
     <form class="cform" id="cform" novalidate>
       <div class="cf-body">
         <fieldset class="cf-topics">
           <legend class="cf-legend">What’s this about?</legend>
-          <label><input type="radio" name="topic" value="Internship / job opportunity" checked><span>Internship / job opportunity</span></label>
+          <label><input type="radio" name="topic" value="Internship / job opportunity" checked><span>Internship or job opportunity</span></label>
           <label><input type="radio" name="topic" value="CV request" data-key="cv"><span>Request my CV</span></label>
           <label><input type="radio" name="topic" value="Project collaboration"><span>Project collaboration</span></label>
-          <label><input type="radio" name="topic" value="Just saying hi"><span>Just saying hi</span></label>
+          <label><input type="radio" name="topic" value="Just saying hi"><span>Just saying hello</span></label>
         </fieldset>
         <div class="cf-grid">
           <div class="cf-field"><label for="cf-name">Your name</label><input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="100"><small class="cf-err" id="cf-name-err"></small></div>
@@ -1527,10 +1543,10 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
         </div>
         <input type="checkbox" name="botcheck" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="cf-actions">
-          <button class="btn btn-light" type="submit" id="cf-send"><svg><use href="#i-mail"/></svg><span>Send Message</span></button>
+          <button class="btn btn-light" type="submit" id="cf-send"><svg><use href="#i-mail"/></svg><span>Send message</span></button>
           <p class="cf-status" id="cf-status" role="status" aria-live="polite"></p>
         </div>
-        <p class="cf-fine">Your message goes straight to my inbox, and I’ll reply to the email you enter.</p>
+        <p class="cf-fine">Your message goes straight to my inbox. I’ll reply to the email address you enter.</p>
       </div>
       <div class="cf-done" id="cf-done" hidden>
         <span class="cf-check" aria-hidden="true"><svg><use href="#i-heart"/></svg></span>
@@ -1574,27 +1590,27 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
   </header>
   <section class="cs-hero">
     <div class="wrap">
-      <a class="back" href="#projects"><svg><use href="#i-left"/></svg>BACK TO PROJECT GALLERY</a>
+      <a class="back" href="#projects"><svg><use href="#i-left"/></svg>Back to projects</a>
       <img class="cs-logo" src="images/profilepath-logo.webp" alt="ProfilePath logo" width="640" height="582">
       <span class="label">Case Study / Capstone Project · In development</span>
       <h1>ProfilePath — <em>Web-Based</em> Career Profiling System</h1>
       <p style="max-width:640px">A web-based career profiling system for Senior High School students that matches them to career paths using content-based filtering and cosine similarity, with AES-256-GCM encryption, PBKDF2 key derivation, and role-based access control to help protect student profile and assessment data.</p>
       <div class="meta">
-        <div><b>Role</b>Backend &amp; Database Developer</div>
+        <div><b>Role</b>Backend and database developer</div>
         <div><b>Type</b>Web application</div>
         <div><b>Stack</b>PHP · PostgreSQL · JavaScript · HTML · CSS</div>
         <div><b>Year</b>2026</div>
       </div>
       <div class="btn-row" style="margin-top:26px">
-            <a class="btn btn-secondary" href="https://profilepath-careerprofilingsystem.onrender.com/staff-login" target="_blank" rel="noopener">Staff Portal <svg><use href="#i-arrow"/></svg></a>
-            <a class="btn btn-secondary" href="https://profilepath-careerprofilingsystem.onrender.com/student-login" target="_blank" rel="noopener">Student Portal <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-secondary" href="https://profilepath-careerprofilingsystem.onrender.com/staff-login" target="_blank" rel="noopener">Open staff portal <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-secondary" href="https://profilepath-careerprofilingsystem.onrender.com/student-login" target="_blank" rel="noopener">Open student portal <svg><use href="#i-arrow"/></svg></a>
       </div>
-      <p class="demo-note">Live demo. The first load can take a moment while the server wakes up.</p>
+      <p class="demo-note">This is a live demo. It may take up to a minute to load the first time.</p>
     </div>
   </section>
   <div class="wrap cs-body">
     <nav class="cs-nav" aria-label="Case study sections">
-      <a href="#cs-overview" data-cs>Overview</a><a href="#cs-problem" data-cs>Problem</a><a href="#cs-objectives" data-cs>Objectives</a><a href="#cs-tech" data-cs>Technologies</a><a href="#cs-process" data-cs>Process</a><a href="#cs-shots" data-cs>Screenshots</a><a href="#cs-features" data-cs>Key features</a><a href="#cs-learn" data-cs>Learnings</a>
+      <a href="#cs-overview" data-cs>Overview</a><a href="#cs-problem" data-cs>Problem</a><a href="#cs-objectives" data-cs>Objectives</a><a href="#cs-tech" data-cs>Technologies</a><a href="#cs-process" data-cs>Process</a><a href="#cs-shots" data-cs>Screenshots</a><a href="#cs-features" data-cs>Key features</a>
     </nav>
     <article>
       <div class="cs-sec" id="cs-overview"><span class="label">01</span><h2>Project overview</h2>
@@ -1621,7 +1637,7 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
         <span class="todo" style="margin-top:14px">To add: remaining features</span></div>
       <div class="cs-sec" id="cs-learn"><span class="label">08</span><h2>Challenges &amp; learnings</h2>
         <span class="todo">To add: your own reflections on challenges and what you learned</span></div>
-      <div class="cs-end"><a class="btn btn-secondary" href="#projects"><svg><use href="#i-left"/></svg>Back to project gallery</a><a class="btn btn-primary" href="#contact">Get in Touch <svg><use href="#i-arrow"/></svg></a></div>
+      <div class="cs-end"><a class="btn btn-secondary" href="#projects"><svg><use href="#i-left"/></svg>Back to projects</a><a class="btn btn-primary" href="#contact">Get in touch <svg><use href="#i-arrow"/></svg></a></div>
     </article>
   </div>
   <div class="stripe-foot" aria-hidden="true"></div>
@@ -1637,7 +1653,7 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
   </header>
   <section class="cs-hero">
     <div class="wrap">
-      <a class="back" href="#projects"><svg><use href="#i-left"/></svg>BACK TO PROJECT GALLERY</a>
+      <a class="back" href="#projects"><svg><use href="#i-left"/></svg>Back to projects</a>
       <span class="label">Case Study / IoT Project · 2026</span>
       <h1>PlantSync — <em>Smart</em> Plant Monitoring System</h1>
       <p style="max-width:680px">An Internet of Things (IoT) prototype that monitors two plant pots on its own, alerts you with an LED and buzzer when a plant needs attention, and shows every reading in an Android app.</p>
@@ -1765,7 +1781,7 @@ footer.x-foot .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:
           <li><b>Loop-based firmware.</b> The Arduino code runs in a standard <code>loop()</code>. A possible next step is FreeRTOS, to split sensing, alerts, and communication into scheduled tasks.</li>
         </ul></div>
 
-      <div class="cs-end"><a class="btn btn-secondary" href="#projects"><svg><use href="#i-left"/></svg>Back to project gallery</a><a class="btn btn-primary" href="#contact">Get in Touch <svg><use href="#i-arrow"/></svg></a></div>
+      <div class="cs-end"><a class="btn btn-secondary" href="#projects"><svg><use href="#i-left"/></svg>Back to projects</a><a class="btn btn-primary" href="#contact">Get in touch <svg><use href="#i-arrow"/></svg></a></div>
     </article>
   </div>
   <div class="stripe-foot" aria-hidden="true"></div>
@@ -1808,10 +1824,10 @@ var MY_EMAIL = "christelleann922@gmail.com";
   var done = document.getElementById("cf-done"), body = f.querySelector(".cf-body");
   var nameEl = document.getElementById("cf-name"), emailEl = document.getElementById("cf-email"), orgEl = document.getElementById("cf-org"), hpEl = f.querySelector(".cf-hp");
   var copy = {
-    "Internship / job opportunity": ["Message", "Tell me a bit about the opportunity.", "Send Message", true],
-    "CV request": ["Role or opportunity (optional)", "Which role or opportunity is this for?", "Request My CV", false],
-    "Project collaboration": ["Message", "What would you like to build together?", "Send Message", true],
-    "Just saying hi": ["Message", "Say hello!", "Send Message", true]
+    "Internship / job opportunity": ["Message", "Tell me a bit about the opportunity.", "Send message", true],
+    "CV request": ["Role or opportunity (optional)", "Which role or opportunity is this for?", "Request my CV", false],
+    "Project collaboration": ["Message", "What would you like to build together?", "Send message", true],
+    "Just saying hi": ["Message", "Say hello!", "Send message", true]
   };
   function topic(){ return f.querySelector('input[name="topic"]:checked').value; }
   function syncTopic(){ var c = copy[topic()]; msgLabel.textContent = c[0]; msg.placeholder = c[1]; sendLabel.textContent = c[2]; msg.required = c[3]; clearErr(msg); }
